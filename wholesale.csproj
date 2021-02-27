@@ -1,0 +1,1370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{86A88C19-6B26-42CF-BB15-5CBAC85DFBF3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>wholesale</RootNamespace>
+    <AssemblyName>wholesale</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44317</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\Downloads\wholesale\wholesale\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="accountorder.aspx" />
+    <Content Include="admin\addmaterial.aspx" />
+    <Content Include="admin\addproduct.aspx" />
+    <Content Include="admin\addpurchase.aspx" />
+    <Content Include="admin\addsales.aspx" />
+    <Content Include="admin\admin-assets\css\app-modern-dark.min.css" />
+    <Content Include="admin\admin-assets\css\app-modern.min.css" />
+    <Content Include="admin\admin-assets\css\custom.css" />
+    <Content Include="admin\admin-assets\css\icons.min.css" />
+    <Content Include="admin\admin-assets\css\vendor\buttons.bootstrap4.css" />
+    <Content Include="admin\admin-assets\css\vendor\dataTables.bootstrap4.css" />
+    <Content Include="admin\admin-assets\css\vendor\font\summernote-2.html" />
+    <Content Include="admin\admin-assets\css\vendor\font\summernote-3.html" />
+    <Content Include="admin\admin-assets\css\vendor\font\summernote-4.html" />
+    <Content Include="admin\admin-assets\css\vendor\font\summernote.html" />
+    <Content Include="admin\admin-assets\css\vendor\font\summernoted41dd41d.html" />
+    <Content Include="admin\admin-assets\css\vendor\jquery-jvectormap-1.2.2.css" />
+    <Content Include="admin\admin-assets\css\vendor\responsive.bootstrap4.css" />
+    <Content Include="admin\admin-assets\css\vendor\select.bootstrap4.css" />
+    <Content Include="admin\admin-assets\css\vendor\simplemde.min.css" />
+    <Content Include="admin\admin-assets\css\vendor\summernote-bs4.css" />
+    <Content Include="admin\admin-assets\fonts\dripicons-v2.svg" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Bold.svg" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Light.html" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Light.svg" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Lightd41dd41d.html" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Regular.svg" />
+    <Content Include="admin\admin-assets\fonts\Nunito-SemiBold.svg" />
+    <Content Include="admin\admin-assets\fonts\unicons8adf8adf.svg" />
+    <Content Include="admin\admin-assets\images\barcode.png" />
+    <Content Include="admin\admin-assets\images\bg-auth.jpg" />
+    <Content Include="admin\admin-assets\images\bg-pattern-dark.png" />
+    <Content Include="admin\admin-assets\images\bg-pattern-light.svg" />
+    <Content Include="admin\admin-assets\images\bg-pattern.png" />
+    <Content Include="admin\admin-assets\images\email-campaign.svg" />
+    <Content Include="admin\admin-assets\images\favicon.ico" />
+    <Content Include="admin\admin-assets\images\flags\germany.jpg" />
+    <Content Include="admin\admin-assets\images\flags\italy.jpg" />
+    <Content Include="admin\admin-assets\images\flags\russia.jpg" />
+    <Content Include="admin\admin-assets\images\flags\spain.jpg" />
+    <Content Include="admin\admin-assets\images\flags\us.jpg" />
+    <Content Include="admin\admin-assets\images\logo-dark.png" />
+    <Content Include="admin\admin-assets\images\logo-light.png" />
+    <Content Include="admin\admin-assets\images\logo.png" />
+    <Content Include="admin\admin-assets\images\logo_sm.png" />
+    <Content Include="admin\admin-assets\images\logo_sm_dark.png" />
+    <Content Include="admin\admin-assets\images\maintenance.svg" />
+    <Content Include="admin\admin-assets\images\payments\cod.png" />
+    <Content Include="admin\admin-assets\images\payments\discover.png" />
+    <Content Include="admin\admin-assets\images\payments\master.png" />
+    <Content Include="admin\admin-assets\images\payments\payoneer.png" />
+    <Content Include="admin\admin-assets\images\payments\paypal.png" />
+    <Content Include="admin\admin-assets\images\payments\stripe.png" />
+    <Content Include="admin\admin-assets\images\payments\visa.png" />
+    <Content Include="admin\admin-assets\images\products\product-1.jpg" />
+    <Content Include="admin\admin-assets\images\products\product-2.jpg" />
+    <Content Include="admin\admin-assets\images\products\product-3.jpg" />
+    <Content Include="admin\admin-assets\images\products\product-4.jpg" />
+    <Content Include="admin\admin-assets\images\products\product-5.jpg" />
+    <Content Include="admin\admin-assets\images\products\product-6.jpg" />
+    <Content Include="admin\admin-assets\images\report.svg" />
+    <Content Include="admin\admin-assets\images\small\small-1.jpg" />
+    <Content Include="admin\admin-assets\images\small\small-2.jpg" />
+    <Content Include="admin\admin-assets\images\small\small-3.jpg" />
+    <Content Include="admin\admin-assets\images\small\small-4.jpg" />
+    <Content Include="admin\admin-assets\images\users\avatar-1.jpg" />
+    <Content Include="admin\admin-assets\images\users\avatar-10.jpg" />
+    <Content Include="admin\admin-assets\images\users\avatar-2.jpg" />
+    <Content Include="admin\admin-assets\images\users\avatar-3.jpg" />
+    <Content Include="admin\admin-assets\images\users\avatar-4.jpg" />
+    <Content Include="admin\admin-assets\images\users\avatar-5.jpg" />
+    <Content Include="admin\admin-assets\images\users\avatar-6.jpg" />
+    <Content Include="admin\admin-assets\images\users\avatar-7.jpg" />
+    <Content Include="admin\admin-assets\images\users\avatar-8.jpg" />
+    <Content Include="admin\admin-assets\images\users\avatar-9.jpg" />
+    <Content Include="admin\admin-assets\images\waves.png" />
+    <Content Include="admin\admin-assets\js\app.min.js" />
+    <Content Include="admin\admin-assets\js\pages\demo.dashboard.js" />
+    <Content Include="admin\admin-assets\js\pages\demo.datatable-init.js" />
+    <Content Include="admin\admin-assets\js\pages\demo.form-wizard.js" />
+    <Content Include="admin\admin-assets\js\pages\demo.google-maps.js" />
+    <Content Include="admin\admin-assets\js\pages\demo.simplemde.js" />
+    <Content Include="admin\admin-assets\js\pages\demo.summernote.js" />
+    <Content Include="admin\admin-assets\js\pages\demo.vector-maps.js" />
+    <Content Include="admin\admin-assets\js\ui\component.dragula.js" />
+    <Content Include="admin\admin-assets\js\ui\component.fileupload.js" />
+    <Content Include="admin\admin-assets\js\ui\component.range-slider.js" />
+    <Content Include="admin\admin-assets\js\ui\component.rating.js" />
+    <Content Include="admin\admin-assets\js\vendor.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\apexcharts.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\buttons.bootstrap4.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\buttons.flash.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\buttons.html5.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\buttons.print.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\dataTables.bootstrap4.js" />
+    <Content Include="admin\admin-assets\js\vendor\dataTables.buttons.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\dataTables.keyTable.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\dataTables.responsive.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\dataTables.select.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\dragula.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\dropzone.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\gmaps.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\ion.rangeSlider.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery-jvectormap-au-mill-en.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery-jvectormap-ca-lcc-en.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery-jvectormap-es-merc.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery-jvectormap-es-mill.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery-jvectormap-europe-mill-en.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery-jvectormap-fr-merc-en.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery-jvectormap-in-mill-en.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery-jvectormap-us-il-chicago-mill-en.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery-jvectormap-us-merc-en.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery.dataTables.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\jquery.rateit.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\responsive.bootstrap4.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\simplemde.min.js" />
+    <Content Include="admin\admin-assets\js\vendor\summernote-bs4.min.js" />
+    <Content Include="admin\customer.aspx" />
+    <Content Include="admin\custorder.aspx" />
+    <Content Include="admin\index.aspx" />
+    <Content Include="admin\materialstock.aspx" />
+    <Content Include="admin\purchaselist.aspx" />
+    <Content Include="admin\purchaseorder.aspx" />
+    <Content Include="admin\Receivedorder.aspx" />
+    <Content Include="admin\salesorder.aspx" />
+    <Content Include="admin\stockmaster.aspx" />
+    <Content Include="admin\subcategory.aspx" />
+    <Content Include="admin\brand.aspx" />
+    <Content Include="admin\category.aspx" />
+    <Content Include="admin\dashboard.aspx" />
+    <Content Include="admin\vieworder.aspx" />
+    <Content Include="admin\viewpurchase.aspx" />
+    <Content Include="assets\ajax\libs\jquery\1.10.2\jquery.min.js" />
+    <Content Include="assets\css\bootstrap.min - Copy.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\easy-responsive-tabs.css" />
+    <Content Include="assets\css\flexslider.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\jquery-ui.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\team.css" />
+    <Content Include="assets\css\theme.min.css" />
+    <Content Include="assets\fonts\feather\feather.css" />
+    <Content Include="assets\fonts\feather\fonts\Feather144f144f.svg" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\fonts\webfonts\flexslider-icon-2.html" />
+    <Content Include="assets\fonts\webfonts\flexslider-icon-3.html" />
+    <Content Include="assets\fonts\webfonts\flexslider-icon.html" />
+    <Content Include="assets\fonts\webfonts\flexslider-icond41d.html" />
+    <Content Include="assets\fonts\webfont\flexslider-icon.html" />
+    <Content Include="assets\images\1.png" />
+    <Content Include="assets\images\2.png" />
+    <Content Include="assets\images\ab_pic.jpg" />
+    <Content Include="assets\images\b1.jpg" />
+    <Content Include="assets\images\b2.jpg" />
+    <Content Include="assets\images\b3.jpg" />
+    <Content Include="assets\images\b4.jpg" />
+    <Content Include="assets\images\b5.jpg" />
+    <Content Include="assets\images\b6.jpg" />
+    <Content Include="assets\images\b7.jpg" />
+    <Content Include="assets\images\b8.jpg" />
+    <Content Include="assets\images\banner1.jpg" />
+    <Content Include="assets\images\banner2.jpg" />
+    <Content Include="assets\images\banner3.jpg" />
+    <Content Include="assets\images\banner4.jpg" />
+    <Content Include="assets\images\banner5.jpg" />
+    <Content Include="assets\images\bb1.jpg" />
+    <Content Include="assets\images\bb2.jpg" />
+    <Content Include="assets\images\bottom1.jpg" />
+    <Content Include="assets\images\bottom2.jpg" />
+    <Content Include="assets\images\bottom3.jpg" />
+    <Content Include="assets\images\bottom4.jpg" />
+    <Content Include="assets\images\bot_1.jpg" />
+    <Content Include="assets\images\bot_2.jpg" />
+    <Content Include="assets\images\cart.html" />
+    <Content Include="assets\images\d1.jpg" />
+    <Content Include="assets\images\d2.jpg" />
+    <Content Include="assets\images\d3.jpg" />
+    <Content Include="assets\images\inner1.jpg" />
+    <Content Include="assets\images\left.html" />
+    <Content Include="assets\images\log_pic.jpg" />
+    <Content Include="assets\images\m1.jpg" />
+    <Content Include="assets\images\m2.jpg" />
+    <Content Include="assets\images\m3.jpg" />
+    <Content Include="assets\images\m4.jpg" />
+    <Content Include="assets\images\m5.jpg" />
+    <Content Include="assets\images\m6.jpg" />
+    <Content Include="assets\images\m7.jpg" />
+    <Content Include="assets\images\m8.jpg" />
+    <Content Include="assets\images\mark1.png" />
+    <Content Include="assets\images\mid.jpg" />
+    <Content Include="assets\images\right.html" />
+    <Content Include="assets\images\s1.jpg" />
+    <Content Include="assets\images\s2.jpg" />
+    <Content Include="assets\images\s3.jpg" />
+    <Content Include="assets\images\s4.jpg" />
+    <Content Include="assets\images\s5.jpg" />
+    <Content Include="assets\images\s6.jpg" />
+    <Content Include="assets\images\s7.jpg" />
+    <Content Include="assets\images\s8.jpg" />
+    <Content Include="assets\images\search.png" />
+    <Content Include="assets\images\t1.jpg" />
+    <Content Include="assets\images\t2.jpg" />
+    <Content Include="assets\images\t3.jpg" />
+    <Content Include="assets\images\t4.jpg" />
+    <Content Include="assets\images\tick-mark1.png" />
+    <Content Include="assets\images\top1.jpg" />
+    <Content Include="assets\images\top2.jpg" />
+    <Content Include="assets\images\up_arrow.png" />
+    <Content Include="assets\images\w1.jpg" />
+    <Content Include="assets\images\w2.jpg" />
+    <Content Include="assets\images\w3.jpg" />
+    <Content Include="assets\images\w4.jpg" />
+    <Content Include="assets\images\w5.jpg" />
+    <Content Include="assets\images\w6.jpg" />
+    <Content Include="assets\images\w7.jpg" />
+    <Content Include="assets\images\w8.jpg" />
+    <Content Include="assets\img\avatars\avatar-1.jpg" />
+    <Content Include="assets\img\avatars\avatar-2.jpg" />
+    <Content Include="assets\img\avatars\avatar-3.jpg" />
+    <Content Include="assets\img\avatars\avatar-4.jpg" />
+    <Content Include="assets\img\avatars\avatar-5.jpg" />
+    <Content Include="assets\img\avatars\avatar-6.jpg" />
+    <Content Include="assets\img\blog\blog-1.jpg" />
+    <Content Include="assets\img\blog\blog-2.jpg" />
+    <Content Include="assets\img\blog\blog-3.jpg" />
+    <Content Include="assets\img\blog\blog-4.jpg" />
+    <Content Include="assets\img\blog\blog-5.jpg" />
+    <Content Include="assets\img\blog\blog-6.jpg" />
+    <Content Include="assets\img\blog\blog-7.jpg" />
+    <Content Include="assets\img\blog\blog-8.jpg" />
+    <Content Include="assets\img\blog\blog-9.jpg" />
+    <Content Include="assets\img\brands\black\esprit.svg" />
+    <Content Include="assets\img\brands\black\mango.svg" />
+    <Content Include="assets\img\brands\black\river-island.svg" />
+    <Content Include="assets\img\brands\black\zara.svg" />
+    <Content Include="assets\img\brands\color\cards.svg" />
+    <Content Include="assets\img\brands\color\paypal.svg" />
+    <Content Include="assets\img\brands\gray-350\adidas.svg" />
+    <Content Include="assets\img\brands\gray-350\asos.svg" />
+    <Content Include="assets\img\brands\gray-350\bershka.svg" />
+    <Content Include="assets\img\brands\gray-350\calvin-klein.svg" />
+    <Content Include="assets\img\brands\gray-350\converse.svg" />
+    <Content Include="assets\img\brands\gray-350\esprit.svg" />
+    <Content Include="assets\img\brands\gray-350\forever21.svg" />
+    <Content Include="assets\img\brands\gray-350\guess.svg" />
+    <Content Include="assets\img\brands\gray-350\h&amp;m.svg" />
+    <Content Include="assets\img\brands\gray-350\joop.svg" />
+    <Content Include="assets\img\brands\gray-350\mango.svg" />
+    <Content Include="assets\img\brands\gray-350\only.svg" />
+    <Content Include="assets\img\brands\gray-350\reebok.svg" />
+    <Content Include="assets\img\brands\gray-350\river-island.svg" />
+    <Content Include="assets\img\brands\gray-350\stradivarius.svg" />
+    <Content Include="assets\img\brands\gray-350\topshop.svg" />
+    <Content Include="assets\img\brands\gray-350\victorias-secret.svg" />
+    <Content Include="assets\img\brands\gray-350\zara.svg" />
+    <Content Include="assets\img\covers\cover-1.jpg" />
+    <Content Include="assets\img\covers\cover-10.jpg" />
+    <Content Include="assets\img\covers\cover-11.jpg" />
+    <Content Include="assets\img\covers\cover-12.jpg" />
+    <Content Include="assets\img\covers\cover-13.jpg" />
+    <Content Include="assets\img\covers\cover-15.jpg" />
+    <Content Include="assets\img\covers\cover-16.jpg" />
+    <Content Include="assets\img\covers\cover-17.jpg" />
+    <Content Include="assets\img\covers\cover-18.jpg" />
+    <Content Include="assets\img\covers\cover-19.jpg" />
+    <Content Include="assets\img\covers\cover-2.jpg" />
+    <Content Include="assets\img\covers\cover-20.jpg" />
+    <Content Include="assets\img\covers\cover-21.jpg" />
+    <Content Include="assets\img\covers\cover-22.jpg" />
+    <Content Include="assets\img\covers\cover-23.jpg" />
+    <Content Include="assets\img\covers\cover-24.jpg" />
+    <Content Include="assets\img\covers\cover-25.jpg" />
+    <Content Include="assets\img\covers\cover-26.jpg" />
+    <Content Include="assets\img\covers\cover-27.jpg" />
+    <Content Include="assets\img\covers\cover-28.jpg" />
+    <Content Include="assets\img\covers\cover-29.jpg" />
+    <Content Include="assets\img\covers\cover-3.jpg" />
+    <Content Include="assets\img\covers\cover-30.jpg" />
+    <Content Include="assets\img\covers\cover-4.jpg" />
+    <Content Include="assets\img\covers\cover-5.jpg" />
+    <Content Include="assets\img\covers\cover-6.jpg" />
+    <Content Include="assets\img\covers\cover-7.jpg" />
+    <Content Include="assets\img\covers\cover-8.jpg" />
+    <Content Include="assets\img\covers\cover-9.jpg" />
+    <Content Include="assets\img\favicons\favicon.ico" />
+    <Content Include="assets\img\flags\canada.svg" />
+    <Content Include="assets\img\flags\germany.svg" />
+    <Content Include="assets\img\flags\usa.svg" />
+    <Content Include="assets\img\icons\icon-bottle.svg" />
+    <Content Include="assets\img\icons\icon-drops.svg" />
+    <Content Include="assets\img\icons\icon-eye.svg" />
+    <Content Include="assets\img\icons\icon-hands.svg" />
+    <Content Include="assets\img\icons\icon-pack.svg" />
+    <Content Include="assets\img\icons\icon-ruler.svg" />
+    <Content Include="assets\img\icons\icon-wrap.svg" />
+    <Content Include="assets\img\masks\avatar-group-hover-last.svg" />
+    <Content Include="assets\img\masks\avatar-group-hover.svg" />
+    <Content Include="assets\img\masks\avatar-group.svg" />
+    <Content Include="assets\img\masks\avatar-status.svg" />
+    <Content Include="assets\img\patterns\pattern-1.svg" />
+    <Content Include="assets\img\patterns\pattern-2.svg" />
+    <Content Include="assets\img\payment\amex.svg" />
+    <Content Include="assets\img\payment\klarna.svg" />
+    <Content Include="assets\img\payment\maestro.svg" />
+    <Content Include="assets\img\payment\mastercard.svg" />
+    <Content Include="assets\img\payment\paypal.svg" />
+    <Content Include="assets\img\payment\visa.svg" />
+    <Content Include="assets\img\products\product-.jpg" />
+    <Content Include="assets\img\products\product-1.jpg" />
+    <Content Include="assets\img\products\product-10.jpg" />
+    <Content Include="assets\img\products\product-100.jpg" />
+    <Content Include="assets\img\products\product-101.jpg" />
+    <Content Include="assets\img\products\product-102.jpg" />
+    <Content Include="assets\img\products\product-103.jpg" />
+    <Content Include="assets\img\products\product-104.jpg" />
+    <Content Include="assets\img\products\product-105.jpg" />
+    <Content Include="assets\img\products\product-106.jpg" />
+    <Content Include="assets\img\products\product-107.jpg" />
+    <Content Include="assets\img\products\product-108.jpg" />
+    <Content Include="assets\img\products\product-109.jpg" />
+    <Content Include="assets\img\products\product-11.jpg" />
+    <Content Include="assets\img\products\product-110.jpg" />
+    <Content Include="assets\img\products\product-111.jpg" />
+    <Content Include="assets\img\products\product-112.jpg" />
+    <Content Include="assets\img\products\product-113.jpg" />
+    <Content Include="assets\img\products\product-114.jpg" />
+    <Content Include="assets\img\products\product-115.jpg" />
+    <Content Include="assets\img\products\product-116.jpg" />
+    <Content Include="assets\img\products\product-117.jpg" />
+    <Content Include="assets\img\products\product-118.jpg" />
+    <Content Include="assets\img\products\product-119.jpg" />
+    <Content Include="assets\img\products\product-12.jpg" />
+    <Content Include="assets\img\products\product-120.jpg" />
+    <Content Include="assets\img\products\product-121.jpg" />
+    <Content Include="assets\img\products\product-122.jpg" />
+    <Content Include="assets\img\products\product-123.jpg" />
+    <Content Include="assets\img\products\product-124.jpg" />
+    <Content Include="assets\img\products\product-125.jpg" />
+    <Content Include="assets\img\products\product-126.jpg" />
+    <Content Include="assets\img\products\product-127.jpg" />
+    <Content Include="assets\img\products\product-128.jpg" />
+    <Content Include="assets\img\products\product-129.jpg" />
+    <Content Include="assets\img\products\product-13.jpg" />
+    <Content Include="assets\img\products\product-13.png" />
+    <Content Include="assets\img\products\product-136.jpg" />
+    <Content Include="assets\img\products\product-137.jpg" />
+    <Content Include="assets\img\products\product-138.jpg" />
+    <Content Include="assets\img\products\product-139.jpg" />
+    <Content Include="assets\img\products\product-14.jpg" />
+    <Content Include="assets\img\products\product-142.jpg" />
+    <Content Include="assets\img\products\product-143.jpg" />
+    <Content Include="assets\img\products\product-144.jpg" />
+    <Content Include="assets\img\products\product-145.jpg" />
+    <Content Include="assets\img\products\product-146.jpg" />
+    <Content Include="assets\img\products\product-147.jpg" />
+    <Content Include="assets\img\products\product-148.jpg" />
+    <Content Include="assets\img\products\product-149.jpg" />
+    <Content Include="assets\img\products\product-15.jpg" />
+    <Content Include="assets\img\products\product-150.jpg" />
+    <Content Include="assets\img\products\product-151.jpg" />
+    <Content Include="assets\img\products\product-152.jpg" />
+    <Content Include="assets\img\products\product-153.jpg" />
+    <Content Include="assets\img\products\product-154.jpg" />
+    <Content Include="assets\img\products\product-155.jpg" />
+    <Content Include="assets\img\products\product-156.jpg" />
+    <Content Include="assets\img\products\product-157.jpg" />
+    <Content Include="assets\img\products\product-158.jpg" />
+    <Content Include="assets\img\products\product-159.jpg" />
+    <Content Include="assets\img\products\product-16.jpg" />
+    <Content Include="assets\img\products\product-17.jpg" />
+    <Content Include="assets\img\products\product-18.jpg" />
+    <Content Include="assets\img\products\product-19.jpg" />
+    <Content Include="assets\img\products\product-2.jpg" />
+    <Content Include="assets\img\products\product-20.jpg" />
+    <Content Include="assets\img\products\product-21.jpg" />
+    <Content Include="assets\img\products\product-21.png" />
+    <Content Include="assets\img\products\product-22.jpg" />
+    <Content Include="assets\img\products\product-23.jpg" />
+    <Content Include="assets\img\products\product-24.jpg" />
+    <Content Include="assets\img\products\product-25.jpg" />
+    <Content Include="assets\img\products\product-26.jpg" />
+    <Content Include="assets\img\products\product-27.jpg" />
+    <Content Include="assets\img\products\product-28.jpg" />
+    <Content Include="assets\img\products\product-29.jpg" />
+    <Content Include="assets\img\products\product-3.jpg" />
+    <Content Include="assets\img\products\product-3.png" />
+    <Content Include="assets\img\products\product-30.jpg" />
+    <Content Include="assets\img\products\product-31.jpg" />
+    <Content Include="assets\img\products\product-32.jpg" />
+    <Content Include="assets\img\products\product-33.jpg" />
+    <Content Include="assets\img\products\product-34.jpg" />
+    <Content Include="assets\img\products\product-35.jpg" />
+    <Content Include="assets\img\products\product-36.jpg" />
+    <Content Include="assets\img\products\product-37.jpg" />
+    <Content Include="assets\img\products\product-4.jpg" />
+    <Content Include="assets\img\products\product-40.jpg" />
+    <Content Include="assets\img\products\product-41.jpg" />
+    <Content Include="assets\img\products\product-42.jpg" />
+    <Content Include="assets\img\products\product-43.jpg" />
+    <Content Include="assets\img\products\product-44.jpg" />
+    <Content Include="assets\img\products\product-45.jpg" />
+    <Content Include="assets\img\products\product-46.jpg" />
+    <Content Include="assets\img\products\product-47.jpg" />
+    <Content Include="assets\img\products\product-48.jpg" />
+    <Content Include="assets\img\products\product-49.jpg" />
+    <Content Include="assets\img\products\product-5.jpg" />
+    <Content Include="assets\img\products\product-50.jpg" />
+    <Content Include="assets\img\products\product-51.jpg" />
+    <Content Include="assets\img\products\product-52.jpg" />
+    <Content Include="assets\img\products\product-53.jpg" />
+    <Content Include="assets\img\products\product-54.jpg" />
+    <Content Include="assets\img\products\product-55.jpg" />
+    <Content Include="assets\img\products\product-56.jpg" />
+    <Content Include="assets\img\products\product-57.jpg" />
+    <Content Include="assets\img\products\product-58.jpg" />
+    <Content Include="assets\img\products\product-59.jpg" />
+    <Content Include="assets\img\products\product-6.jpg" />
+    <Content Include="assets\img\products\product-62.jpg" />
+    <Content Include="assets\img\products\product-63.jpg" />
+    <Content Include="assets\img\products\product-65.jpg" />
+    <Content Include="assets\img\products\product-66.jpg" />
+    <Content Include="assets\img\products\product-67.jpg" />
+    <Content Include="assets\img\products\product-68.jpg" />
+    <Content Include="assets\img\products\product-69.jpg" />
+    <Content Include="assets\img\products\product-7.jpg" />
+    <Content Include="assets\img\products\product-70.jpg" />
+    <Content Include="assets\img\products\product-71.jpg" />
+    <Content Include="assets\img\products\product-72.jpg" />
+    <Content Include="assets\img\products\product-73.jpg" />
+    <Content Include="assets\img\products\product-74.jpg" />
+    <Content Include="assets\img\products\product-75.jpg" />
+    <Content Include="assets\img\products\product-76.jpg" />
+    <Content Include="assets\img\products\product-77.jpg" />
+    <Content Include="assets\img\products\product-78.jpg" />
+    <Content Include="assets\img\products\product-79.jpg" />
+    <Content Include="assets\img\products\product-8.jpg" />
+    <Content Include="assets\img\products\product-80.jpg" />
+    <Content Include="assets\img\products\product-81.jpg" />
+    <Content Include="assets\img\products\product-82.jpg" />
+    <Content Include="assets\img\products\product-83.jpg" />
+    <Content Include="assets\img\products\product-84.jpg" />
+    <Content Include="assets\img\products\product-85.jpg" />
+    <Content Include="assets\img\products\product-86.jpg" />
+    <Content Include="assets\img\products\product-87.jpg" />
+    <Content Include="assets\img\products\product-88.jpg" />
+    <Content Include="assets\img\products\product-89.jpg" />
+    <Content Include="assets\img\products\product-9.jpg" />
+    <Content Include="assets\img\products\product-9.png" />
+    <Content Include="assets\img\products\product-90.jpg" />
+    <Content Include="assets\img\products\product-91.jpg" />
+    <Content Include="assets\img\products\product-92.jpg" />
+    <Content Include="assets\img\products\product-93.jpg" />
+    <Content Include="assets\img\products\product-94.jpg" />
+    <Content Include="assets\img\products\product-95.jpg" />
+    <Content Include="assets\img\products\product-96.jpg" />
+    <Content Include="assets\img\products\product-97.jpg" />
+    <Content Include="assets\img\products\product-98.jpg" />
+    <Content Include="assets\img\products\product-99.jpg" />
+    <Content Include="assets\js\analytics.js" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\easy-responsive-tabs.js" />
+    <Content Include="assets\js\imagezoom.js" />
+    <Content Include="assets\js\jquery-2.1.4.min.js" />
+    <Content Include="assets\js\jquery-ui.js" />
+    <Content Include="assets\js\jquery.countup.js" />
+    <Content Include="assets\js\jquery.easing.min.js" />
+    <Content Include="assets\js\jquery.flexslider.js" />
+    <Content Include="assets\js\jquery.waypoints.min.js" />
+    <Content Include="assets\js\minicart.min.js" />
+    <Content Include="assets\js\modernizr.custom.js" />
+    <Content Include="assets\js\monetization.js" />
+    <Content Include="assets\js\move-top.js" />
+    <Content Include="assets\js\responsiveslides.min.js" />
+    <Content Include="assets\js\theme.min.js" />
+    <Content Include="assets\libs\%40fancyapps\fancybox\dist\jquery.fancybox.min.css" />
+    <Content Include="assets\libs\%40fancyapps\fancybox\dist\jquery.fancybox.min.js" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\css\all.min.css" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-brands-400.svg" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-regular-400.svg" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-solid-900.svg" />
+    <Content Include="assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="assets\libs\flickity-fade\flickity-fade.css" />
+    <Content Include="assets\libs\flickity-fade\flickity-fade.js" />
+    <Content Include="assets\libs\flickity\dist\flickity.min.css" />
+    <Content Include="assets\libs\flickity\dist\flickity.pkgd.min.js" />
+    <Content Include="assets\libs\highlightjs\highlight.pack.min.js" />
+    <Content Include="assets\libs\highlightjs\styles\vs2015.css" />
+    <Content Include="assets\libs\jarallax\dist\jarallax.min.js" />
+    <Content Include="assets\libs\jquery\dist\jquery.min.js" />
+    <Content Include="assets\libs\list.js\dist\list.min.js" />
+    <Content Include="assets\libs\simplebar\dist\simplebar.min.css" />
+    <Content Include="assets\libs\simplebar\dist\simplebar.min.js" />
+    <Content Include="assets\libs\smooth-scroll\dist\smooth-scroll.min.js" />
+    <Content Include="assets\video\video-1.mp4" />
+    <Content Include="cart.aspx" />
+    <Content Include="Checkout.aspx" />
+    <Content Include="contact.aspx" />
+    <Content Include="admin\employeelist.aspx" />
+    <Content Include="Content\DataTables\css\dataTables.autoFill.css" />
+    <Content Include="Content\DataTables\css\dataTables.autoFill.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\css\dataTables.colReorder.css" />
+    <Content Include="Content\DataTables\css\dataTables.colReorder.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.colVis.css" />
+    <Content Include="Content\DataTables\css\dataTables.colvis.jqueryui.css" />
+    <Content Include="Content\DataTables\css\dataTables.colVis.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.fixedColumns.css" />
+    <Content Include="Content\DataTables\css\dataTables.fixedColumns.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.fixedHeader.css" />
+    <Content Include="Content\DataTables\css\dataTables.fixedHeader.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables\css\dataTables.keyTable.css" />
+    <Content Include="Content\DataTables\css\dataTables.keyTable.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.responsive.css" />
+    <Content Include="Content\DataTables\css\dataTables.scroller.css" />
+    <Content Include="Content\DataTables\css\dataTables.scroller.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.tableTools.css" />
+    <Content Include="Content\DataTables\css\dataTables.tableTools.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables\images\background.png" />
+    <Content Include="Content\DataTables\images\back_disabled.png" />
+    <Content Include="Content\DataTables\images\back_enabled.png" />
+    <Content Include="Content\DataTables\images\back_enabled_hover.png" />
+    <Content Include="Content\DataTables\images\collection.png" />
+    <Content Include="Content\DataTables\images\collection_hover.png" />
+    <Content Include="Content\DataTables\images\copy.png" />
+    <Content Include="Content\DataTables\images\copy_hover.png" />
+    <Content Include="Content\DataTables\images\csv.png" />
+    <Content Include="Content\DataTables\images\csv_hover.png" />
+    <Content Include="Content\DataTables\images\details_close.png" />
+    <Content Include="Content\DataTables\images\details_open.png" />
+    <Content Include="Content\DataTables\images\filler.png" />
+    <Content Include="Content\DataTables\images\forward_disabled.png" />
+    <Content Include="Content\DataTables\images\forward_enabled.png" />
+    <Content Include="Content\DataTables\images\forward_enabled_hover.png" />
+    <Content Include="Content\DataTables\images\insert.png" />
+    <Content Include="Content\DataTables\images\loading-background.png" />
+    <Content Include="Content\DataTables\images\pdf.png" />
+    <Content Include="Content\DataTables\images\pdf_hover.png" />
+    <Content Include="Content\DataTables\images\print.png" />
+    <Content Include="Content\DataTables\images\print_hover.png" />
+    <Content Include="Content\DataTables\images\sort_asc.png" />
+    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\images\sort_both.png" />
+    <Content Include="Content\DataTables\images\sort_desc.png" />
+    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\images\xls.png" />
+    <Content Include="Content\DataTables\images\xls_hover.png" />
+    <Content Include="Content\DataTables\swf\copy_csv_xls.swf" />
+    <Content Include="Content\DataTables\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Content\jquery.dataTables.multiselect.css" />
+    <Content Include="css\style.css" />
+    <Content Include="FilledStar.gif" />
+    <Content Include="fonts\material-icon\css\material-design-iconic-font.css" />
+    <Content Include="fonts\material-icon\css\material-design-iconic-font.min.css" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="fonts\montserrat\montserrat-v12-latin-900.svg" />
+    <Content Include="fonts\montserrat\OFL.txt" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.svg" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.svg" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.svg" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.svg" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.svg" />
+    <Content Include="images\addnew.png" />
+    <Content Include="images\cancel.png" />
+    <Content Include="images\checked.gif" />
+    <Content Include="images\delete.png" />
+    <Content Include="images\edit.png" />
+    <Content Include="images\favicons\android-icon-144x144.png" />
+    <Content Include="images\favicons\android-icon-192x192.png" />
+    <Content Include="images\favicons\android-icon-36x36.png" />
+    <Content Include="images\favicons\android-icon-48x48.png" />
+    <Content Include="images\favicons\android-icon-72x72.png" />
+    <Content Include="images\favicons\android-icon-96x96.png" />
+    <Content Include="images\favicons\apple-icon-114x114.png" />
+    <Content Include="images\favicons\apple-icon-120x120.png" />
+    <Content Include="images\favicons\apple-icon-144x144.png" />
+    <Content Include="images\favicons\apple-icon-152x152.png" />
+    <Content Include="images\favicons\apple-icon-180x180.png" />
+    <Content Include="images\favicons\apple-icon-57x57.png" />
+    <Content Include="images\favicons\apple-icon-60x60.png" />
+    <Content Include="images\favicons\apple-icon-72x72.png" />
+    <Content Include="images\favicons\apple-icon-76x76.png" />
+    <Content Include="images\favicons\apple-icon-precomposed.png" />
+    <Content Include="images\favicons\apple-icon.png" />
+    <Content Include="images\favicons\browserconfig.xml" />
+    <Content Include="images\favicons\favicon-16x16.png" />
+    <Content Include="images\favicons\favicon-32x32.png" />
+    <Content Include="images\favicons\favicon-96x96.png" />
+    <Content Include="images\favicons\favicon.ico" />
+    <Content Include="images\favicons\ms-icon-144x144.png" />
+    <Content Include="images\favicons\ms-icon-150x150.png" />
+    <Content Include="images\favicons\ms-icon-310x310.png" />
+    <Content Include="images\favicons\ms-icon-70x70.png" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\quiz.gif" />
+    <Content Include="images\save.png" />
+    <Content Include="images\sign-in1.png" />
+    <Content Include="images\signin-image.jpg" />
+    <Content Include="images\signup-bg.jpg" />
+    <Content Include="images\signup-image.jpg" />
+    <Content Include="images\signupimg.jpg" />
+    <Content Include="images\unchecked.gif" />
+    <Content Include="index.aspx" />
+    <Content Include="js\jquery-3.2.1.min.js" />
+    <Content Include="js\npm.js" />
+    <Content Include="js\site89a2.js" />
+    <Content Include="js\views\customer\index.js" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="lib\fastclick\lib\fastclick.js" />
+    <Content Include="lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="lib\iCheck\icheck.min.js" />
+    <Content Include="lib\iCheck\square\blue%402x.png" />
+    <Content Include="lib\iCheck\square\blue.css" />
+    <Content Include="lib\iCheck\square\blue.png" />
+    <Content Include="lib\Ionicons\css\ionicons.min.css" />
+    <Content Include="lib\Ionicons\fonts\ionicons28b5.svg" />
+    <Content Include="lib\jQuery-File-Upload-9.21.0\css\jquery.fileupload.css" />
+    <Content Include="lib\jQuery-File-Upload-9.21.0\js\jquery.fileupload.js" />
+    <Content Include="lib\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="lib\jquery-ui-1.12.1\jquery-ui.min.js" />
+    <Content Include="lib\ladda\ladda-themeless.min.css" />
+    <Content Include="lib\ladda\ladda.jquery.min.js" />
+    <Content Include="lib\ladda\ladda.min.js" />
+    <Content Include="lib\ladda\spin.min.js" />
+    <Content Include="lib\marioizquierdo-jquery.serializeJSON\jquery.serializejson.min.js" />
+    <Content Include="lib\sweetalert\sweetalert.min.js" />
+    <Content Include="lib\toastr\toastr.min.css" />
+    <Content Include="lib\toastr\toastr.min.js" />
+    <Content Include="admin\material.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="admin\proddetails.aspx" />
+    <Content Include="admin\productlist.aspx" />
+    <Content Include="ordercomplete.aspx" />
+    <Content Include="admin\printpurchase.aspx" />
+    <Content Include="profile.aspx" />
+    <Content Include="ReceivedOrder.aspx" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.colVis.js" />
+    <Content Include="Scripts\DataTables\dataTables.colVis.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.tableTools.js" />
+    <Content Include="Scripts\DataTables\dataTables.tableTools.min.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.dataTables.multiselect.js" />
+    <Content Include="shop.aspx" />
+    <Content Include="Shoppingcart.aspx" />
+    <Content Include="signup.aspx" />
+    <Content Include="Site.Master" />
+    <Content Include="Star.gif" />
+    <Content Include="storelocator.aspx" />
+    <Content Include="admin\supplierlist.aspx" />
+    <Content Include="assets\style.css" />
+    <Content Include="viewproduct.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="WaitingStar.gif" />
+    <Content Include="Web.config" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="admin\expense.aspx" />
+    <Content Include="admin\addexpense.aspx" />
+    <Content Include="admin\product.aspx" />
+    <Content Include="wishlist.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="accountorder.aspx.cs">
+      <DependentUpon>accountorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="accountorder.aspx.designer.cs">
+      <DependentUpon>accountorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addmaterial.aspx.cs">
+      <DependentUpon>addmaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addmaterial.aspx.designer.cs">
+      <DependentUpon>addmaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addproduct.aspx.cs">
+      <DependentUpon>addproduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addproduct.aspx.designer.cs">
+      <DependentUpon>addproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminmaster.Master.cs">
+      <DependentUpon>adminmaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminmaster.Master.designer.cs">
+      <DependentUpon>adminmaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addpurchase.aspx.cs">
+      <DependentUpon>addpurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addpurchase.aspx.designer.cs">
+      <DependentUpon>addpurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addsales.aspx.cs">
+      <DependentUpon>addsales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addsales.aspx.designer.cs">
+      <DependentUpon>addsales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\brand.aspx.cs">
+      <DependentUpon>brand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\brand.aspx.designer.cs">
+      <DependentUpon>brand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\category.aspx.cs">
+      <DependentUpon>category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\category.aspx.designer.cs">
+      <DependentUpon>category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\customer.aspx.cs">
+      <DependentUpon>customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\customer.aspx.designer.cs">
+      <DependentUpon>customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\custorder.aspx.cs">
+      <DependentUpon>custorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\custorder.aspx.designer.cs">
+      <DependentUpon>custorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\materialstock.aspx.cs">
+      <DependentUpon>materialstock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\materialstock.aspx.designer.cs">
+      <DependentUpon>materialstock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\purchaselist.aspx.cs">
+      <DependentUpon>purchaselist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\purchaselist.aspx.designer.cs">
+      <DependentUpon>purchaselist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\purchaseorder.aspx.cs">
+      <DependentUpon>purchaseorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\purchaseorder.aspx.designer.cs">
+      <DependentUpon>purchaseorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Receivedorder.aspx.cs">
+      <DependentUpon>Receivedorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Receivedorder.aspx.designer.cs">
+      <DependentUpon>Receivedorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\salesorder.aspx.cs">
+      <DependentUpon>salesorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\salesorder.aspx.designer.cs">
+      <DependentUpon>salesorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\stockmaster.aspx.cs">
+      <DependentUpon>stockmaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\stockmaster.aspx.designer.cs">
+      <DependentUpon>stockmaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\subcategory.aspx.cs">
+      <DependentUpon>subcategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\subcategory.aspx.designer.cs">
+      <DependentUpon>subcategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\vieworder.aspx.cs">
+      <DependentUpon>vieworder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\vieworder.aspx.designer.cs">
+      <DependentUpon>vieworder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\viewpurchase.aspx.cs">
+      <DependentUpon>viewpurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\viewpurchase.aspx.designer.cs">
+      <DependentUpon>viewpurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\employeelist.aspx.cs">
+      <DependentUpon>employeelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\employeelist.aspx.designer.cs">
+      <DependentUpon>employeelist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\material.aspx.cs">
+      <DependentUpon>material.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\material.aspx.designer.cs">
+      <DependentUpon>material.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\proddetails.aspx.cs">
+      <DependentUpon>proddetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\proddetails.aspx.designer.cs">
+      <DependentUpon>proddetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\productlist.aspx.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\productlist.aspx.designer.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ordercomplete.aspx.cs">
+      <DependentUpon>ordercomplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ordercomplete.aspx.designer.cs">
+      <DependentUpon>ordercomplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\printpurchase.aspx.cs">
+      <DependentUpon>printpurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\printpurchase.aspx.designer.cs">
+      <DependentUpon>printpurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceivedOrder.aspx.cs">
+      <DependentUpon>ReceivedOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReceivedOrder.aspx.designer.cs">
+      <DependentUpon>ReceivedOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shop.aspx.cs">
+      <DependentUpon>shop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shop.aspx.designer.cs">
+      <DependentUpon>shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shoppingcart.aspx.cs">
+      <DependentUpon>Shoppingcart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shoppingcart.aspx.designer.cs">
+      <DependentUpon>Shoppingcart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="storelocator.aspx.cs">
+      <DependentUpon>storelocator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="storelocator.aspx.designer.cs">
+      <DependentUpon>storelocator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\supplierlist.aspx.cs">
+      <DependentUpon>supplierlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\supplierlist.aspx.designer.cs">
+      <DependentUpon>supplierlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewproduct.aspx.cs">
+      <DependentUpon>viewproduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewproduct.aspx.designer.cs">
+      <DependentUpon>viewproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\expense.aspx.cs">
+      <DependentUpon>expense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\expense.aspx.designer.cs">
+      <DependentUpon>expense.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addexpense.aspx.cs">
+      <DependentUpon>addexpense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addexpense.aspx.designer.cs">
+      <DependentUpon>addexpense.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\product.aspx.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\product.aspx.designer.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wishlist.aspx.cs">
+      <DependentUpon>wishlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wishlist.aspx.designer.cs">
+      <DependentUpon>wishlist.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.woff2" />
+    <Content Include="assets\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-brands-400.eot" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-brands-400.ttf" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-brands-400.woff" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-brands-400.woff2" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-brands-400d41dd41d.eot" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-regular-400.eot" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-regular-400.ttf" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-regular-400.woff" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-regular-400.woff2" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-regular-400d41dd41d.eot" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-solid-900.eot" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-solid-900.ttf" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-solid-900.woff" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <Content Include="assets\libs\%40fortawesome\fontawesome-free\webfonts\fa-solid-900d41dd41d.eot" />
+    <Content Include="assets\fonts\feather\fonts\Feather144f144f.ttf" />
+    <Content Include="assets\fonts\feather\fonts\Feather144f144f.woff" />
+    <Content Include="assets\fonts\jost\Jost-400-Book.ttf" />
+    <Content Include="assets\fonts\jost\Jost-400-Book.woff" />
+    <Content Include="assets\fonts\jost\Jost-400-Book.woff2" />
+    <Content Include="assets\fonts\jost\Jost-400-BookItalic.ttf" />
+    <Content Include="assets\fonts\jost\Jost-400-BookItalic.woff" />
+    <Content Include="assets\fonts\jost\Jost-400-BookItalic.woff2" />
+    <Content Include="assets\fonts\jost\Jost-500-Medium.ttf" />
+    <Content Include="assets\fonts\jost\Jost-500-Medium.woff" />
+    <Content Include="assets\fonts\jost\Jost-500-Medium.woff2" />
+    <Content Include="assets\fonts\jost\Jost-600-Semi.ttf" />
+    <Content Include="assets\fonts\jost\Jost-600-Semi.woff" />
+    <Content Include="assets\fonts\jost\Jost-600-Semi.woff2" />
+    <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont3e6e.woff2" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="lib\Ionicons\fonts\ionicons28b5.eot" />
+    <Content Include="lib\Ionicons\fonts\ionicons28b5.ttf" />
+    <Content Include="lib\Ionicons\fonts\ionicons28b5.woff" />
+    <Content Include="admin\admin-assets\fonts\dripicons-v2.eot" />
+    <Content Include="admin\admin-assets\fonts\dripicons-v2.ttf" />
+    <Content Include="admin\admin-assets\fonts\dripicons-v2.woff" />
+    <Content Include="admin\admin-assets\fonts\dripicons-v2d41dd41d.eot" />
+    <Content Include="admin\admin-assets\fonts\materialdesignicons-webfont74b774b7.eot" />
+    <Content Include="admin\admin-assets\fonts\materialdesignicons-webfont74b774b7.ttf" />
+    <Content Include="admin\admin-assets\fonts\materialdesignicons-webfont74b774b7.woff" />
+    <Content Include="admin\admin-assets\fonts\materialdesignicons-webfont74b774b7.woff2" />
+    <Content Include="admin\admin-assets\fonts\materialdesignicons-webfontd41dd41d.eot" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Bold.eot" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Bold.ttf" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Bold.woff" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Boldd41dd41d.eot" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Light.ttf" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Light.woff" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Regular.eot" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Regular.ttf" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Regular.woff" />
+    <Content Include="admin\admin-assets\fonts\Nunito-Regulard41dd41d.eot" />
+    <Content Include="admin\admin-assets\fonts\Nunito-SemiBold.eot" />
+    <Content Include="admin\admin-assets\fonts\Nunito-SemiBold.ttf" />
+    <Content Include="admin\admin-assets\fonts\Nunito-SemiBold.woff" />
+    <Content Include="admin\admin-assets\fonts\Nunito-SemiBoldd41dd41d.eot" />
+    <Content Include="admin\admin-assets\fonts\summernote.eot" />
+    <Content Include="admin\admin-assets\fonts\summernoted41dd41d.eot" />
+    <Content Include="admin\admin-assets\fonts\summernoted41dd41d.ttf" />
+    <Content Include="admin\admin-assets\fonts\summernoted41dd41d.woff" />
+    <Content Include="admin\admin-assets\fonts\unicons8adf8adf.eot" />
+    <Content Include="admin\admin-assets\fonts\unicons8adf8adf.ttf" />
+    <Content Include="admin\admin-assets\fonts\unicons8adf8adf.woff" />
+    <Content Include="admin\admin-assets\fonts\unicons8adf8adf.woff2" />
+    <Content Include="adminmaster.Master" />
+    <Content Include="admin\admin-assets\css\bootstrap.min.css.map" />
+    <Content Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </Content>
+    <Content Include="css\style.css.map" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="fonts\montserrat\montserrat-v12-latin-900.eot" />
+    <Content Include="fonts\montserrat\montserrat-v12-latin-900.ttf" />
+    <Content Include="fonts\montserrat\montserrat-v12-latin-900.woff" />
+    <Content Include="fonts\montserrat\montserrat-v12-latin-900.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.eot" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.ttf" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.woff" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.woff2" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.eot" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.ttf" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.woff" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.woff2" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.eot" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.ttf" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.woff" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.woff2" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.eot" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.ttf" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.woff" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.woff2" />
+    <Content Include="images\favicons\manifest.json" />
+    <Content Include="Content\DataTables\css\dataTables.responsive.scss" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.scss" />
+    <Content Include="assets\img\covers\cov.webp" />
+    <None Include="packages.config" />
+    <Content Include="assets\style.css.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61615</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44317/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
