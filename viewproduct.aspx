@@ -379,30 +379,17 @@
                                         <!-- List -->
                                         <ul class="list list-unstyled mb-md-0 text-gray-500">
                                             <li>
-                                                <strong class="text-body">Product Code</strong>: #61590437
+                                                <strong class="text-body">Product Code</strong>:  <%# Eval ("pcode") %>
                                             </li>
                                             <li>
-                                                <strong class="text-body">Occasion</strong>: Lifestyle, Sport
+                                                <strong class="text-body">Lenght</strong>: <%# Eval ("length") %>
                                             </li>
                                             <li>
-                                                <strong class="text-body">Country</strong>: India
+                                                <strong class="text-body">Specification</strong>:  <%# Eval ("subcatname") %>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="col-12 col-md-6">
-                                        <!-- List -->
-                                        <ul class="list list-unstyled mb-0">
-                                            <li>
-                                                <strong>Outer</strong>: Leather 100%, Polyamide 100%
-                                            </li>
-                                            <li>
-                                                <strong>Lining</strong>: Polyester 100%
-                                            </li>
-                                            <li>
-                                                <strong>CounSoletry</strong>: Rubber 100%
-                                            </li>
-                                        </ul>
-                                    </div>
+                                 
                                 </div>
                             </div>
                         </div>

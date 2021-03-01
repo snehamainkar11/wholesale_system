@@ -113,6 +113,12 @@
  </asp:UpdatePanel>
 
                   </div>
+                 <table style="width: 100%"  class="table table-bordered table-centered table-hover mb-0">
+                         <tr>
+                             <td width="90%">
+                             
+                         
+                        
                 <asp:GridView ID="GridView1" runat="server"  ShowFooter="false" AutoGenerateColumns="False" class="table table-bordered table-centered table-hover mb-0">
 
 
@@ -136,6 +142,10 @@
                 </Columns>
                     <FooterStyle ForeColor="#000066" />
 </asp:GridView>
+                    
+</td><td>
+                    <asp:Button runat="server"  Id="Button1" class="btn btn-outline-danger" type="clear" text="Clear" OnClick="Button1_Click" Visible="false"/>
+ </td></tr></table>
                 <br />
                 
                  <div class="col-sm-12">
@@ -205,7 +215,6 @@
                         
 </div>
                      <div class="form-group col-md-2">
-            <asp:Button runat="server"  Id="Button1" class="btn btn-danger" type="clear" Width="120px" text="Cancel" OnClick="Button1_Click" />
                         
 </div>
 </div>

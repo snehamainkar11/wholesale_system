@@ -234,6 +234,7 @@
     <Content Include="admin\admin-assets\js\vendor\summernote-bs4.min.js" />
     <Content Include="admin\customer.aspx" />
     <Content Include="admin\custorder.aspx" />
+    <Content Include="admin\editsales.aspx" />
     <Content Include="admin\index.aspx" />
     <Content Include="admin\materialstock.aspx" />
     <Content Include="admin\purchaselist.aspx" />
@@ -889,6 +890,13 @@
     </Compile>
     <Compile Include="admin\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\editsales.aspx.cs">
+      <DependentUpon>editsales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editsales.aspx.designer.cs">
+      <DependentUpon>editsales.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

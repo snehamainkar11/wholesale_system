@@ -15,6 +15,7 @@ namespace wholesale
     public partial class productlist : System.Web.UI.Page
     {
         string s = ConfigurationManager.ConnectionStrings["wholesale"].ConnectionString;
+        static string[,] ClassNames ={   {"Out of stock","Red"},  {"In stock","Green"}};
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,7 +38,7 @@ namespace wholesale
                 gvproduct.DataSource = dtbl;
                 gvproduct.DataBind();
 
-
+                
             }
             else
             {
@@ -50,7 +51,7 @@ namespace wholesale
                 gvproduct.Rows[0].Cells[0].Text = "No Data Found ..!";
                 gvproduct.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
             }
-
+          
         }
 
 
@@ -202,6 +203,7 @@ namespace wholesale
 
         protected void gvproduct_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+            
             if (e.Row.RowType == DataControlRowType.DataRow && ((e.Row.RowState & DataControlRowState.Edit) == DataControlRowState.Edit))
             {
                 var DropDownList1 = e.Row.FindControl("ddlbrd") as DropDownList;
@@ -239,10 +241,19 @@ namespace wholesale
                     DropDownList2.DataValueField = "ID";
                     DropDownList2.DataBind();
                 }
-
+                var ss = e.Row.FindControl("lblstatus") as Label;
+                if (ss.Text == "Out of stock")
+                {
+                    ss.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {
+                    ss.ForeColor = System.Drawing.Color.Red;
+                }
 
 
             }
+           
         }
         public override void VerifyRenderingInServerForm(Control control)
         {

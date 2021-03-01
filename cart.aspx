@@ -67,7 +67,7 @@
                                         <!-- Text -->
                                         <p class="mb-lg-0 font-size-sm font-weight-bold">
                                             <time datetime="2019-10-01">
-                                                01 Oct, 2019
+                                                21 Feb, 2021
                                             </time>
                                         </p>
                                     </div>
@@ -84,7 +84,7 @@
                                         <h6 class="heading-xxxs text-muted">Order Amount:</h6>
                                         <!-- Text -->
                                         <p class="mb-0 font-size-sm font-weight-bold">
-                                            $259.00
+                                            Rs.7049
                                         </p>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@
                                 <div class="form-row">
                                     <div class="col-6">
                                         <!-- Button -->
-                                        <a class="btn btn-sm btn-block btn-outline-dark" href="cart.aspx">
+                                        <a class="btn btn-sm btn-block btn-outline-dark" href="accountorder.aspx">
                                             Order Details
                                         </a>
                                     </div>
@@ -159,7 +159,7 @@
                                         <!-- Text -->
                                         <p class="mb-lg-0 font-size-sm font-weight-bold">
                                             <time datetime="2019-09-25">
-                                                25 Sep, 2019
+                                                25 Feb, 2021
                                             </time>
                                         </p>
                                     </div>
@@ -176,7 +176,7 @@
                                         <h6 class="heading-xxxs text-muted">Order Amount:</h6>
                                         <!-- Text -->
                                         <p class="mb-0 font-size-sm font-weight-bold">
-                                            $75.00
+                                            Rs.1,019
                                         </p>
                                     </div>
                                 </div>
@@ -233,7 +233,7 @@
                                         <!-- Text -->
                                         <p class="mb-lg-0 font-size-sm font-weight-bold">
                                             <time datetime="2019-09-07">
-                                                07 Sep, 2019
+                                                14 Feb, 2021
                                             </time>
                                         </p>
                                     </div>
@@ -250,7 +250,7 @@
                                         <h6 class="heading-xxxs text-muted">Order Amount:</h6>
                                         <!-- Text -->
                                         <p class="mb-0 font-size-sm font-weight-bold">
-                                            $69.00
+                                            Rs.2089
                                         </p>
                                     </div>
                                 </div>

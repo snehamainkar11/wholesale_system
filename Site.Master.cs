@@ -89,7 +89,7 @@ namespace wholesale
             else
             {
 
-                pCount.InnerText = 1.ToString();
+                pCount.InnerText = 0.ToString();
             }
         }
         protected void OnItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -101,7 +101,7 @@ namespace wholesale
 
                 using (SqlConnection con = new SqlConnection(s))
                 {
-                    using (SqlCommand cmd = new SqlCommand(string.Format("SELECT A.*,B.* FROM tblSubCategory A inner join Category B on A.MainCatID=B.ID WHERE MainCatID='{0}'", catId), con))
+                    using (SqlCommand cmd = new SqlCommand(string.Format("SELECT * from Category where ID ='{0}'", catId), con))
                     {
                         cmd.CommandType = CommandType.Text;
                         using (SqlDataAdapter sda = new SqlDataAdapter(cmd))

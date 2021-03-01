@@ -19,7 +19,7 @@ namespace wholesale
             if (!IsPostBack)
             {
                 BindProductRepeater();
-                BindBrand();
+               // BindBrand();
 
             }
         }
@@ -27,7 +27,7 @@ namespace wholesale
         {
             using (SqlConnection con = new SqlConnection(s))
             {
-                using (SqlCommand cmd = new SqlCommand("select top 3 A.PID, A.status, A.pname, A.pcode, A.unitprice, A.sellingprice, A.discount,A.Type,B.Name as ImageName,B.Extension,B.ProID,C.* ,D.*,E.* from Product A inner join Brands C on C.ID = A.brand inner join Category E on E.ID=A.Category inner join ProdStock D on D.PID = A.PID cross apply( select top 1 * from ProdImage B where B.ProID = A.PID order by B.ProID desc )B ", con))
+                using (SqlCommand cmd = new SqlCommand("select  A.PID, A.status, A.pname, A.pcode, A.unitprice, A.sellingprice, A.discount,A.Type,B.Name as ImageName,B.Extension,B.ProID,C.* ,D.*,E.* from Product A inner join Brands C on C.ID = A.brand inner join Category E on E.ID=A.Category inner join ProdStock D on D.PID = A.PID cross apply( select top 1 * from ProdImage B where B.ProID = A.PID order by B.ProID desc )B ", con))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
@@ -52,8 +52,8 @@ namespace wholesale
 
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
-                        rptrBrand.DataSource = dt;
-                        rptrBrand.DataBind();
+                      //  rptrBrand.DataSource = dt;
+                      //  rptrBrand.DataBind();
                     }
                 }
             }

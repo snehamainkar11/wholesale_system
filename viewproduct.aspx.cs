@@ -67,7 +67,7 @@ namespace wholesale
             Int64 PID = Convert.ToInt64(Request.QueryString["PID"]);
             using (SqlConnection con = new SqlConnection(s))
             {
-                using (SqlCommand cmd = new SqlCommand("select A.PID,A.status,A.pname,A.length,A.pcode,A.unitprice,A.sellingprice,A.discount,A.pdesc,A.materialcare,B.*,C.*,D.* ,E.* from product A with(nolock) inner join Category B on B.ID =a.category  inner join Brands C on C.Id =A.brand inner join tblSubCategory D on D.SubCategoryID =A.subcategory inner join ProdStock E on E.PID=A.PID where A.PID ='" + PID + "'", con))
+                using (SqlCommand cmd = new SqlCommand("select  A.PID,A.status,A.pname,A.length,A.pcode,A.unitprice,A.sellingprice,A.discount,A.pdesc,A.materialcare,B.*,C.*,D.* ,E.* from product A with(nolock) inner join Category B on B.ID =a.category  inner join Brands C on C.Id =A.brand inner join tblSubCategory D on D.SubCategoryID =A.subcategory inner join ProdStock E on E.PID=A.PID where A.PID ='" + PID + "'", con))
                 {
                     cmd.CommandType = CommandType.Text;
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))

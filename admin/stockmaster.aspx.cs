@@ -235,5 +235,25 @@ namespace wholesale.admin
             }
 
         }
+
+        protected void gvproduct_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+
+
+                if ((e.Row.Cells[7].Text).ToUpper().Contains("IN STOCK"))
+                {
+                    // CHANGE BACKGROUND COLOR OF THTE CELL.
+                    e.Row.Cells[7].ForeColor = System.Drawing.Color.Green;
+                }
+
+                if ((e.Row.Cells[7].Text).ToUpper() == "OUT OF STOCK")
+
+                {
+                    e.Row.Cells[7].ForeColor = System.Drawing.Color.Red;
+                }
+            }
+        }
     }
 }

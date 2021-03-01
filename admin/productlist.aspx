@@ -57,7 +57,7 @@
 
                                                               <asp:Panel runat="server" ID="panel11">
 
-                                                                   <asp:GridView ID="gvproduct" runat="server" ShowHeaderWhenEmpty="true" DataKeyNames="PID" OnRowDataBound="gvproduct_RowDataBound"
+                                                                   <asp:GridView ID="gvproduct" runat="server"  ShowHeaderWhenEmpty="true" DataKeyNames="PID" OnRowDataBound="gvproduct_RowDataBound" 
                                                                        AllowPaging="False" AutoGenerateColumns="False"  class="table table-bordered table-centered table-hover mb-0" OnRowDeleting="gvproduct_RowDeleting1" OnRowEditing="gvproduct_RowEditing" OnRowCancelingEdit="gvproduct_RowCancelingEdit" OnRowUpdating="gvproduct_RowUpdating" CellPadding="4" ForeColor="#333333" GridLines="None">
                                                                        <AlternatingRowStyle BackColor="White" ForeColor="#284775"></AlternatingRowStyle>
                                                                        <EditRowStyle BackColor="#999999"></EditRowStyle>
@@ -226,7 +226,7 @@
                       
                     </asp:TemplateField>
     </Columns>
-                          
+          
                           
                                                   
                                                        
@@ -243,7 +243,7 @@
 
 
 
-                </div>
+             
 </div>
           
 
@@ -301,10 +301,11 @@ select:true,
             { extend: 'pdf', text: 'PDF', className: ' mdi mdi-file-outline', filename: 'products', orientation: 'Portrait', pageSize: 'LEGAL', exportOptions: { modifier: { page: 'all' }, columns: [0, 1, 2,3,4,5,6,7,8,9,10,11,12,13]} },
             'colvis'
             ],
-            columnDefs: [{ targets: -1, visible: false}]
+            columnDefs: [{ targets: -1, visible: false}],
+
         });
 
     });
 </script>
-     
+   
     </asp:Content>

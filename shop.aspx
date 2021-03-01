@@ -1171,22 +1171,7 @@
                     </ul>
                 </nav>
             </div>
-     <div class="row">
-                         
-        <div class="row">
-               <asp:Repeater ID="rptrBrand" runat="server">
-
-           <ItemTemplate>
-            <div class="col-4 col-sm-3 col-md text-center">
-             
-                 <img src="/brands/<%# Eval("imageurl") %>" alt="<%# Eval("brand") %>" width="200px" height="200px" class="img-fluid">
-                    
-            </div>
-          </ItemTemplate>
-             </asp:Repeater>
-        </div>
-             
-    </div>
+   
         </div>
     </div>
 </section>

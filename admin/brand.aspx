@@ -90,7 +90,7 @@
                  
                                     <asp:Panel runat="server" ID="panel11">
 
-                            <asp:GridView ID="gvbrand" runat="server" ShowHeaderWhenEmpty="true"
+                            <asp:GridView ID="gvbrand" runat="server" ShowHeaderWhenEmpty="true" 
                                 AllowPaging="false" AutoGenerateColumns="False" class="table table-bordered table-centered  table-hover mb-0" OnRowCancelingEdit="gvbrand_RowCancelingEdit" OnRowDeleting="gvbrand_RowDeleting"
                                 OnRowEditing="gvbrand_RowEditing" OnRowUpdating="gvbrand_RowUpdating" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" GridLines="None">
 

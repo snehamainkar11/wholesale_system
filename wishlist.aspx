@@ -69,8 +69,8 @@
                             </div>
                             <!-- Body -->
                             <div class="card-body font-weight-bold text-center">
-                                <a class="text-body" href="product.html">Cotton floral print Dress</a> <br>
-                                <span class="text-muted">$40.00</span>
+                                <a class="text-body" href="product.html">Joggers</a> <br>
+                                <span class="text-muted">Rs.799</span>
                             </div>
                         </div>
                     </div>
@@ -96,10 +96,10 @@
                             </div>
                             <!-- Body -->
                             <div class="card-body font-weight-bold text-center">
-                                <a class="text-body" href="product.html">Suede cross body Bag</a> <br>
+                                <a class="text-body" href="product.html">Patches Funky</a> <br>
                                 <span>
-                                    <span class="font-size-xs text-gray-350 text-decoration-line-through">$85.00</span>
-                                    <span class="text-primary">$49.00</span>
+                                    <span class="font-size-xs text-gray-350 text-decoration-line-through">Rs.1,699</span>
+                                    <span class="text-primary">Rs.1,599</span>
                                 </span>
                             </div>
                         </div>
@@ -122,8 +122,8 @@
                             </div>
                             <!-- Body -->
                             <div class="card-body font-weight-bold text-center">
-                                <a class="text-reset" href="product.html">Cotton leaf print Shirt</a>
-                                <span class="text-muted">$65.00</span>
+                                <a class="text-reset" href="product.html">Printed Pants</a>
+                                <span class="text-muted">Rs.899</span>
                             </div>
                         </div>
                     </div>
@@ -145,8 +145,8 @@
                             </div>
                             <!-- Body -->
                             <div class="card-body font-weight-bold text-center">
-                                <a class="text-body" href="product.html">Leather Sneakers</a> <br>
-                                <a class="text-primary" href="#">Select Options</a>
+                                <a class="text-body" href="product.html">Whisker Jeans</a> <br>
+                                <a class="text-primary" href="#">Rs.899</a>
                             </div>
                         </div>
                     </div>
@@ -168,8 +168,8 @@
                             </div>
                             <!-- Body -->
                             <div class="card-body font-weight-bold text-center">
-                                <a class="text-body" href="product.html">Another fine dress</a> <br>
-                                <span class="text-muted">$99.00</span>
+                                <a class="text-body" href="product.html">Knee Cut</a> <br>
+                                <span class="text-muted">Rs.1019</span>
                             </div>
                         </div>
                     </div>

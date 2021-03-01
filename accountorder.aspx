@@ -17,13 +17,13 @@
                 <!-- Nav -->
                 <nav class="mb-10 mb-md-0">
                     <div class="list-group list-group-sm list-group-strong list-group-flush-x">
-                        <a class="list-group-item list-group-item-action dropright-toggle active" href="AccountOrders.html">
+                        <a class="list-group-item list-group-item-action dropright-toggle active" href="AccountOrders.aspx">
                             Orders
                         </a>
-                        <a class="list-group-item list-group-item-action dropright-toggle" href="WishList.html">
+                        <a class="list-group-item list-group-item-action dropright-toggle" href="WishList.aspx">
                             Wishlist
                         </a>
-                        <a class="list-group-item list-group-item-action dropright-toggle" href="PersonalInfo.html">
+                        <a class="list-group-item list-group-item-action dropright-toggle" href="PersonalInfo.aspx">
                             Personal Info
                         </a>
                     </div>
@@ -51,7 +51,7 @@
                                         <!-- Text -->
                                         <p class="mb-lg-0 font-size-sm font-weight-bold">
                                             <time datetime="2019-10-01">
-                                                01 Oct, 2019
+                                                01 Feb, 2021
                                             </time>
                                         </p>
                                     </div>
@@ -68,7 +68,7 @@
                                         <h6 class="heading-xxxs text-muted">Order Amount:</h6>
                                         <!-- Text -->
                                         <p class="mb-0 font-size-sm font-weight-bold">
-                                            $259.00
+                                            Rs.2,398
                                         </p>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="card-footer">
                         <!-- Heading -->
-                        <h6 class="mb-7">Order Items (3)</h6>
+                        <h6 class="mb-7">Order Items</h6>
                         <!-- Divider -->
                         <hr class="my-5">
                         <!-- List group -->
@@ -86,18 +86,18 @@
                                 <div class="row align-items-center">
                                     <div class="col-4 col-md-3 col-xl-2">
                                         <!-- Image -->
-                                        <a href="../Product.html"><img src="../assets/img/products/product-6.jpg" alt="..." class="img-fluid"></a>
+                                        <a href="viewproduct.aspx"><img src="../assets/img/products/product-6.jpg" alt="..." class="img-fluid"></a>
                                     </div>
                                     <div class="col">
                                         <!-- Title -->
                                         <p class="mb-4 font-size-sm font-weight-bold">
-                                            <a class="text-body" href="../Product.html">Cotton floral print Dress x 1</a> <br>
-                                            <span class="text-muted">$40.00</span>
+                                            <a class="text-body" href="viewproduct.aspx">Joggers x 1</a> <br>
+                                            <span class="text-muted">Rs.799</span>
                                         </p>
                                         <!-- Text -->
                                         <div class="font-size-sm text-muted">
                                             Size: M <br>
-                                            Color: Red
+                                            Color: White
                                         </div>
                                     </div>
                                 </div>
@@ -106,38 +106,38 @@
                                 <div class="row align-items-center">
                                     <div class="col-4 col-md-3 col-xl-2">
                                         <!-- Image -->
-                                        <a href="../Product.html"><img src="../assets/img/products/product-10.jpg" alt="..." class="img-fluid"></a>
+                                        <a href="viewproduct.aspx"><img src="../assets/img/products/product-10.jpg" alt="..." class="img-fluid"></a>
                                     </div>
                                     <div class="col">
                                         <!-- Title -->
                                         <p class="mb-4 font-size-sm font-weight-bold">
-                                            <a class="text-body" href="../Product.html">Suede cross body Bag x 1</a> <br>
-                                            <span class="text-muted">$49.00</span>
+                                            <a class="text-body" href="viewproduct.aspx">Patches Funky x 1</a> <br>
+                                            <span class="text-muted">Rs.1,599</span>
                                         </p>
                                         <!-- Text -->
                                         <div class="font-size-sm text-muted">
-                                            Color: Brown
+                                            Color: Blue
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="list-group-item">
+                           <!-- <li class="list-group-item">
                                 <div class="row align-items-center">
-                                    <div class="col-4 col-md-3 col-xl-2">
+                                    <div class="col-4 col-md-3 col-xl-2">-->
                                         <!-- Image -->
-                                        <a href="../Product.html"><img src="../assets/img/products/product-48.jpg" alt="..." class="img-fluid"></a>
+                                      <!--  <a href="../Product.html"><img src="../assets/img/products/product-48.jpg" alt="..." class="img-fluid"></a>
                                     </div>
-                                    <div class="col">
+                                    <div class="col">-->
                                         <!-- Title -->
-                                        <p class="mb-4 font-size-sm font-weight-bold">
+                                        <!--<p class="mb-4 font-size-sm font-weight-bold">
                                             <a class="text-body" href="../Product.html">Sweatshirt with Pocket</a> <br>
                                             <span class="text-muted">$39.00</span>
-                                        </p>
+                                        </p>-->
                                         <!-- Text -->
-                                        <div class="font-size-sm text-muted">
+                                        <!--<div class="font-size-sm text-muted">
                                             Size: L <br>
                                             Color: Pink
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </div>
                             </li>
@@ -153,19 +153,19 @@
                         <ul class="list-group list-group-sm list-group-flush-y list-group-flush-x">
                             <li class="list-group-item d-flex">
                                 <span>Subtotal</span>
-                                <span class="ml-auto">$128.00</span>
+                                <span class="ml-auto">Rs.2,398</span>
                             </li>
                             <li class="list-group-item d-flex">
                                 <span>Tax</span>
-                                <span class="ml-auto">$0.00</span>
+                                <span class="ml-auto">Rs.0</span>
                             </li>
                             <li class="list-group-item d-flex">
                                 <span>Shipping</span>
-                                <span class="ml-auto">$8.00</span>
+                                <span class="ml-auto">Free</span>
                             </li>
                             <li class="list-group-item d-flex font-size-lg font-weight-bold">
                                 <span>Total</span>
-                                <span class="ml-auto">$136.00</span>
+                                <span class="ml-auto">Rs.2,398</span>
                             </li>
                         </ul>
                     </div>
@@ -183,11 +183,11 @@
                                     Billing Address:
                                 </p>
                                 <p class="mb-7 mb-md-0 text-gray-500">
-                                    Daniel Robinson, <br>
-                                    3997 Raccoon Run, <br>
-                                    Kingston, 45644, <br>
-                                    United States, <br>
-                                    6146389574
+                                    IG-101, <br>
+                                    Ground Floor, <br>
+                                    Vaibhav Laxmi, <br>
+                                    Ahemdabad, <br>
+                                    380001
                                 </p>
                             </div>
                             <div class="col-12 col-md-4">
@@ -196,11 +196,11 @@
                                     Shipping Address:
                                 </p>
                                 <p class="mb-7 mb-md-0 text-gray-500">
-                                    Daniel Robinson, <br>
-                                    3997 Raccoon Run, <br>
-                                    Kingston, 45644, <br>
-                                    United States, <br>
-                                    6146389574
+                                    IG-101, <br>
+                                    Ground Floor, <br>
+                                    Vaibhav Laxmi, <br>
+                                    Ahemdabad, <br>
+                                    380001
                                 </p>
                             </div>
                             <div class="col-12 col-md-4">

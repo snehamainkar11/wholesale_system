@@ -155,7 +155,10 @@
                                     </asp:HyperLink>
                                     <asp:ImageButton ImageUrl="~/Images/edit.png" runat="server" CommandName="Edit" ToolTip="Edit" Width="20px" Height="20px" />
                                     <asp:ImageButton ImageUrl="~/Images/delete.png" runat="server" CommandName="Delete" ToolTip="Delete" Width="20px" Height="20px" />
-                               
+                                <asp:HyperLink ID="HyperLink1" 
+                                        runat="server" NavigateUrl='<%# "~/admin/editsales.aspx?orderno=" + Eval("orderno") %>'>
+                                        <i class="mdi mdi-eye"></i>
+                                    </asp:HyperLink>
                                 </ItemTemplate>
                                 <EditItemTemplate>
                                     <asp:ImageButton ImageUrl="~/Images/save.png" runat="server" CommandName="Update" ToolTip="Update" Width="20px" Height="20px" />

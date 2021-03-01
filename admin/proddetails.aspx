@@ -46,19 +46,13 @@
                     </div> <!-- end col -->
                     <div class="col-lg-7">
                       <asp:Repeater ID="rptrProductDetails" runat="server">
-                <ItemTemplate>
+                <ItemTemplate>                          <h4> <a  href="productlist.aspx"  ><i class="uil-arrow-left"></i>Back</a> </h4>
+
                             <!-- Product title -->
                             <h3 class="mt-0"><%# Eval("PName") %>
-                           <a  href="productlist.aspx"  ><i class="uil-arrow-left"></i></a> 
                          </h3>
                             <p class="mb-1"></p>
-                            <p class="font-16">
-                                <span class="text-warning mdi mdi-star"></span>
-                                <span class="text-warning mdi mdi-star"></span>
-                                <span class="text-warning mdi mdi-star"></span>
-                                <span class="text-warning mdi mdi-star"></span>
-                                <span class="text-warning mdi mdi-star"></span>
-                            </p>
+                           
                      <h4 class="mt-0">Product Code : <%# Eval("pcode") %></h4>
                     <div class="mb-7">
                     <span style="font-size:large;font-weight:bold; color:lightblue; text-decoration:line-through;"><%#Eval("unitprice")%> Rs</span>&nbsp;
@@ -151,63 +145,44 @@
                  <h4 class="mb-10 text-center">Customer Reviews</h4>
                 </div></div>
             <div id="handle-dragula-right" class="py-2">
-                  <div class="col-12 col-md-auto">
-                        <!-- Dropdown -->
-                        <div class="dropdown mb-4 mb-md-0">
-                            <!-- Toggle -->
-                            <a class="dropdown-toggle text-reset" data-toggle="dropdown" href="#">
-                                <strong>Sort by: Newest</strong>
-                            </a>
-                            <!-- Menu -->
-                            <div class="dropdown-menu mt-3">
-                                <a class="dropdown-item" href="#!">Newest</a>
-                                <a class="dropdown-item" href="#!">Oldest</a>
-                            </div>
-                            <div  style="float:right" class="rateit rateit-mdi mt-6" data-rateit-mode="font" data-rateit-icon=""  data-rateit-value="2.5" data-rateit-ispreset="true" data-rateit-readonly="true">
-</div>
+                  <div class="col-6 col-md-auto">
+             
+                                                                     <div style="float:left;color:green;font-weight:bold;font-size:18px"><asp:Label runat="server" ID="lblrvw"></asp:Label></div>
+
                         </div>
+                                  <div class="col-12 col-md-auto">
+ <asp:Repeater ID="rptr1" runat="server">
+                <ItemTemplate>
+                 <p class="font-22" style="float:right">
+                              <div class="rateit rateit-mdi" data-rateit-mode="font" data-rateit-icon=""  data-rateit-value= <%#Eval("AverageRating")%>   data-rateit-ispreset="true" data-rateit-readonly="true">
+</div>
+                            </p>
+                           </ItemTemplate>    </asp:Repeater>       </div>
                     </div>
+                 <asp:Repeater ID="rptr" runat="server">
+                <ItemTemplate>
                 <div class="card mb-0 mt-2">
                 
                     <div class="card-body p-3">
 
                         <div class="media">
-                           
+
                             <div class="media-body">
-                                <h5 class="mb-1 mt-1">Customer 1</h5>
-                                <p class="mb-0"> Reviews ....... </p>
+
+                              <h4 class="mb-0" style="color:black">  <%#Eval("title")%> </h4>
+                             <p class="mb-1 mt-1"> By <%#Eval("username")%></p>
+
+                                <p class="mb-0">  <%#Eval("feedback")%> </p>
+                                                              <div class="rateit rateit-mdi" data-rateit-mode="font" data-rateit-icon=""  data-rateit-value= <%#Eval("ratings")%>   data-rateit-ispreset="true" data-rateit-readonly="true">
+
                             </div> <!-- end media-body -->
                             
                         </div> <!-- end media -->
                     </div> <!-- end card-body -->
                 </div> <!-- end col -->
-                
-                <div class="card mb-0 mt-2">
-                    <div class="card-body p-3">
-                        <div class="media">
-                          
-                            <div class="media-body">
-                                <h5 class="mb-1 mt-1">Customer 2</h5>
-                                <p class="mb-0"> Goood </p>
-                            </div> <!-- end media-body -->
-                          
-                        </div> <!-- end media -->
-                    </div> <!-- end card-body -->
-                </div> <!-- end col -->
-                
-                <div class="card mb-0 mt-2">
-                    <div class="card-body p-3">
-                        <div class="media">
-                            
-                            <div class="media-body">
-                                <h5 class="mb-1 mt-1">Customer 3</h5>
-                                <p class="mb-0">Nice Color</p>
-                            </div> <!-- end media-body -->
-                           
-                        </div> <!-- end media -->
-                    </div> <!-- end card-body -->
-                </div> <!-- end col -->
-                
+                    </ItemTemplate>
+              </asp:Repeater>  
+               
             </div> <!-- end company-list-2-->
         </div> <!-- end div.bg-light-->
     </div> <!-- end col -->

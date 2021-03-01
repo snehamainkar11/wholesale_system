@@ -26,12 +26,12 @@
                             <div class="col">
                                 <!-- Title -->
                                 <div class="d-flex mb-2 font-weight-bold">
-                                    <a class="text-body" href="viewproduct.aspx">Cotton floral print</a> <span class="ml-auto">$40.00</span>
+                                    <a class="text-body" href="viewproduct.aspx">Joggers</a> <span class="ml-auto">Rs.799</span>
                                 </div>
                                 <!-- Text -->
                                 <p class="mb-7 font-size-sm text-muted">
                                     Size: M <br>
-                                    Color: Red
+                                    Color: White
                                 </p>
                                 <!--Footer -->
                                 <div class="d-flex align-items-center">
@@ -60,11 +60,11 @@
                             <div class="col">
                                 <!-- Title -->
                                 <div class="d-flex mb-2 font-weight-bold">
-                                    <a class="text-body" href="viewproduct.aspx">Suede cross body Bag</a> <span class="ml-auto">$49.00</span>
+                                    <a class="text-body" href="viewproduct.aspx">Patches Funky</a> <span class="ml-auto">Rs.1,599</span>
                                 </div>
                                 <!-- Text -->
                                 <p class="mb-7 font-size-sm text-muted">
-                                    Color: Brown
+                                    Color: Blue
                                 </p>
                                 <!--Footer -->
                                 <div class="d-flex align-items-center">
@@ -117,13 +117,13 @@
                     <div class="card-body">
                         <ul class="list-group list-group-sm list-group-flush-y list-group-flush-x">
                             <li class="list-group-item d-flex">
-                                <span>Subtotal</span> <span class="ml-auto font-size-sm">$89.00</span>
+                                <span>Subtotal</span> <span class="ml-auto font-size-sm">Rs.2,398</span>
                             </li>
                             <li class="list-group-item d-flex">
-                                <span>Tax</span> <span class="ml-auto font-size-sm">$00.00</span>
+                                <span>Tax</span> <span class="ml-auto font-size-sm">Rs.0</span>
                             </li>
                             <li class="list-group-item d-flex font-size-lg font-weight-bold">
-                                <span>Total</span> <span class="ml-auto font-size-sm">$89.00</span>
+                                <span>Total</span> <span class="ml-auto font-size-sm">Rs.2,398</span>
                             </li>
                             <li class="list-group-item font-size-sm text-center text-gray-500">
                                 Shipping cost calculated at Checkout *

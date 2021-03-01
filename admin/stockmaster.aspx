@@ -86,7 +86,7 @@
               <div class="mt-0" style="float: right;background-color:white" ><asp:Button runat="server" Text="View All Records" ID="btnvw" OnClick="btnvw_Click"  class="btn btn-dark"></asp:Button></div>
                         </h4><br />  <div class="table-responsive">
                                <asp:Panel runat="server" ID="panel11">
-                                <asp:GridView ID="gvproduct" runat="server" ShowHeaderWhenEmpty="true" DataKeyNames="PID" ShowFooter="true" OnRowCancelingEdit="gvproduct_RowCancelingEdit" OnRowEditing="gvproduct_RowEditing" OnRowUpdating="gvproduct_RowUpdating" OnRowDeleting="gvproduct_RowDeleting"
+                                <asp:GridView ID="gvproduct" runat="server" OnRowDataBound="gvproduct_RowDataBound" ShowHeaderWhenEmpty="true" DataKeyNames="PID" ShowFooter="true" OnRowCancelingEdit="gvproduct_RowCancelingEdit" OnRowEditing="gvproduct_RowEditing" OnRowUpdating="gvproduct_RowUpdating" OnRowDeleting="gvproduct_RowDeleting"
 
                                                                        AllowPaging="False" AutoGenerateColumns="False"  class="table table-bordered table-centered table-hover mb-0"  CellPadding="4" ForeColor="#333333" GridLines="None">
                                                                        <AlternatingRowStyle BackColor="White" ForeColor="#284775"></AlternatingRowStyle>

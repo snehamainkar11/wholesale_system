@@ -107,7 +107,7 @@
                                         </div>
                                     </td>
                                     <td>Delivery in 5 - 7 working days</td>
-                                    <td>$8.00</td>
+                                    <td>Rs.100</td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -119,7 +119,7 @@
                                         </div>
                                     </td>
                                     <td>Delivery in 3 - 5 working days</td>
-                                    <td>$12.00</td>
+                                    <td>Rs.150</td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -131,7 +131,7 @@
                                         </div>
                                     </td>
                                     <td>Delivery in 1 - 2 working days</td>
-                                    <td>$18.00</td>
+                                    <td>Rs.250</td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -147,7 +147,7 @@
                                         meat replenish face was you morning
                                         firmament darkness.
                                     </td>
-                                    <td>$0.00</td>
+                                    <td>Rs.0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -155,12 +155,12 @@
                     <!-- Address -->
                     <div class="mb-9">
                         <!-- Checkbox -->
-                        <div class="custom-control custom-checkbox">
+                        <!--<div class="custom-control custom-checkbox">
                             <input class="custom-control-input" id="checkoutShippingAddress" type="checkbox">
                             <label class="custom-control-label font-size-sm" data-toggle="collapse" data-target="#checkoutShippingAddressCollapse" for="checkoutShippingAddress">
                                 Ship to a different address?
                             </label>
-                        </div>
+                        </div>-->>
                         <!-- Collapse -->
                         <div class="collapse" id="checkoutShippingAddressCollapse">
                             <div class="row mt-6">
@@ -253,9 +253,9 @@
                                     <div class="form-group mb-md-0">
                                         <label class="sr-only" for="checkoutPaymentCardYear">Year</label>
                                         <select class="custom-select custom-select-sm" id="checkoutPaymentCardYear">
-                                            <option>2017</option>
-                                            <option>2018</option>
                                             <option>2019</option>
+                                            <option>2020</option>
+                                            <option>2021</option>
                                         </select>
                                     </div>
                                 </div>
@@ -305,13 +305,13 @@
                             <div class="col">
                                 <!-- Title -->
                                 <p class="mb-4 font-size-sm font-weight-bold">
-                                    <a class="text-body" href="viewproduct.aspx">Cotton floral print Dress</a> <br>
-                                    <span class="text-muted">$40.00</span>
+                                    <a class="text-body" href="viewproduct.aspx">Joggers</a> <br>
+                                    <span class="text-muted">Rs.799</span>
                                 </p>
                                 <!-- Text -->
                                 <div class="font-size-sm text-muted">
                                     Size: M <br>
-                                    Color: Red
+                                    Color: White
                                 </div>
                             </div>
                         </div>
@@ -327,12 +327,12 @@
                             <div class="col">
                                 <!-- Title -->
                                 <p class="mb-4 font-size-sm font-weight-bold">
-                                    <a class="text-body" href="viewproduct.aspx">Suede cross body Bag</a> <br>
-                                    <span class="text-muted">$49.00</span>
+                                    <a class="text-body" href="viewproduct.aspx">Patches Funky</a> <br>
+                                    <span class="text-muted">Rs.1,599</span>
                                 </p>
                                 <!-- Text -->
                                 <div class="font-size-sm text-muted">
-                                    Color: Brown
+                                    Color: Blue
                                 </div>
                             </div>
                         </div>
@@ -343,16 +343,16 @@
                     <div class="card-body">
                         <ul class="list-group list-group-sm list-group-flush-y list-group-flush-x">
                             <li class="list-group-item d-flex">
-                                <span>Subtotal</span> <span class="ml-auto font-size-sm">$89.00</span>
+                                <span>Subtotal</span> <span class="ml-auto font-size-sm">Rs.2,398</span>
                             </li>
                             <li class="list-group-item d-flex">
-                                <span>Tax</span> <span class="ml-auto font-size-sm">$00.00</span>
+                                <span>Tax</span> <span class="ml-auto font-size-sm">Rs.0</span>
                             </li>
                             <li class="list-group-item d-flex">
-                                <span>Shipping</span> <span class="ml-auto font-size-sm">$8.00</span>
+                                <span>Shipping</span> <span class="ml-auto font-size-sm">Free</span>
                             </li>
                             <li class="list-group-item d-flex font-size-lg font-weight-bold">
-                                <span>Total</span> <span class="ml-auto">$97.00</span>
+                                <span>Total</span> <span class="ml-auto">Rs.2,398</span>
                             </li>
                         </ul>
                     </div>

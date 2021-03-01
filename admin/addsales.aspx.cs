@@ -72,6 +72,7 @@ namespace wholesale.admin
 
         protected void additem_Click(object sender, EventArgs e)
         {
+            Button1.Visible = true;
             dt = (DataTable)Session["data"];
             DataRow dr;
             dr = dt.NewRow();
@@ -99,7 +100,7 @@ namespace wholesale.admin
             }
             using (SqlConnection con = new SqlConnection(s))
             {
-                String strQuery = "select A.minlevel,B.quantity from Product A inner join prodStock B on A.PID=B.PID where" +
+                String strQuery = "select A.minlevel,B.quantity  from Product A inner join prodStock B on A.PID=B.PID where" +
                     " A.pname = @mname";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.AddWithValue("@mname", ddlproduct.SelectedItem.Text);
@@ -114,14 +115,27 @@ namespace wholesale.admin
                     int qty = Convert.ToInt32(sdr[1]);
                     int stock = qty - level;
                     int txt = Convert.ToInt32(txtqty.Text);
-
+                  
                     if (stock < txt)
                     {
-                        System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Minimum Stock Alert..Please update your Inventory')", true);
+                        System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Minimum Stock. You can add upto :" + stock + " Products');", true);
                         //con.Close();
-                        
-                    }
+                        if (stock == 0)
+                        {
+                            using (SqlConnection con1 = new SqlConnection(s))
+                            {
+                                SqlCommand cmd1 = new SqlCommand("update Product set status=@status where Product.pname=@id", con1);
+                                cmd1.Parameters.AddWithValue("@id", ddlproduct.SelectedItem.Text);
+                                cmd1.Parameters.AddWithValue("@status", "Out of stock");
+                                con1.Open();
+                                cmd1.ExecuteNonQuery();
+                                // con1.Close();
 
+                            }
+                        }
+
+                    }
+                   
                     else
                     {
 
@@ -351,14 +365,24 @@ namespace wholesale.admin
                     con.Open();
                     cmd.ExecuteNonQuery();
                 }
+              
 
-            
-                // DataTable dt;
-                dt = (DataTable)Session["data"];
+                    // DataTable dt;
+                 dt = (DataTable)Session["buyitems"];
 
                 for (int i = 0; i <= dt.Rows.Count - 1; i++)
 
                 {
+                    using (SqlConnection con = new SqlConnection(s))
+                    {
+                        SqlCommand cmd1 = new SqlCommand("update Prodstock set ProdStock.quantity=ProdStock.quantity-@quantity from  Product inner join Prodstock  on Product.PID=ProdStock.PID where Product.pname=@id", con);
+                        cmd1.Parameters.AddWithValue("@id", dt.Rows[i]["product"]);
+                        cmd1.Parameters.AddWithValue("@quantity", dt.Rows[i]["quantity"]);
+                        con.Open();
+                        cmd1.ExecuteNonQuery();
+                        // con1.Close();
+
+                    }
 
                     using (SqlConnection con = new SqlConnection(s))
                     {
@@ -377,16 +401,8 @@ namespace wholesale.admin
                         //con.Close();
                     }
 
-                    using (SqlConnection con = new SqlConnection(s))
-                    {
-                        SqlCommand cmd1 = new SqlCommand("update Prodstock set ProdStock.quantity=ProdStock.quantity-@quantity from  Product inner join Prodstock  on Product.PID=ProdStock.PID where Product.pname=@id", con);
-                        cmd1.Parameters.AddWithValue("@id", dt.Rows[i]["product"]);
-                        cmd1.Parameters.AddWithValue("@quantity", dt.Rows[i]["quantity"]);
-                        con.Open();
-                        cmd1.ExecuteNonQuery();
-                        // con1.Close();
-
-                    }
+                  
+                   
 
                 }
                     
@@ -422,18 +438,16 @@ namespace wholesale.admin
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            dt = (DataTable)Session["data"];
-            dt.Clear();
             GridView1.DataSource = null;
             GridView1.DataBind();
-            for (int i = 0; GridView1.Columns.Count > i;)
-            {
-                GridView1.Columns.RemoveAt(i);
-            }
+            dt = (DataTable)Session["buyitems"];
+            dt.Clear();
+
             grand.Text = "0.0";
             txtsrno.Text = "1";
             txttot.Text = "0.0";
             txtdue.Text = "0.0";
+            Button1.Visible = false;
         }
     }
 }

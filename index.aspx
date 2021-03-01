@@ -75,7 +75,7 @@
                         </h6>
                         <!-- Text -->
                         <p class="mb-0 font-size-sm text-muted">
-                            From all orders over $100
+                            From all orders over 1000
                         </p>
                     </div>
                 </div>
@@ -148,10 +148,11 @@
                     New Collection
                 </h6>
                 <!-- Heading -->
-                <h2 class="mb-4">Best Picks 2019</h2>
+                <h2 class="mb-4">Best Picks 2021</h2>
                 <!-- Subheading -->
                 <p class="mb-10 text-gray-500">
-                    Appear, dry there darkness they're seas, dry waters thing fly midst. Beast, above fly brought Very green.
+                   In the right DENIM, you can Conquer the World
+                     <!--Appear, dry there darkness they're seas, dry waters thing fly midst. Beast, above fly brought Very green.-->
                 </p>
             </div>
         </div>
@@ -166,7 +167,7 @@
                     <!-- Body -->
                     <div class="card-body my-auto text-center">
                         <!-- Heading -->
-                        <h4 class="mb-0">Bags Collection</h4>
+                        <h4 class="mb-0">Ohhh Denim</h4>
                         <!-- Link -->
                         <a class="btn btn-link stretched-link text-reset" href="shop.aspx">
                             Shop Now <i class="fe fe-arrow-right ml-2"></i>
@@ -189,7 +190,7 @@
                             <span class="font-size-h4 font-weight-bold">30%</span>
                         </div>
                         <!-- Heading -->
-                        <h4 class="mb-0">Printed men’s Shirts</h4>
+                        <h4 class="mb-0">Denim is always a good idea;)</h4>
                         <!-- Link -->
                         <a class="btn btn-link stretched-link px-0 text-reset" href="shop.aspx">
                             Shop Now <i class="fe fe-arrow-right ml-2"></i>
@@ -202,12 +203,12 @@
                 <div class="card mb-7 mb-md-0 text-body" style="min-height: 400px;">
                     <!-- Background -->
                     <div class="card-bg">
-                        <div class="card-bg-img bg-cover" style="background-image: url(assets/img/products/product-3.jpg);"></div>
+                        <div class="card-bg-img bg-cover" style="background-image: url(assets/img/products/product-3.png);"></div>
                     </div>
                     <!-- Body -->
                     <div class="card-body my-auto px-md-10 text-center text-md-left">
                         <!-- Heading -->
-                        <h4 class="mb-0">Basic women’s Dresses</h4>
+                        <h4 class="mb-0">Plain Basic</h4>
                         <!-- Link -->
                         <a class="btn btn-link stretched-link px-0 text-reset" href="shop.aspx">
                             Shop Now <i class="fe fe-arrow-right ml-2"></i>
@@ -225,7 +226,7 @@
                     <!-- Body -->
                     <div class="card-body my-auto text-center">
                         <!-- Heading -->
-                        <h4 class="mb-0">Sweatshirts</h4>
+                        <h4 class="mb-0">Rip My Jeans</h4>
                         <!-- Link -->
                         <a class="btn btn-link stretched-link text-reset" href="shop.aspx">
                             Shop Now <i class="fe fe-arrow-right ml-2"></i>
@@ -246,14 +247,13 @@
                 <h2 class="mb-4 text-center">Top month Sellers</h2>
                 <!-- Nav -->
                 <div class="nav justify-content-center mb-10">
-                     <asp:HyperLink runat="server" class="nav-link active" href="#topSellersTab1" data-toggle="tab"  Text="MEN" Id="women" OnDataBinding="women_DataBinding">Women</asp:HyperLink>
-                    <asp:HyperLink runat="server" class="nav-link" href="#topSellersTab1" data-toggle="tab"  Text="MEN" Id="men" OnDataBinding="men_DataBinding">MEn</asp:HyperLink>
-                 <asp:HyperLink runat="server" class="nav-link" href="#topSellersTab1" data-toggle="tab"  Text="MEN" Id="kids" OnDataBinding="kids_DataBinding">Kids</asp:HyperLink>
-                    </div>
+                    <a class="nav-link active" href="#topSellersTab" data-toggle="tab">Women</a>
+                    <a class="nav-link" href="#topSellersTab" data-toggle="tab">Men</a>
+                    <a class="nav-link" href="#topSellersTab" data-toggle="tab">Kids</a>
+                </div>
             </div>
         </div>
-     
-        <div class="tab-content">
+       <div class="tab-content">
           
             <div class="tab-pane fade show active" id="topSellersTab1">
                 
@@ -325,6 +325,7 @@
     </div>
      
       
+      
         <div class="row">
             <div class="col-12">
                 <!-- Link  -->
@@ -343,7 +344,7 @@
             <div class="col-12 col-md-8 col-lg-6">
                 <!-- Heading -->
                 <h3 class="mb-7">
-                    Get -50% from <br />Summer Collection
+                    Get -50% from <br />On Our Collection
                 </h3>
                 <!-- Counter -->
                 <div class="d-flex mb-9" data-countdown data-date="Jan 5, 2021 15:37:25">
@@ -407,16 +408,16 @@
                                 <div class="row align-items-center mb-6">
                                     <div class="col-4">
                                         <!-- Image -->
-                                        <img src="assets/img/products/product-13.jpg" alt="..." class="img-fluid">
+                                        <img src="assets/img/products/product-13.png" alt="..." class="img-fluid">
                                     </div>
                                     <div class="col-8 ml-n2">
                                         <!-- Preheading -->
                                         <a class="font-size-xs text-muted" href="shop.aspx">
-                                            Shoes
+                                            Jeans
                                         </a>
                                         <!-- Heading -->
                                         <a class="d-block font-weight-bold text-body" href="viewproduct.aspx">
-                                            Low top Sneakers
+                                            Plain Basic
                                         </a>
                                         <!-- Rating -->
                                         <div class="rating font-size-xxs text-warning" data-value="3">
@@ -441,10 +442,11 @@
                                 <!-- Blockquote -->
                                 <blockquote class="mb-0">
                                     <p class="text-muted">
-                                        From creepeth said moved given divide make multiply of him shall itself also above second doesn't unto created saying land herb sea midst night wherein.
+                                        <!--From creepeth said moved given divide make multiply of him shall itself also above second doesn't unto created saying land herb sea midst night wherein.-->
+                                        They have pretty much no stretch , thich-ish denim, and don't stretch out with multiple wears.
                                     </p>
                                     <footer class="font-size-xs text-muted">
-                                        Logan Edwards, <time datetime="2019-06-01">01 Jun 2019</time>
+                                        Rosh Panjabi, <time datetime="2019-06-01">20 Nov 2020</time>
                                     </footer>
                                 </blockquote>
                             </div>
@@ -463,11 +465,11 @@
                                     <div class="col-8 ml-n2">
                                         <!-- Preheading -->
                                         <a class="font-size-xs text-muted" href="shop.aspx">
-                                            Dresses
+                                            Jeans
                                         </a>
                                         <!-- Heading -->
                                         <a class="d-block font-weight-bold text-body" href="viewproduct.aspx">
-                                            Cotton print Dress
+                                            Patchy Funky
                                         </a>
                                         <!-- Rating -->
                                         <div class="rating font-size-xxs text-warning" data-value="5">
@@ -492,10 +494,11 @@
                                 <!-- Blockquote -->
                                 <blockquote class="mb-0">
                                     <p class="text-muted">
-                                        God every fill great replenish darkness unto. Very open. Likeness their that light. Given under image to. Subdue of shall cattle day fish form saw spirit and given stars, us you whales may, land, saw fill unto.
+                                        Just fabulous.. Very nice material.just love it
+                                        <!--God every fill great replenish darkness unto. Very open. Likeness their that light. Given under image to. Subdue of shall cattle day fish form saw spirit and given stars, us you whales may, land, saw fill unto. -->
                                     </p>
                                     <footer class="font-size-xs text-muted">
-                                        Jane Jefferson, <time datetime="2019-05-29">29 May 2019</time>
+                                        Sneha Mainkar, <time datetime="2019-05-29">29 May 2020</time>
                                     </footer>
                                 </blockquote>
                             </div>
@@ -514,11 +517,11 @@
                                     <div class="col-8 ml-n2">
                                         <!-- Preheading -->
                                         <a class="font-size-xs text-muted" href="shop.aspx">
-                                            T-shirts
+                                            Jeans
                                         </a>
                                         <!-- Heading -->
                                         <a class="d-block font-weight-bold text-body" href="viewproduct.aspx">
-                                            Oversized print T-shirt
+                                            Joggers
                                         </a>
                                         <!-- Rating -->
                                         <div class="rating font-size-xxs text-warning" data-value="4">
@@ -546,7 +549,7 @@
                                         Fill his waters wherein signs likeness waters. Second light gathered appear sixth fourth, seasons behold creeping female.
                                     </p>
                                     <footer class="font-size-xs text-muted">
-                                        Darrell Baker, <time datetime="2019-05-18">18 May 2019</time>
+                                        Asmita Mulchandani, <time datetime="2019-05-18">18 Aug 2019</time>
                                     </footer>
                                 </blockquote>
                             </div>
@@ -615,10 +618,10 @@
         <div class="row">
             <div class="col-12 text-center">
                 <!-- Heading -->
-                <h2 class="mb-3">BootShop</h2>
+                <h2 class="mb-3">Waheguru Creations</h2>
                 <!-- Subheading -->
                 <p class="mb-10 font-size-lg text-gray-500">
-                    Appear, dry there darkness they're seas, dry waters.
+                    The Ultimate Denim Store
                 </p>
             </div>
         </div>
@@ -672,22 +675,22 @@
                 <!-- Card -->
                 <div class="card">
                     <!-- Image -->
-                    <img src="assets/img/products/product-21.jpg" alt="..." class="card-img">
+                    <img src="assets/img/products/product-21.png" alt="..." class="card-img">
                     <!-- Overlay -->
                    
                 </div>
             </div>
         </div>
-      
-                    
+        <div class="row">
+                         
         <div class="row">
                <asp:Repeater ID="rptrBrand" runat="server">
 
            <ItemTemplate>
             <div class="col-4 col-sm-3 col-md text-center">
-                
-                 <img src="/Brands/<%# Eval("imageurl") %>" alt="<%# Eval("brand") %>" width="200px" height="200px" class="img-fluid">
-                       
+             
+                 <img src="/brands/<%# Eval("imageurl") %>" alt="<%# Eval("brand") %>" width="200px" height="200px" class="img-fluid">
+                    
             </div>
           </ItemTemplate>
              </asp:Repeater>

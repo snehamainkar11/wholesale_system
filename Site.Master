@@ -715,7 +715,7 @@
 
                                         <asp:Repeater ID="rptSubCategories" runat="server">
                                             <ItemTemplate>
-                                                 <a class="list-styled-link" href="shop.aspx?subcat=<%# Eval("ID") %>"><%# Eval("Category") %></a>
+                                                 <a class="list-styled-link" href="shop.aspx?ID=<%# Eval("ID") %>"><%# Eval("Category") %></a>
                                             </ItemTemplate>
                                             <FooterTemplate>
                                                 <div class="dropdown-divider"></div>

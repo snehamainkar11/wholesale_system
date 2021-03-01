@@ -9,6 +9,7 @@ namespace wholesale
     public partial class proddetails : System.Web.UI.Page
     {
         public static String s = ConfigurationManager.ConnectionStrings["wholesale"].ConnectionString;
+        DataTable dt = new DataTable();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,15 +17,18 @@ namespace wholesale
             {
                 if (!IsPostBack)
                 {
+                    Int64 PID = Convert.ToInt64(Request.QueryString["PID"]);
+
                     BindProductImage();
                     BindProductDetails();
-                
-
+                    Reviews();
+                    DataTable dt = this.GetData("SELECT ISNULL(AVG(Ratings), 0) AverageRating, COUNT(Ratings) RatingCount FROM tblrating1 where pid ='" + PID + "'");
+                    lblrvw.Text = string.Format("{0} Users Have Rated. Average Rating is :", dt.Rows[0]["RatingCount"]);
                 }
-            }
-            else
-            {
-                Response.Redirect("~/Product.aspx");
+                else
+                {
+                    Response.Redirect("~/Product.aspx");
+                }
             }
         }
         private void BindProductDetails()
@@ -46,7 +50,53 @@ namespace wholesale
                 }
             }
         }
+        private void Reviews()
+        {
+            Int64 PID = Convert.ToInt64(Request.QueryString["PID"]);
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                using (SqlCommand cmd = new SqlCommand("select ISNULL(AVG(Ratings), 0) AverageRating from tblrating1 where pid ='" + PID + "'", con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        rptr1.DataSource = dt;
+                        rptr1.DataBind();
 
+                    }
+                }
+            }
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                using (SqlCommand cmd = new SqlCommand("select * from tblrating1 where pid ='" + PID + "'", con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        rptr.DataSource = dt;
+                        rptr.DataBind();
+
+                    }
+                }
+            }
+        }
+            
+        
+        private DataTable GetData(string query)
+        {
+            SqlConnection con = new SqlConnection(s);
+            SqlCommand cmd = new SqlCommand(query);
+            SqlDataAdapter sda = new SqlDataAdapter();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            sda.SelectCommand = cmd;
+            sda.Fill(dt);
+            return dt;
+        }
         private void BindProductImage()
         {
             Int64 PID = Convert.ToInt64(Request.QueryString["PID"]);
