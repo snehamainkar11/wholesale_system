@@ -15,7 +15,7 @@
                     <li class="breadcrumb-item active"><a href="javascript: void(0);">Purchase</a></li>
                 </ol>
             </div>
-            <h4 class="page-title"> Purchased List </h4>
+            <h4 class="page-title"> Purchase Bill </h4>
         </div>
     </div>
 </div>
@@ -26,7 +26,7 @@
             <div class="card-body">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <a href="addpurchase.aspx" class="btn btn-dark mb-2" ><i class="mdi mdi-plus-circle mr-2" ></i> Add Order</a>
+                        <a href="addpurchase.aspx" class="btn btn-dark mb-2" ><i class="mdi mdi-plus-circle mr-2" ></i> New Invoice</a>
                     </div>
                    
                        
@@ -76,9 +76,9 @@
 
 
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Supplier Name">
+                            <asp:TemplateField HeaderText="Supplier">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblbrd2" runat="server" Text='<%# Bind("sname") %>'></asp:Label>
+                                    <asp:Label ID="lblbrd2" runat="server" Text='<%# Bind("company") %>'></asp:Label>
                                 </ItemTemplate>
 
 
@@ -130,7 +130,10 @@
                                         runat="server" NavigateUrl='<%# "~/admin/viewpurchase.aspx?pid=" + Eval("pid") %>'>
                                         <i class=" mdi mdi-eye"></i>
                                     </asp:HyperLink>
-                                 <asp:ImageButton ImageUrl="~/Images/edit.png" runat="server" CommandName="Edit" ToolTip="Edit" Width="20px" Height="20px" />
+                                      <asp:HyperLink ID="HyperLink1" 
+                                        runat="server" NavigateUrl='<%# "~/admin/editpurchase.aspx?pid=" + Eval("pid") %>' Height="30px">
+                                        <i class=" uil-edit-alt"></i>
+                                    </asp:HyperLink>
                                     <asp:ImageButton ImageUrl="~/Images/delete.png" runat="server" CommandName="Delete" ToolTip="Delete" Width="20px" Height="20px" />
                                
                                 </ItemTemplate>

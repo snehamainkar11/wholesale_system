@@ -194,7 +194,7 @@ namespace wholesale.admin
             double first = (tot * 5) / 100;
             double second = Convert.ToDouble(discounts.Text.Trim() != string.Empty ? discounts.Text.Trim() : "0");
             grand.Text = ((tot + first )-  second).ToString();
-            note.Text = (Convert.ToDouble(grand.Text) - Convert.ToDouble(Txtpaid.Text)).ToString();
+            //note.Text = (Convert.ToDouble(grand.Text) - Convert.ToDouble(Txtpaid.Text)).ToString();
         }
 
 
@@ -344,7 +344,9 @@ namespace wholesale.admin
             try
             {
                 string s = ConfigurationManager.ConnectionStrings["wholesale"].ConnectionString;
-              
+                double grands = Convert.ToDouble(grand.Text);
+                double paid = Convert.ToDouble(Txtpaid.Text);
+
                 using (SqlConnection con = new SqlConnection(s))
                 {
                     SqlCommand cmd = new SqlCommand("insert into sales values(@cid,@pdate,@duedate,@gst,@discount,@total,@paymode,@status,@orderno,@due,@grand,@paid)", con);
@@ -358,7 +360,7 @@ namespace wholesale.admin
                     cmd.Parameters.AddWithValue("@total", txttot.Text);
                     cmd.Parameters.AddWithValue("@paymode", ddlpay.SelectedItem.Text);
                     cmd.Parameters.AddWithValue("@status", ddlstatus.SelectedItem.Text);
-                    cmd.Parameters.AddWithValue("@due", note.Text);
+                    cmd.Parameters.AddWithValue("@due", Convert.ToDouble(grands - paid));
                     cmd.Parameters.AddWithValue("@grand", (grand.Text));
                     cmd.Parameters.AddWithValue("@paid", Txtpaid.Text);
 

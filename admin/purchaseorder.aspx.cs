@@ -52,12 +52,12 @@ namespace wholesale.admin
                     {
                         Int64 ss = Convert.ToInt64(sdr[0]);
 
-                        txtpo.Text = "PO-0000" + (ss + 1).ToString();
+                        txtpo.Text = "0000" + (ss + 1).ToString();
                     }
                 }
                 catch (Exception ex)
                 {
-                    txtpo.Text = "PO-00001";
+                    txtpo.Text = "00001";
                     //throw ex;
                     lblErrorMessage.Text = ex.Message;
                 }
@@ -94,6 +94,8 @@ namespace wholesale.admin
             dt = (DataTable)Session["data"];
             DataRow dr;
             dr = dt.NewRow();
+            Button1.Visible = true;
+
             if (dt.Rows.Count > 0)
             {
                 dr["sno"] = txtsrno.Text;
@@ -282,16 +284,15 @@ namespace wholesale.admin
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            dt = (DataTable)Session["data"];
-            dt.Clear();
             GridView1.DataSource = null;
             GridView1.DataBind();
-            for (int i = 0; GridView1.Columns.Count > i;)
-            {
-                GridView1.Columns.RemoveAt(i);
-            }
-            grand.Text = "0.0";
+            dt = (DataTable)Session["buyitems"];
+            dt.Clear();
+
             txtsrno.Text = "1";
+            Button1.Visible = false;
+          
+            grand.Text = "0.0";
         }
     }
 }

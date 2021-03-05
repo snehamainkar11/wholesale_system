@@ -1,6 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/adminmaster.Master" MaintainScrollPositionOnPostBack="true" CodeFile="addsales.aspx.cs" Inherits="wholesale.admin.addsales" %>
-
+ 
 <asp:Content ID="content1" ContentPlaceHolderID="admincontent" runat="server">  
+      <asp:ScriptManager EnablePartialRendering="true"
+ ID="ScriptManager1" runat="server"></asp:ScriptManager> 
+                       <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                       <ContentTemplate>
     <div class="content-page">
                 <div class="content">
                 <div class="content">
@@ -67,10 +71,7 @@
 
                
                   <div class="table-responsive">
-                      <asp:ScriptManager EnablePartialRendering="true"
- ID="ScriptManager1" runat="server"></asp:ScriptManager> 
-                       <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
-                       <ContentTemplate>
+                   
 
                      <table style="width: 100%"  class="table table-bordered table-centered table-hover mb-0">
                          <tr>
@@ -85,7 +86,7 @@
                         </td>
                              <td> 
                                 
-                                   <asp:DropDownList runat="server"  class="form-control" ID="ddlproduct" AutoPostBack="true" OnSelectedIndexChanged="ddlproduct_SelectedIndexChanged" AppendDataBoundItems="true" DataSourceID="SqlDataSource3" DataTextField="pname" DataValueField="PID">
+                                   <asp:DropDownList runat="server"  class="form-control" ID="ddlproduct"  AutoPostBack="true" OnSelectedIndexChanged="ddlproduct_SelectedIndexChanged" AppendDataBoundItems="true" DataSourceID="SqlDataSource3" DataTextField="pname" DataValueField="PID">
 
                                      <asp:ListItem Value="-1">Select</asp:ListItem>
 
@@ -98,26 +99,24 @@
 </td>
  <td> <asp:Textbox  ID="txtprc" runat="server" class="form-control" type="number"></asp:Textbox>
 </td> 
-                             
+                       
                              <td style="border:none">    
                                  
+
                                  <asp:Button runat="server"    Id="additem" class="btn btn-outline-primary" type="submit" text="Add Item" OnClick="additem_Click"/>
-                             </td>
+                           
+                           </td>
                          </tr>
                      </table>
-                       </ContentTemplate>
-                    <Triggers>
- <asp:AsyncPostBackTrigger ControlID="ddlproduct"  EventName="SelectedIndexChanged" />
- <asp:AsyncPostBackTrigger ControlID="additem"  EventName="Click" />
- </Triggers>
- </asp:UpdatePanel>
+                       
 
-                  </div>
+                  </div>  
+              
+                         
                  <table style="width: 100%"  class="table table-bordered table-centered table-hover mb-0">
                          <tr>
                              <td width="90%">
-                             
-                         
+             
                         
                 <asp:GridView ID="GridView1" runat="server"  ShowFooter="false" AutoGenerateColumns="False" class="table table-bordered table-centered table-hover mb-0">
 
@@ -144,8 +143,12 @@
 </asp:GridView>
                     
 </td><td>
+      
+                  
                     <asp:Button runat="server"  Id="Button1" class="btn btn-outline-danger" type="clear" text="Clear" OnClick="Button1_Click" Visible="false"/>
- </td></tr></table>
+ 
+                  
+                           </td></tr></table>
                 <br />
                 
                  <div class="col-sm-12">
@@ -157,7 +160,7 @@
                  
                                  <p> <b>Discount(in Rs)  :  </b>                                      <div class="input-group">
 
-                                     <asp:TextBox ID="discounts" OnTextChanged="discounts_TextChanged1" AutoPostBack="true" Value="0.0" class="form-control" runat="server"   ></asp:TextBox> <div class="input-group-prepend">
+                                     <asp:TextBox ID="discounts"  Value="0.0" class="form-control" runat="server"   ></asp:TextBox> <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroupPrepend">Rs</span>
             </div></div></p>
                                    <p> <b> GST:</b> <asp:Label ID="txtgst"    Text="5 %"   runat="server" ></asp:Label></p>
@@ -169,26 +172,19 @@
                  <div class="row mb-2">
                     <div class="col-sm-12">
                         <div class="form-row">
-                             <div class="form-group col-md-3">
+                             <div class="form-group col-md-4">
                                   
                                    
                         <label for="brand">Paid Amount</label>
                                      <div class="input-group">
-                     <asp:TextBox runat="server"  ID="Txtpaid"  class="form-control" OnTextChanged="Txtpaid_TextChanged" AutoPostBack="true" Value="0.0"></asp:TextBox>
+                     <asp:TextBox runat="server"  ID="Txtpaid"  class="form-control" Value="0.0"></asp:TextBox>
                     <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroupPrepend">Rs</span>
             </div>
                                       </div>
                                  </div>
-                             <div class="form-group col-md-3">
-                        <label for="brand">Due Amount</label>
-                     <div class="input-group">
-                     <asp:TextBox runat="server"  ID="note"  class="form-control" ReadOnly="true" Value="0.0"></asp:TextBox>
-                          <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupPrepend">Rs</span>
-            </div></div>
-                    </div>
-                       <div class="form-group col-md-3">
+                            
+                       <div class="form-group col-md-4">
                         <label for="brand">Payment Mode</label>
                       <asp:DropDownList runat="server" ID="ddlpay" class="form-control">
                                                     <asp:ListItem>NA</asp:ListItem>
@@ -198,7 +194,7 @@
 
                         </asp:DropDownList>
                     </div>
-                             <div class="form-group col-md-3">
+                             <div class="form-group col-md-4">
                         <label for="brand">Payment Status</label>
                       <asp:DropDownList runat="server" ID="ddlstatus" class="form-control">
                           <asp:ListItem>Pending</asp:ListItem>
@@ -225,25 +221,41 @@
 
     </div>
       </div>
+                           </ContentTemplate>
+                    <Triggers>
+ <asp:AsyncPostBackTrigger ControlID="Button1"  EventName="Click" />
+                         <asp:AsyncPostBackTrigger ControlID="additem"  EventName="Click" />
+
+ </Triggers>
+ </asp:UpdatePanel>   
+              
 </asp:Content>   
 
    
 <asp:Content ID="content2" ContentPlaceHolderID="footer" runat="server"> 
      
-         <script type="text/javascript">
- 
-        function sum() {
-            var tot = document.getElementById("<%=txttot.ClientID %>").value;
-            var discount = document.getElementById("<%=discounts.ClientID %>").value;
-            var final = document.getElementById("<%=grand.ClientID %>").value;
-        
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+   $(function () {
+
            
-            final =final- parseInt(discount);
-            if (!isNaN(final)) {
-                var amountToPay = document.getElementById("<%=grand.ClientID %>").value;
-                document.getElementById("<%=grand.ClientID %>").value = parseInt(amountToPay) + final;
-            }
-        }
+            $('#<%=discounts.ClientID %>').blur(function () {
+                 var txttot = parseFloat($('#<%=txttot.ClientID %>').val())
+
+                var disCount = parseFloat($('#<%=discounts.ClientID %>').val())
+
+                 var x= parseFloat(txttot + parseFloat((txttot*5)/100))
+                if (!isNaN(disCount)) {
+                  
+                    $('#<%=grand.ClientID %>').text(parseFloat(x) - parseFloat(disCount));
+                
+}
+
+            })
+
+
+        })
     </script>
+
     </asp:Content>
 

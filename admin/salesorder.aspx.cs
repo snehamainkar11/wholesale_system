@@ -40,7 +40,7 @@ namespace wholesale.admin
                 gvmaterial.DataBind();
                 gvmaterial.FooterRow.Cells[3].Text = "Total:";
                 gvmaterial.FooterRow.Cells[4].Text = dtbl.Compute("Sum(grand)","").ToString() + "  Rs";
-                gvmaterial.FooterRow.Cells[6].Text = dtbl.Compute("Sum(due)", "").ToString() + "  Rs";
+                gvmaterial.FooterRow.Cells[5].Text = dtbl.Compute("Sum(due)", "").ToString() + "  Rs";
 
                 lblSuccessMessage.Text = "";
             }

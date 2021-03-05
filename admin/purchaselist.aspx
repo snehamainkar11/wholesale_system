@@ -26,19 +26,12 @@
             <div class="card-body">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <a href="purchaseorder.aspx" class="btn btn-light mb-2" ><i class="mdi mdi-plus-circle mr-2" ></i> Add Order</a>
+                        <a href="purchaseorder.aspx" class="btn btn-dark mb-2" ><i class="mdi mdi-plus-circle mr-2" ></i> Add Order</a>
                     </div>
                    
-                         <div class="col-sm-6">
-                        <div class="text-sm-right">
-                           <asp:Button Id="excel" class="btn btn-dark mb-2" runat="server" Text="Export to Excel" OnClick="excel_Click"></asp:Button>
-
-                            <asp:Button Id="print" class="btn btn-secondary mb-2" runat="server" Text="Export to Word" OnClick="print_Click"></asp:Button>
-                        </div>
-                    </div><!-- end col-->
-                </div>
-                  <div class="row mb-2">
-                    <div class="col-sm-8">
+                       
+             
+                    <div class="col-sm-6">
                         <div class="text-sm-left">
                            <asp:Panel runat="server" ID="panel" Visible="false">
 <div class="alert alert-info alert-dismissible fade show" role="alert">
@@ -60,7 +53,7 @@
                 
 
                 <div class="table-responsive">
-                    <asp:GridView ID="gvpo" runat="server" ShowFooter="False" ShowHeaderWhenEmpty="true" DataKeyNames="po" 
+                    <asp:GridView ID="gvpo" runat="server" ShowFooter="False" ShowHeaderWhenEmpty="true" DataKeyNames="po"  OnRowDeleting="gvpo_RowDeleting"
                         AllowPaging="false"  AutoGenerateColumns="False" class="table table-bordered table-centered table-hover mb-0"  CellPadding="4" ForeColor="#333333" GridLines="None">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775"></AlternatingRowStyle>
                         <HeaderStyle Width="100px" />
@@ -82,9 +75,9 @@
 
 
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Supplier Name">
+                            <asp:TemplateField HeaderText="Supplier">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblbrd2" runat="server" Text='<%# Bind("sname") %>'></asp:Label>
+                                    <asp:Label ID="lblbrd2" runat="server" Text='<%# Bind("company") %>'></asp:Label>
                                 </ItemTemplate>
 
 
@@ -114,6 +107,12 @@
                                         runat="server" NavigateUrl='<%# "~/admin/printpurchase.aspx?po=" + Eval("po") %>'>
                                         <i class="mdi mdi-eye"></i>
                                     </asp:HyperLink>
+                                     <asp:HyperLink ID="HyperLink1" 
+                                        runat="server" NavigateUrl='<%# "~/admin/editorder.aspx?po=" + Eval("po") %>' Height="30px">
+                                        <i class=" uil-edit-alt"></i>
+                                    </asp:HyperLink>
+                                    <asp:ImageButton ImageUrl="~/Images/delete.png" runat="server" CommandName="Delete" ToolTip="Delete" Width="20px" Height="20px" />
+
                                 </ItemTemplate>
                               
 
@@ -150,8 +149,9 @@
                     </div>
                     </asp:Content>
 
+
 <asp:Content ID="content2" ContentPlaceHolderID="footer" runat="server">  
- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
@@ -167,12 +167,37 @@
 <!-- Bootstrap Data Tables JS -->
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js" type="text/javascript" charset="utf8"></script>
 
+
+
+<!-- Bootstrap Data Tables JS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.print.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/3.2.6/js/dataTables.fixedColumns.min.js"></script>
 <script>
     $(document).ready(function () {
         $('#<%= gvpo.ClientID%>').prepend($("<thead></thead>").append($("#<%= gvpo.ClientID%>").find("tr:first"))).DataTable({
             stateSave: true,
-            
-               
+           dom: 'Bfrtip',
+            'aoColumnDefs': [{ 'bSortable': false, 'aTargets': [0]}],
+            'iDisplayLength': 4,
+select:true,
+            buttons: [
+            { extend: 'print', text: ' Print', exportOptions: { columns: ':visible'},className: ' uil-print', },
+            { extend: 'copy', text: ' Copy', className: ' uil-copy-landscape', exportOptions: { modifier: { page: 'all'}} },
+            { extend: 'excel', text: ' Excel ', className: '  uil-file-times', filename: 'purchasedata', exportOptions: { modifier: { page: 'all'}} },
+            { extend: 'pdf', text: ' PDF', className: ' mdi mdi-file-outline', filename: 'purchasedata', orientation: 'Portrait', pageSize: 'LEGAL', exportOptions: { modifier: { page: 'all' }, columns: [0, 1, 2,3,4,5]} },
+            'colvis'
+            ],
+            columnDefs: [{ targets: -1, visible: false}]
         });
 
     });

@@ -28,7 +28,7 @@
             <div class="card-body">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <a href="addsales.aspx" class="btn btn-dark mb-2" ><i class="mdi mdi-plus-circle mr-2" ></i> Add Order</a>
+                        <a href="addsales.aspx" class="btn btn-dark mb-2" ><i class="mdi mdi-plus-circle mr-2" ></i> New Order</a>
                     </div>
        
                     <div class="col-sm-6">
@@ -54,7 +54,7 @@
 
                 <div class="table-responsive">
                     <asp:GridView ID="gvmaterial" runat="server" ShowFooter="True" ShowHeaderWhenEmpty="true" DataKeyNames="orderno"
-                        AllowPaging="false"  AutoGenerateColumns="False" class="table table-bordered table-centered table-hover mb-0" OnRowCancelingEdit="gvmaterial_RowCancelingEdit" OnRowEditing="gvmaterial_RowEditing" OnRowDeleting="gvmaterial_RowDeleting" OnRowUpdating="gvmaterial_RowUpdating" CellPadding="4" ForeColor="#333333" GridLines="None">
+                        AllowPaging="false"  PageIndex="8" AutoGenerateColumns="False" class="table table-bordered table-centered table-hover mb-0"  OnRowDeleting="gvmaterial_RowDeleting"  CellPadding="4" ForeColor="#333333" GridLines="None">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775"></AlternatingRowStyle>
                         <HeaderStyle Width="100px" />
                         <Columns>
@@ -84,12 +84,12 @@
                             </asp:TemplateField>
 
 
-                            <asp:TemplateField HeaderText="Date">
+                            <asp:TemplateField HeaderText="Due Date">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblclr" runat="server" Text='<%# Bind("pdate") %>' Width="100px"></asp:Label>
+                                    <asp:Label ID="lblclr" runat="server" Text='<%# Bind("duedate") %>' Width="100px"></asp:Label>
                                 </ItemTemplate>
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="pdate" TextMode="Date" CssClass="form-control" runat="server" Text='<%# Bind("pdate") %>' Width="100px"></asp:TextBox>
+                                    <asp:TextBox ID="pdate" TextMode="Date" CssClass="form-control" runat="server" Text='<%# Bind("duedate") %>' Width="100px"></asp:TextBox>
                                 </EditItemTemplate>
 
 
@@ -104,16 +104,7 @@
 
                                 </EditItemTemplate>
                             </asp:TemplateField>
-                               <asp:TemplateField HeaderText="Paid Amount">
-                                <ItemTemplate>
-                                    <asp:Label ID="lblsm3" runat="server" Text='<%# Bind("paid") %>'></asp:Label>
-                                </ItemTemplate>
-
-                                <EditItemTemplate>
-                                    <asp:TextBox ID="paid" CssClass="form-control" runat="server" Text='<%# Bind("paid") %>' Width="100px"></asp:TextBox>
-
-                                </EditItemTemplate>
-                            </asp:TemplateField>
+                             
                                <asp:TemplateField HeaderText="Due Amount">
                                 <ItemTemplate>
                                     <asp:Label ID="lbls2m" runat="server" Text='<%# Bind("due") %>'></asp:Label>
@@ -136,29 +127,21 @@
 
                             </asp:TemplateField>
 
-                            <asp:TemplateField HeaderText="Payment mode">
-                                <ItemTemplate>
-                                    <asp:Label ID="unitlbl" runat="server" Text='<%# Bind("paymode") %>'></asp:Label>
-                                </ItemTemplate>
-                                <EditItemTemplate>
-                                    <asp:TextBox ID="paymode" CssClass="form-control" runat="server" Text='<%# Bind("paymode") %>' Width="100px"></asp:TextBox>
-                                </EditItemTemplate>
-
-                            </asp:TemplateField>
+                          
 
 
-                            <asp:TemplateField HeaderText="Action" ItemStyle-Width="20">
+                            <asp:TemplateField HeaderText="Action" ItemStyle-Width="40">
                                 <ItemTemplate>
                                       <asp:HyperLink ID="vwdet" 
                                         runat="server" NavigateUrl='<%# "~/admin/vieworder.aspx?orderno=" + Eval("orderno") %>'>
                                         <i class="mdi mdi-eye"></i>
                                     </asp:HyperLink>
-                                    <asp:ImageButton ImageUrl="~/Images/edit.png" runat="server" CommandName="Edit" ToolTip="Edit" Width="20px" Height="20px" />
-                                    <asp:ImageButton ImageUrl="~/Images/delete.png" runat="server" CommandName="Delete" ToolTip="Delete" Width="20px" Height="20px" />
                                 <asp:HyperLink ID="HyperLink1" 
-                                        runat="server" NavigateUrl='<%# "~/admin/editsales.aspx?orderno=" + Eval("orderno") %>'>
-                                        <i class="mdi mdi-eye"></i>
+                                        runat="server" NavigateUrl='<%# "~/admin/editsales.aspx?orderno=" + Eval("orderno") %>' Height="30px">
+                                        <i class=" uil-edit-alt"></i>
                                     </asp:HyperLink>
+                                                                        <asp:ImageButton ImageUrl="~/Images/delete.png" runat="server" CommandName="Delete" ToolTip="Delete" Width="20px" Height="20px" />
+
                                 </ItemTemplate>
                                 <EditItemTemplate>
                                     <asp:ImageButton ImageUrl="~/Images/save.png" runat="server" CommandName="Update" ToolTip="Update" Width="20px" Height="20px" />
@@ -236,13 +219,13 @@
             stateSave: true,
            dom: 'Bfrtip',
             'aoColumnDefs': [{ 'bSortable': false, 'aTargets': [0]}],
-            'iDisplayLength': 4,
+            'iDisplayLength': 6,
 select:true,
             buttons: [
             { extend: 'print', text: 'Print', exportOptions: { columns: ':visible'},className: ' uil-print', },
             { extend: 'copy', text: 'Copy to Clipboard', className: ' uil-copy-landscape', exportOptions: { modifier: { page: 'all'}} },
             { extend: 'excel', text: 'Excel ', className: '  uil-file-times', filename: 'sales', exportOptions: { modifier: { page: 'all'}} },
-            { extend: 'pdf', text: 'PDF', className: ' mdi mdi-file-outline', filename: 'sales', orientation: 'Portrait', pageSize: 'LEGAL', exportOptions: { modifier: { page: 'all' }, columns: [0, 1, 2,3,4,5,6,7,8]} },
+            { extend: 'pdf', text: 'PDF', className: ' mdi mdi-file-outline', filename: 'sales', orientation: 'Portrait', pageSize: 'LEGAL', exportOptions: { modifier: { page: 'all' }, columns: [0, 1, 2,3,4,5,6]} },
             'colvis'
             ],
             columnDefs: [{ targets: -1, visible: false}]

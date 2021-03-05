@@ -28,6 +28,8 @@ namespace wholesale.admin
                 dt.Columns.Add("sno");
                 dt.Columns.Add("material");
                 dt.Columns.Add("quantity");
+                dt.Columns.Add("price");
+                dt.Columns.Add("total");
                 Session["data"] = dt;
                 txtsrno.Text = "1";
 
@@ -57,6 +59,8 @@ namespace wholesale.admin
         }
         protected void additem_Click(object sender, EventArgs e)
         {
+            Button1.Visible = true;
+
             dt = (DataTable)Session["data"];
             DataRow dr;
             dr = dt.NewRow();
@@ -65,13 +69,18 @@ namespace wholesale.admin
                 dr["sno"] = txtsrno.Text;
                 dr["material"] = ddlmaterial1.SelectedItem.Text;
                 dr["quantity"] = txtqty.Text;
+                dr["price"] = txtprc.Text;
+                dr["total"] = txttot.Text;
+
             }
             else
             {
                 dr["sno"] = txtsrno.Text;
                 dr["material"] = ddlmaterial1.SelectedItem.Text;
                 dr["quantity"] = txtqty.Text;
-                           
+                dr["price"] = txtprc.Text;
+                dr["total"] = txttot.Text;
+
             }
             dt.Rows.Add(dr);
             GridView1.DataSource = dt;
@@ -80,12 +89,15 @@ namespace wholesale.admin
             txtsrno.Text = (dt.Rows.Count + 1).ToString();
             ddlmaterial1.ClearSelection();
             txtqty.Text = "";
+            txttot.Text = "";
+            txtprc.Text = "";
+
 
         }
 
         protected void save_Click(object sender, EventArgs e)
         {
-            Double paid = Convert.ToDouble(txtinv.Text) - Convert.ToDouble(txtrem.Text);
+            Double rem = Convert.ToDouble(txtinv.Text) - Convert.ToDouble(txtrem.Text);
             try
             {
                 string s = ConfigurationManager.ConnectionStrings["wholesale"].ConnectionString;
@@ -97,8 +109,8 @@ namespace wholesale.admin
                     cmd.Parameters.AddWithValue("@inv", txtnum.Text);
                     cmd.Parameters.AddWithValue("@pid", txtnum.Text);
                     cmd.Parameters.AddWithValue("@amt", txtinv.Text);
-                    cmd.Parameters.AddWithValue("@rem", txtrem.Text);
-                    cmd.Parameters.AddWithValue("@paid", paid);
+                    cmd.Parameters.AddWithValue("@paid", txtrem.Text);
+                    cmd.Parameters.AddWithValue("@rem", rem);
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -116,11 +128,14 @@ namespace wholesale.admin
                     {
 
 
-                        SqlCommand cmd = new SqlCommand("insert into PurDetails(p_id,sno,pro_id,quantity) values(@po,@sno,@mat,@qty)", con);
+                        SqlCommand cmd = new SqlCommand("insert into PurDetails(p_id,sno,pro_id,quantity,price,total) values(@po,@sno,@mat,@qty,@price,@total)", con);
                         cmd.Parameters.AddWithValue("@po",txtnum.Text);
                         cmd.Parameters.AddWithValue("@sno", dt.Rows[i]["sno"]);
                         cmd.Parameters.AddWithValue("@mat", dt.Rows[i]["material"]);
                         cmd.Parameters.AddWithValue("@qty", dt.Rows[i]["quantity"]);
+                        cmd.Parameters.AddWithValue("@price", dt.Rows[i]["price"]);
+                        cmd.Parameters.AddWithValue("@total", dt.Rows[i]["total"]);
+
                         con.Open();
                         cmd.ExecuteNonQuery();
                         //con.Close();
@@ -148,6 +163,16 @@ namespace wholesale.admin
 
 
 
+        }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            GridView1.DataSource = null;
+            GridView1.DataBind();
+            dt = (DataTable)Session["buyitems"];
+            dt.Clear();
+
+            txtsrno.Text = "1";
+            Button1.Visible = false;
         }
     }
 }

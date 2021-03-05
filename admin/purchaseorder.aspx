@@ -67,7 +67,7 @@
                  
                   <div class="table-responsive">
                      <table style="width: 100%"  class="table table-bordered table-centered table-hover mb-0">
-                         <tr>
+                         <tr style="background-color:lavender;color:black">
                              <td>Sr.No</td>
                              <td>Material</td>
                              <td>Quantity</td>
@@ -92,9 +92,12 @@
                              <td style="border:none">
                                  <asp:Button runat="server"  Id="additem" class="btn btn-outline-primary" type="submit" text="Add Item" OnClick="additem_Click"/>
                              </td>
+                            
                          </tr>
                      </table>
                   </div>
+                                      <table  style="width: 100%" ><tr>
+<td>
                 <asp:GridView ID="GridView1" runat="server"  ShowFooter="false" AutoGenerateColumns="false" class="table table-bordered table-centered table-hover mb-0">
 
 
@@ -116,6 +119,12 @@
 </Columns>
                     <FooterStyle ForeColor="#000066" />
 </asp:GridView>
+
+                         </td>       &nbsp;       <td style="border:none">
+                           <asp:Button runat="server"  Id="Button1" class="btn btn-outline-danger" type="clear" Visible="false" text="Clear" OnClick="Button1_Click" />
+
+                             </td>
+                                </tr>      </table>
                 <asp:Label runat="server" ID="Label3" Font-Bold="True" ForeColor="black" ></asp:Label>
 
                                       <div class="col-sm-11">
@@ -128,13 +137,10 @@
                   <div class="row mb-2">
 
                 <div class="form-group col-md-3">
-            <asp:Button runat="server"  Id="save" class="btn btn-primary" type="submit" text="Generate Order" Width="150px" OnClick="save_Click"/>
+            <asp:Button runat="server"  Id="save" class="btn btn-primary" type="submit" text="Generate Order"  Width="150px" OnClick="save_Click"/>
                         
 </div>
-                     <div class="form-group col-md-3">
-            <asp:Button runat="server"  Id="Button1" class="btn btn-danger" type="clear" Width="120px" text="Cancel" OnClick="Button1_Click" />
-                        
-              </div> 
+                    
 </div>
 
             </div>

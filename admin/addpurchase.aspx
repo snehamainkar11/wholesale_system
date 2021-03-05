@@ -15,7 +15,7 @@
                     <li class="breadcrumb-item active">Purchase</li>
                         </ol>
             </div>
-            <h4 class="page-title">Add Received Order</h4>
+            <h4 class="page-title">New Purchase Bill</h4>
         </div>
           
         </div>
@@ -67,7 +67,7 @@
            
                      
                   <div class="form-group col-md-3">
-                        <label for="brand">Due Amount </label>
+                        <label for="brand">Paid Amount </label>
                         <asp:Textbox  ID="txtrem" runat="server" class="form-control" value="0.0" type="number"  placeholder=" Amount Pending in RS">
                             
                             </asp:Textbox>
@@ -76,17 +76,19 @@
 </div>
                     </div>
                     <div class="table-responsive">
-                     <table style="width: 80%"  class="table table-bordered table-centered table-hover mb-0">
+                     <table style="width: 100%"  class="table table-bordered table-centered table-hover mb-0">
                          <tr>
-                             <td style="width: 20%">Sr.No</td>
-                             <td  style="width: 40%">Material</td>
-                             <td>Quantity</td>
-                                 
+                             <td>Sr.No</td>
+                             <td  style="width: 20%">Material</td>
+                             <td  style="width: 20%">Quantity</td>
+                             <td  style="width: 20%">Price</td>
+                             <td  style="width: 20%">Total</td>
+
                          </tr>
                          <tr>
-                             <td style="width: 20%"> <asp:Textbox  ID="txtsrno" runat="server" class="form-control" type="number" Width="60%"></asp:Textbox>
+                             <td> <asp:Textbox  ID="txtsrno" runat="server"  type="number" Width="50" ></asp:Textbox>
                         </td>
-                             <td  style="width: 40%"> <asp:DropDownList runat="server" class="form-control" ID="ddlmaterial1"  AppendDataBoundItems="true" DataSourceID="SqlDataSource1" DataTextField="mname" DataValueField="mid">
+                             <td> <asp:DropDownList Width="200" runat="server"  ID="ddlmaterial1"  AppendDataBoundItems="true" DataSourceID="SqlDataSource1" DataTextField="mname" DataValueField="mid">
 
                     <asp:ListItem Value="-1">Select</asp:ListItem>
 
@@ -95,8 +97,12 @@
                 <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT [mname] ,[mid]  FROM [Material]"></asp:SqlDataSource>
           
 </td>
-                              <td> <asp:Textbox  ID="txtqty" runat="server" class="form-control" type="number"></asp:Textbox>
+                              <td> <asp:Textbox  ID="txtqty" runat="server"  type="number" Width="100"></asp:Textbox>
 </td>
+                              <td> <asp:Textbox  ID="txtprc" runat="server" type="number" CssClass="CssPrice" Width="100"></asp:Textbox>
+</td> 
+                              <td> <asp:Textbox  ID="txttot" runat="server"  type="number" Width="100"></asp:Textbox>
+</td> 
                               <td style="border:none">    
                                   <asp:Button runat="server"  Id="additem" class="btn btn-outline-primary" type="submit" text="Add Item" OnClick="additem_Click" />
 </td>
@@ -106,6 +112,11 @@
                           
                    
                   </div>
+                          <table style="width: 100%"  class="table table-bordered table-centered table-hover mb-0">
+                         <tr>
+                             <td width="90%">
+                             
+                    
                     <asp:GridView ID="GridView1" runat="server"  ShowFooter="false" AutoGenerateColumns="False" class="table table-bordered table-centered table-hover mb-0">
 
 
@@ -118,15 +129,44 @@
 </asp:BoundField>
 <asp:BoundField DataField="quantity" HeaderText="Quantity"><HeaderStyle HorizontalAlign="Center"></HeaderStyle>
 </asp:BoundField>
+<asp:BoundField DataField="price" HeaderText="Price"><HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+</asp:BoundField>
 
+ <asp:BoundField DataField="total" HeaderText="Total"><HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+</asp:BoundField>
 </Columns>
                     <FooterStyle ForeColor="#000066" />
 </asp:GridView>
-                  
-                  <div class="form-group col-md-3 mt-3">
-                                          <asp:Button runat="server" class="btn btn-outline-primary" type="submit" text="Save" ID="save" OnClick="save_Click"/>
+                           
+</td><td>
+                    <asp:Button runat="server"  Id="Button1" class="btn btn-outline-danger" type="clear" text="Clear" OnClick="Button1_Click" Visible="false"/>
+ </td></tr></table>
+                  <div class="form-group col-md-6 mt-3">
+                                          <asp:Button runat="server" class="btn btn-primary" type="submit" text="Save" ID="save" OnClick="save_Click"/>
                               </div>
             </div></div></div></div></div></div>
       </div>
 </asp:Content>            
+<asp:Content ID="content2" ContentPlaceHolderID="footer" runat="server"> 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+   $(function () {
+        $(".CssPrice").on('change keyup paste', function () {
+            var textBox = this;
+            var Price = $(textBox).val();
+            var tableRow = $(textBox).parent().parent().children();
 
+            if (Price != "") {
+                var quantity = $(tableRow[2]).find("input[type='number']").val();
+
+                var itemTotal = parseInt(Price) * parseInt(quantity);
+
+                $(tableRow[4]).find("input[type='number']").val(itemTotal);
+            }
+            else
+                $(tableRow[4]).find("input[type='number']").val("");
+        });
+    })
+    </script>
+
+</asp:Content>

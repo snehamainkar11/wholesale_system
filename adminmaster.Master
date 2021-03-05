@@ -308,15 +308,17 @@
       
   
     </ul>
+                 <div class="clearfix"></div>
+                <!-- Sidebar -left -->
+            </div>
                 
 
                 <!-- End Sidebar -->
-                <div class="clearfix"></div>
-                <!-- Sidebar -left -->
-            </div>
+               
+             
               <asp:ContentPlaceHolder ID="admincontent" runat="server">
             </asp:ContentPlaceHolder>
-
+                      
     <!-- Footer Start -->
                 <footer class="footer">
     <div class="container-fluid">

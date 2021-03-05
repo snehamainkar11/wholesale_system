@@ -119,7 +119,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Products</th>
-                                <th>In Hand</th>
+                                <th>Stock</th>
                                 <th>Reorder level</th>
 
                             </tr>
@@ -132,7 +132,7 @@
                     <tr>
                                 <td><%# Eval("pcode") %></td>
                                 <td><%# Eval("pname") %></td>
-                                <td><%# Eval("quantity") %> Rs</td>
+                                <td><%# Eval("quantity") %></td>
                                 <td><%# Eval("minlevel") %></td>
                                  </tr>
                             </Itemtemplate>

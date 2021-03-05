@@ -76,7 +76,7 @@
                            
                        <h5>Contact: <%# Eval("contact") %></h5>
                                             <h5> Invoice No: <%# Eval("orderno") %></h5>
-                        Date: <%# Eval("pdate") %>
+                        Date: <%# Eval("duedate") %>
                          </div></div>
                     <!-- end col-->
 
@@ -116,7 +116,7 @@
 
                                     <SortedDescendingHeaderStyle BackColor="#383838"></SortedDescendingHeaderStyle>
                                 </asp:GridView>
-                                <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT SaleDet.sno, SaleDet.price, SaleDet.quantity,SaleDet.total, product.pname FROM product INNER JOIN SaleDet ON product.pname = SaleDet.productid WHERE (SaleDet.orderno = @orderno)">
+                                <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT SaleDet.sno, SaleDet.price, SaleDet.quantity,SaleDet.total, product.pname FROM product INNER JOIN SaleDet ON product.pname = SaleDet.productid WHERE (SaleDet.orderno = @orderno) order by sno asc">
                                     <SelectParameters>
                                         <asp:QueryStringParameter QueryStringField="orderno" Name="orderno"></asp:QueryStringParameter>
                                     </SelectParameters>

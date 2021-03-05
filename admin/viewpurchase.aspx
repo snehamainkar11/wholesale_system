@@ -17,7 +17,7 @@
                     <li class="breadcrumb-item active">View Order</li>
                         </ol>
             </div>
-            <h4 class="page-title">Received Order</h4>
+            <h4 class="page-title">View Purchase Invoice</h4>
         </div>
          
         </div>
@@ -34,7 +34,7 @@
                              <div class="clearfix">
                    
                     <div class="float-left">
-                        <h3>View Received Order Details</h3>
+                        <h3>Purchase Invoice</h3>
                     </div>
  </div>
                       <hr /><asp:Repeater runat="server" ID="rptr">
@@ -75,7 +75,7 @@
   </div>
       
      <div class="row">
-     <div class="col-sm-6 col-lg-8 ">
+     <div class="col-sm-6 col-lg-10 ">
 
 
 
@@ -94,7 +94,13 @@
                                         </asp:BoundField>
                                         <asp:BoundField DataField="pro_id" HeaderText="Items" SortExpression="pro_id"></asp:BoundField>
                                         <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="quantity">
-                                                                                        <ItemStyle Width="20%" />
+                                                                                        <ItemStyle Width="15%" />
+                                        </asp:BoundField>
+                                          <asp:BoundField DataField="price" HeaderText="Price" SortExpression="price">
+                                                                                        <ItemStyle Width="15%" />
+                                        </asp:BoundField>
+                                          <asp:BoundField DataField="total" HeaderText="Total" SortExpression="total">
+                                                                                        <ItemStyle Width="15%" />
                                         </asp:BoundField>
                                     </Columns>
                                     <FooterStyle BackColor="#CCCC99" ForeColor="Black"></FooterStyle>
@@ -113,7 +119,7 @@
 
                                     <SortedDescendingHeaderStyle BackColor="#242121"></SortedDescendingHeaderStyle>
                                 </asp:GridView>
-                                <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT Supplier.supid, Purchase.supid AS Expr1, Purchase.pid, PurDetails.p_id, Supplier.company, Supplier.sname, Supplier.contact, Supplier.address, Supplier.city, Supplier.state, Supplier.zip, PurDetails.sno, PurDetails.pro_id, PurDetails.quantity, Purchase.invno, Purchase.invamt, Purchase.invpaid, Purchase.invrem, Purchase.pdate FROM Purchase INNER JOIN PurDetails ON Purchase.pid = PurDetails.p_id INNER JOIN Supplier ON Purchase.supid = Supplier.supid WHERE (purchase.pid = @pid)">
+                                <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT Supplier.supid, Purchase.supid AS Expr1, Purchase.pid, PurDetails.p_id, Supplier.company, Supplier.sname, Supplier.contact, Supplier.address, Supplier.city, Supplier.state, Supplier.zip, PurDetails.sno, PurDetails.pro_id, PurDetails.quantity,PurDetails.price,PurDetails.total, Purchase.invno, Purchase.invamt, Purchase.invpaid, Purchase.invrem, Purchase.pdate FROM Purchase INNER JOIN PurDetails ON Purchase.pid = PurDetails.p_id INNER JOIN Supplier ON Purchase.supid = Supplier.supid WHERE (purchase.pid = @pid)">
                                  <SelectParameters>
                                         <asp:QueryStringParameter QueryStringField="pid" Name="pid"></asp:QueryStringParameter>
                                     </SelectParameters>
@@ -130,8 +136,8 @@
                     <table class="table mb-0">
                         <thead class="thead-light">
                             <tr>
-                                <th>Description</th>
-                                <th>Amount</th>
+                                <th style="color:black">Description</th>
+                                <th style="color:black">Amount</th>
                             </tr>
                         </thead>
                         <tbody>
