@@ -106,8 +106,74 @@
     </div> <!-- end col-->
   
   </div>
+
+
+    
+<div class="row mb-1">
+     <div class="col-xl-3 col-lg-6">
+        <div class="card overflow-hidden" style="background-color:white;color:midnightblue">
+            <div class="card-body">
+                <div class="float-right">
+
+                    <asp:HyperLink type="button" class="btn btn-sm btn-light" runat="server" NavigateUrl="~/admin/ReceivedOrder.aspx">View</asp:HyperLink>
+                </div>
+                <h5 class="text-uppercase mt-0" title="Online Orders">Purchase Orders</h5>
+                <div id="spark1" class="apex-charts mb-3" data-colors="#734CEA">
+                                  <h2><i class=" uil-shopping-trolley"></i>   <asp:Label ID="porder" runat="server" ToolTip="No of Orders"></asp:Label></h2>
+                    <h5 style="color:darkblue">Orders</h5>
+                </div>
+
+                <div class="row text-center">
+                    
+                    <div class="col-6">
+                        <h5 class=" d-block">Pending Orders</h5>
+                        <p class="font-18 mb-0 text-danger"><asp:Label ID="pending" runat="server" ></asp:Label></p>
+                    </div>
+                    <div class="col-6">
+                        <h5 class=" d-block">Due Amount</h5>
+                        <p class="font-18 mb-0 text-danger"><asp:Label ID="due" runat="server"></asp:Label></p>
+                    </div>
+                       
+                </div>
+            </div>
+        </div>
+    </div> <!-- end col-->
+    <div class="col-xl-3 col-lg-6">
+        <div class="card overflow-hidden" style="background-color:white;color:midnightblue">
+            <div class="card-body">
+                <div class="float-right">
+
+                    <asp:HyperLink type="button" class="btn btn-sm btn-light" runat="server" NavigateUrl="~/admin/onlineorder.aspx">View</asp:HyperLink>
+                </div>
+                <h5 class="text-uppercase mt-0" title="Online Orders">Online Orders</h5>
+                <div id="spark1" class="apex-charts mb-3" data-colors="#734CEA">
+                                  <h2><i class="  uil-cart"></i> <asp:Label ID="orders" runat="server" ToolTip="No of Orders"></asp:Label></h2>
+                     <h5 style="color:darkblue">Revenue INR</h5>
+                    <h4 style="color:darkblue"><asp:Label ID="onliners" runat="server" ToolTip="Total Rs"></asp:Label></h4>
+
+                </div>
+
+                <div class="row text-center">
+                    
+                    <div class="col-4">
+                        <h5 class=" d-block">Pending</h5>
+                        <p class="font-18 mb-0 text-danger"><asp:Label ID="placed" runat="server" ></asp:Label></p>
+                    </div>
+                    <div class="col-4">
+                        <h5 class=" d-block">Shipped</h5>
+                        <p class="font-18 mb-0 text-danger"><asp:Label ID="shipped" runat="server"></asp:Label></p>
+                    </div>
+                       <div class="col-4">
+                        <h5 class=" d-block">Delivered</h5>
+                        <p class="font-18 mb-0 text-danger"><asp:Label ID="delivered" runat="server"></asp:Label></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end col-->
+    </div>
 <!-- end row-->
-    <div class="row mb-2">
+    <div class="row mb-1">
         <div class="col-xl-4 col-lg-6">
            <div class="card">
             <div class="card-body">
@@ -182,6 +248,6 @@
                 </div> <!-- end table responsive-->
             </div> <!-- end col-->
         </div> <!-- end row-->
-    </div>
-        </div></div>
+            </div></div>
+        </div>
         </asp:Content>

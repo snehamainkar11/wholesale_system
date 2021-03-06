@@ -182,7 +182,7 @@
     </div> <!-- end col -->
 </div>
 
-    </div>
+   
 </div>
 </asp:Content>
 <asp:Content ID="content2" ContentPlaceHolderID="footer" runat="server">  

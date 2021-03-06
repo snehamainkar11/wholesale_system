@@ -89,16 +89,23 @@
                                     </asp:TemplateField>
         <asp:TemplateField HeaderText="Code">
             <ItemTemplate>
+
                 <asp:Label ID="lblid" runat="server" Text='<%# Bind("pcode")  %>'  Width="100px"></asp:Label>
-            </ItemTemplate>           
+            </ItemTemplate>   
+            
+
+
             <EditItemTemplate>
                 <asp:TextBox ID="txtpcode" runat="server" CssClass="form-control" Text='<%# Bind("Pcode") %>' Width="100px"></asp:TextBox>
             </EditItemTemplate>
         </asp:TemplateField>
         <asp:TemplateField  HeaderText="Image" >
             <ItemTemplate>
-                <asp:Label ID="lblpimgname" runat="server" ></asp:Label>
+
+               
              <img  Height="60px" width="60px" src="/Products/<%# Eval("ProID") %>/<%# Eval("Name") %><%# Eval("Extension") %>" alt="<%# Eval("Name") %>"/>
+      
+              <asp:Label ID="lblpimgname" runat="server" ></asp:Label>
                  
                 
             </ItemTemplate>        
@@ -106,7 +113,7 @@
              <img  Height="60px" width="60px" src="/Products/<%# Eval("ProID") %>/<%# Eval("Name") %><%# Eval("Extension") %>" alt="<%# Eval("Name") %>"/>
                        <asp:FileUpload ID="fuimg01" runat="server" /> 
             
-
+           <asp:HiddenField ID="idp" runat="server" Value='<%# Eval("p_imgId") %>' />
 
 
        </EditItemTemplate>

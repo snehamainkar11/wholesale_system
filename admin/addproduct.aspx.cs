@@ -161,10 +161,14 @@ namespace wholesale
                         string Extention = Path.GetExtension(fuImg01.PostedFile.FileName);
                         fuImg01.SaveAs(SavePath + "\\" + prodname.Text.ToString().Trim() + "01" + Extention);
 
-                        
+
                         SqlCommand cmd3 = new SqlCommand("insert into prodImage values('" + PID + "','" + prodname.Text.ToString().Trim() + "01" + "','" + Extention + "')", con);
                         cmd3.ExecuteNonQuery();
+
+
                     }
+
+                    /*
                     if (fuImg02.HasFile)
                     {
                         string SavePath = Server.MapPath("~/Products/") + PID;
@@ -209,7 +213,7 @@ namespace wholesale
 
                         SqlCommand cmd3 = new SqlCommand("insert into prodImage values('" + PID + "','" + prodname.Text.ToString().Trim() + "04" + "','" + Extention + "')", con);
                         cmd3.ExecuteNonQuery();
-                    }
+                    }*/
                     Response.Redirect("~/admin/product.aspx");
                 }
                 catch (Exception ex)

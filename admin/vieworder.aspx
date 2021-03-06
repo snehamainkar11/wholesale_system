@@ -81,47 +81,32 @@
                     <!-- end col-->
 
                     </div>
-                                  </div>
+                                  </div><hr />
                           <div class="row">
-                    <div class="col-10">
+                    <div class="col-10 mt-1">
                         <div class="table-responsive">
-                            <table class="table mt-4">
-                                <asp:GridView runat="server" ID="gv" class="table table-bordered table-centered table-hover mb-0"
-                                    AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+                            <asp:GridView runat="server" ID="gv" class="table table-bordered table-centered table-hover mb-0"
+                                AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
+                                <AlternatingRowStyle BackColor="White" ForeColor="#284775"></AlternatingRowStyle>
+                                <Columns>
+                                    <asp:BoundField DataField="sno" HeaderText="Sno" SortExpression="Sno"></asp:BoundField>
+                                    <asp:BoundField DataField="pname" HeaderText="Jeans" SortExpression="pname"></asp:BoundField>
 
-                                    <AlternatingRowStyle BackColor="#CCCCCC"></AlternatingRowStyle>
-                                    <Columns>
-                                        <asp:BoundField DataField="sno" HeaderText="Sno" SortExpression="Sno"></asp:BoundField>
-                                        <asp:BoundField DataField="pname" HeaderText="Jeans" SortExpression="pname"></asp:BoundField>
+                                    <asp:BoundField DataField="price" HeaderText="Price" SortExpression="Price"></asp:BoundField>
+                                    <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="Quantity"></asp:BoundField>
 
-                                        <asp:BoundField DataField="price" HeaderText="Price" SortExpression="Price"></asp:BoundField>
-                                        <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="Quantity"></asp:BoundField>
+                                    <asp:BoundField DataField="total" HeaderText="Total" SortExpression="Total"></asp:BoundField>
 
-                                        <asp:BoundField DataField="total" HeaderText="Total" SortExpression="Total"></asp:BoundField>
+                                </Columns>
 
-                                    </Columns>
-                                    <FooterStyle BackColor="#CCCCCC"></FooterStyle>
+                                <HeaderStyle BackColor="Lavender" Font-Bold="True" ForeColor="Black"></HeaderStyle>
 
-                                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White"></HeaderStyle>
-
-                                    <PagerStyle HorizontalAlign="Center" BackColor="#999999" ForeColor="Black"></PagerStyle>
-
-                                    <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
-
-                                    <SortedAscendingCellStyle BackColor="#F1F1F1"></SortedAscendingCellStyle>
-
-                                    <SortedAscendingHeaderStyle BackColor="#808080"></SortedAscendingHeaderStyle>
-
-                                    <SortedDescendingCellStyle BackColor="#CAC9C9"></SortedDescendingCellStyle>
-
-                                    <SortedDescendingHeaderStyle BackColor="#383838"></SortedDescendingHeaderStyle>
                                 </asp:GridView>
                                 <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT SaleDet.sno, SaleDet.price, SaleDet.quantity,SaleDet.total, product.pname FROM product INNER JOIN SaleDet ON product.pname = SaleDet.productid WHERE (SaleDet.orderno = @orderno) order by sno asc">
                                     <SelectParameters>
                                         <asp:QueryStringParameter QueryStringField="orderno" Name="orderno"></asp:QueryStringParameter>
                                     </SelectParameters>
                                 </asp:SqlDataSource>
-                            </table>
                         </div>    </div>        
             <div class="col-sm-10">
                         <div class="float-right mt-4 mt-sm-2">
@@ -131,7 +116,7 @@
                            <tr>  <td>  <p><b>Discount :</b> </td><td>- <span class="float-center"><%# Eval("discount") %> Rs</span></p></td></tr>
 
                            <tr>  <td>  <h4> Grand Total :  </td><td><%# Eval("grand") %> Rs</h4></td></tr>
-                           <tr>  <td>  <p class="font-18"><strong>Payment Status: </strong> </td><td> <span class="badge badge-success float-centre"><asp:Label Text='<%# Eval("status") %>' runat="server" ID="statusLabel"  />  </span></p></td></tr>
+                           <tr>  <td >  <p  class=" font-18"><strong>Payment Status: </strong> </td><td> <span class="badge badge-success float-centre"><asp:Label Text='<%# Eval("status") %>' runat="server" ID="statusLabel" class="font-18" />  </span></p></td></tr>
                  </table> 
                         </div>
                         

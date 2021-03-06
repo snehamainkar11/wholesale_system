@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
+using System.Drawing;
 
 namespace wholesale
 {
@@ -22,6 +23,8 @@ namespace wholesale
             getexp();
             getdata();
             getdata1();
+            getpurchase();
+            getorders();
         }
         public void getprod()
         {
@@ -84,6 +87,140 @@ namespace wholesale
                     con.Open();
                     int i = Convert.ToInt32(cmd.ExecuteScalar());
                     label2.Text = i.ToString("c");
+
+                }
+                catch (Exception ex)
+                {
+                    string x = ex.Message;
+                    Response.Write(x);
+                }
+            }
+        }
+        public void getpurchase()
+        {
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                SqlCommand cmd = new SqlCommand("select count(pid) from Purchase WHERE pdate >= DATEADD(DAY, -30, GETDATE())", con);
+                try
+                {
+                    con.Open();
+                    int i = Convert.ToInt32(cmd.ExecuteScalar());
+                    porder.Text = i.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    string x = ex.Message;
+                    Response.Write(x);
+                }
+            }
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT sum(invrem) FROM Purchase ", con);
+                try
+                {
+                    con.Open();
+                    int i = Convert.ToInt32(cmd.ExecuteScalar());
+                    due.Text = i.ToString("c");
+
+                }
+                catch (Exception ex)
+                {
+                    string x = ex.Message;
+                    Response.Write(x);
+                }
+            }
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT count(pid) FROM Purchase where invrem > 0 ", con);
+                try
+                {
+                    con.Open();
+                    int i = Convert.ToInt32(cmd.ExecuteScalar());
+                    pending.Text = i.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    string x = ex.Message;
+                    Response.Write(x);
+                }
+            }
+        }
+        public void getorders()
+        {
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                SqlCommand cmd = new SqlCommand("select count(Id) from custorder WHERE odate >= DATEADD(DAY, -30, GETDATE())", con);
+                try
+                {
+                    con.Open();
+                    int i = Convert.ToInt32(cmd.ExecuteScalar());
+                    orders.Text = i.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    string x = ex.Message;
+                    Response.Write(x);
+                }
+            }
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT sum(grandtotal) FROM custorder  WHERE odate >= DATEADD(DAY, -30, GETDATE())", con);
+                try
+                {
+                    con.Open();
+                    int i = Convert.ToInt32(cmd.ExecuteScalar());
+                    onliners.Text = i.ToString("c");
+
+                }
+                catch (Exception ex)
+                {
+                    string x = ex.Message;
+                    Response.Write(x);
+                }
+            }
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT count(Id) FROM custorder where shipstatus='Shipped' ", con);
+                try
+                {
+                    con.Open();
+                    int i = Convert.ToInt32(cmd.ExecuteScalar());
+                    shipped.Text = i.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    string x = ex.Message;
+                    Response.Write(x);
+                }
+            }
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT count(Id) FROM custorder where shipstatus='Delivered' ", con);
+                try
+                {
+                    con.Open();
+                    int i = Convert.ToInt32(cmd.ExecuteScalar());
+                    delivered.Text = i.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    string x = ex.Message;
+                    Response.Write(x);
+                }
+            }
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT count(Id) FROM custorder where shipstatus='Order Placed' ", con);
+                try
+                {
+                    con.Open();
+                    int i = Convert.ToInt32(cmd.ExecuteScalar());
+                    placed.Text = i.ToString();
 
                 }
                 catch (Exception ex)
@@ -164,5 +301,6 @@ namespace wholesale
                 Response.Write(x);
             }
         }
+
     }
 }

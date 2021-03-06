@@ -101,7 +101,7 @@
      </div>
          <div class="form-group col-md-4">
         <label for="validationCustom06"> Unit Price</label>
-        <asp:TextBox runat ="server" type="number" class="form-control" id="unitprc"
+        <asp:TextBox runat ="server" type="number" class="form-control" id="unitprc" Text="0.0"
             placeholder="in Rs"  required=""></asp:TextBox>
           <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Enter Price" ControlToValidate="unitprc" ForeColor="red" Display="Dynamic"></asp:RequiredFieldValidator>
         
@@ -114,9 +114,9 @@
         
     </div>
       <div class="form-group col-md-4">
-        <label for="validationCustom06">Discount %</label>
+        <label for="validationCustom06">Discount</label>
         <asp:TextBox runat ="server" type="number" class="form-control" id="discount"
-            placeholder="%"  required=""></asp:TextBox>
+            placeholder="in Rs"  required=""></asp:TextBox>
         
     </div>
   
@@ -159,7 +159,7 @@
            <div class="form-group col-md-8">
         <label for="validationCustom03">Material and Care</label>
       <asp:TextBox runat ="server"  TextMode="MultiLine" type="text" class="form-control" ID="materialcare"
-            placeholder="Description" ></asp:TextBox>
+            placeholder="Material and Care" ></asp:TextBox>
        
     </div>
         </div></div>
@@ -167,17 +167,21 @@
 
     
     
-        <span class="fa-header" style="color:black"><b>Add Product Images</b></span>
+        <span class="fa-header" style="color:black"><b>Add Product Image</b></span>
       <hr>
     <div class="row">
         <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-          <div class="form-group col-md-4">
+                          <div class="form-group col-md-6">
+
+                <asp:Image ID="Image1" runat="server" Height = "100" Width = "100" />
+</div>
+          <div class="form-group col-md-6">
         
-              <asp:FileUpload ID="fuImg01" runat="server" /> 
+              <asp:FileUpload ID="fuImg01" runat="server" onchange="ShowImagePreview(this);"/> 
               </div>
-                  <div class="form-group col-md-4">
+              <!--    <div class="form-group col-md-4">
                 <asp:FileUpload ID="fuImg02" runat="server" /> 
                       </div>
                   <div class="form-group col-md-4">
@@ -187,7 +191,7 @@
 
                 <asp:FileUpload ID="fuImg04" runat="server" /> 
          
-                  </div>
+                  </div>-->
                     <asp:Button runat="server" class="btn btn-primary" type="submit" text="Submit" OnClick="btnadd_Click" ID="btnadd"></asp:Button>
 
                 </div>
@@ -200,3 +204,42 @@
    
     </div>
 </asp:Content>
+<asp:Content ID="content2" ContentPlaceHolderID="footer" runat="server">  
+                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+   $(function () {
+
+           
+            $('#<%=discount.ClientID %>').blur(function () {
+                 var txttot = parseFloat($('#<%=unitprc.ClientID %>').val())
+
+                var disCount = parseFloat($('#<%=discount.ClientID %>').val())
+
+                if (!isNaN(disCount)) {
+                  
+                    $('#<%=sellingprc.ClientID %>').text(parseFloat(txttot) - parseFloat(disCount));
+                
+}
+
+            })
+
+
+        })
+    </script>
+     <script src="http://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function ShowImagePreview(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#<%=Image1.ClientID%>').prop('src', e.target.result)
+                        .width(150)
+                        .height(150);
+                };
+                reader.readAsDataURL(input.files[0]);
+                }
+            } 
+
+    </script>
+     
+    </asp:Content>

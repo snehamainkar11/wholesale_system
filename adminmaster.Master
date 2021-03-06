@@ -229,7 +229,7 @@
 
         <li class="side-nav-item">
         <a href="#" class="side-nav-link">
-            <i class="mdi mdi-tag-outline"></i>
+            <i class="uil-store"></i>
             <span> Sales </span>
              <span class="menu-arrow"></span> 
         </a>
@@ -243,6 +243,14 @@
             </ul>
     </li>
   
+        <li class="side-nav-item">
+        <a href="onlineorder.aspx" class="side-nav-link">
+            <i class="  uil-cart"></i>
+            <span> Online Orders </span>
+            
+        </a>
+        
+    </li>
     <li class="side-nav-item">
         <a href="javascript: void(0);" class="side-nav-link">
             <i class="mdi mdi-cart-arrow-right"></i>
@@ -263,7 +271,9 @@
             
             </ul>
     </li>
-                      <li class="side-nav-item">
+                   
+                     <li class="side-nav-title side-nav-item">Others</li>
+                       <li class="side-nav-item">
         <a href="javascript: void(0);" class="side-nav-link">
             <i class="dripicons-wallet"></i>
             <span> Expense </span>
@@ -279,8 +289,6 @@
             </ul>
     </li>
       
-                     <li class="side-nav-title side-nav-item">Reports</li>
-
         <li class="side-nav-item">
         <a href="javascript: void(0);" class="side-nav-link">
             <i class=" dripicons-graph-bar"></i>

@@ -239,6 +239,7 @@
     <Content Include="admin\editsales.aspx" />
     <Content Include="admin\index.aspx" />
     <Content Include="admin\materialstock.aspx" />
+    <Content Include="admin\onlineorder.aspx" />
     <Content Include="admin\purchaselist.aspx" />
     <Content Include="admin\purchaseorder.aspx" />
     <Content Include="admin\Receivedorder.aspx" />
@@ -927,6 +928,13 @@
     </Compile>
     <Compile Include="admin\materialstock.aspx.designer.cs">
       <DependentUpon>materialstock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\onlineorder.aspx.cs">
+      <DependentUpon>onlineorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\onlineorder.aspx.designer.cs">
+      <DependentUpon>onlineorder.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\purchaselist.aspx.cs">
       <DependentUpon>purchaselist.aspx</DependentUpon>

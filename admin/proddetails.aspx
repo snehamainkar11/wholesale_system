@@ -34,14 +34,19 @@
                         <!-- Product image -->
                        
                         
-                        <asp:Repeater ID="rptrImage" runat="server">
-          <ItemTemplate>
+                <asp:Repeater ID="rptrImage" runat="server">
+          <ItemTemplate>         
     <div class="d-lg-flex d-none justify-content-center">
+       
+          
+           
       <img   class="card-img-top card-img-front" height="250px" width="100px" src="/Products/<%# Eval("ProID") %>/<%# Eval("Name")%><%# Eval("Extension") %>" alt="<%# Eval("Name") %>" >
-      
-    </div>
-             </ItemTemplate>
+        
+           
+    </div>     
+   </ItemTemplate>
 </asp:Repeater>
+           
                        
                     </div> <!-- end col -->
                     <div class="col-lg-7">

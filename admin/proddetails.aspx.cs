@@ -25,10 +25,7 @@ namespace wholesale
                     DataTable dt = this.GetData("SELECT ISNULL(AVG(Ratings), 0) AverageRating, COUNT(Ratings) RatingCount FROM tblrating1 where pid ='" + PID + "'");
                     lblrvw.Text = string.Format("{0} Users Have Rated. Average Rating is :", dt.Rows[0]["RatingCount"]);
                 }
-                else
-                {
-                    Response.Redirect("~/Product.aspx");
-                }
+               
             }
         }
         private void BindProductDetails()

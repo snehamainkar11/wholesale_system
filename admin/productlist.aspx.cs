@@ -162,23 +162,25 @@ namespace wholesale
                     TextBox labName = (TextBox)gvproduct.Rows[e.RowIndex].FindControl("txtpname");
 
                     FileUpload UploadImage = (FileUpload)gvproduct.Rows[e.RowIndex].FindControl("fuimg01");
+                    var idd = (HiddenField)gvproduct.Rows[e.RowIndex].FindControl("idp");
 
-                    if (UploadImage.HasFile)
-                    {
-                        string SavePath = Server.MapPath("~/Products/") + PID;
-                        string Extention = Path.GetExtension(UploadImage.PostedFile.FileName);
-                        UploadImage.SaveAs(SavePath + "\\" + labName.Text.ToString().Trim() + "01" + Extention);
+                        if (UploadImage.HasFile)
+                        {
+                            string SavePath = Server.MapPath("~/Products/") + PID;
+                            string Extention = Path.GetExtension(UploadImage.PostedFile.FileName);
+                            UploadImage.SaveAs(SavePath + "\\" + labName.Text.ToString().Trim() + "01" + Extention);
 
 
-                        SqlCommand cmd3 = new SqlCommand("update prodImage set extension=@extension,name=@name where ProID=@id", sqlCon);
-                        cmd3.Parameters.AddWithValue("@name", labName.Text + "01");
-                        cmd3.Parameters.AddWithValue("@extension", Extention.ToString());
-                        cmd3.Parameters.AddWithValue("@id", Convert.ToInt32(gvproduct.DataKeys[e.RowIndex].Value.ToString()));
+                            SqlCommand cmd3 = new SqlCommand("update prodImage set extension=@extension,name=@name where ProID=@id and p_imgId=@idd", sqlCon);
+                            cmd3.Parameters.AddWithValue("@name", labName.Text + "01");
+                            cmd3.Parameters.AddWithValue("@extension", Extention.ToString());
+                            cmd3.Parameters.AddWithValue("@id", Convert.ToInt32(gvproduct.DataKeys[e.RowIndex].Value.ToString()));
+                            cmd3.Parameters.AddWithValue("@idd",idd.Value);
 
                         cmd3.ExecuteNonQuery();
-                        PopulateGridview();
-                    }
-
+                            PopulateGridview();
+                        }
+                    
                   
 
                     gvproduct.EditIndex = -1;
@@ -241,15 +243,7 @@ namespace wholesale
                     DropDownList2.DataValueField = "ID";
                     DropDownList2.DataBind();
                 }
-                var ss = e.Row.FindControl("lblstatus") as Label;
-                if (ss.Text == "Out of stock")
-                {
-                    ss.ForeColor = System.Drawing.Color.Green;
-                }
-                else
-                {
-                    ss.ForeColor = System.Drawing.Color.Red;
-                }
+           
 
 
             }

@@ -22,111 +22,112 @@
 </div>
 <!-- end page title -->
 
-<div class="row justify-content-center">
-    <div class="col-lg-7 col-md-10 col-sm-11">
-
-        <div class="horizontal-steps mt-4 mb-4 pb-5">
-            <div class="horizontal-steps-content">
-                <div class="step-item">
-                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="20/08/2018 07:24 PM">Order Placed</span>
-                </div>
-                <div class="step-item current">
-                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="21/08/2018 11:32 AM">Packed</span>
-                </div>
-                <div class="step-item">
-                    <span>Shipped</span>
-                </div>
-                <div class="step-item">
-                    <span>Delivered</span>
-                </div>
-            </div>
-
-            <div class="process-line" style="width: 33%;"></div>
-        </div>
-
-    </div>
-</div>
 <!-- end row -->
 
 
 <div class="row">
+ <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                       
+                             <div class="clearfix">
+                   
+                    <div class="float-left">
+                        <h3>Invoice</h3>
+                    </div>
+ </div>
+                      <hr />
+                    
+                    
+    
+                        
+<div class="row">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                                        <button type="button"  style="float:right" class="btn btn-outline-info btn-rounded"><i class=" dripicons-document-remove"></i> Generate Invoive</button>
+                
+                        <asp:Repeater runat="server" ID="rptr">
+                    <ItemTemplate>
+                    <div class="row">
 
-                 <table class="table mb-0">
-                        <thead>
-                            <tr>
-                                <th>Customer Name</th>
-                                <th>Invoice Number</th>
-                                <th>Ordered Date</th>
-                                <th>Delivery Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>The Military Duffle Bag</td>
-                                <td>56745</td>
-                                <td>12-4-2020</td>
-                                <td>14-4-2020</td>
-                            </tr>
-              </table>
+                    <div class="col-sm-6">
+              <div class="float-left mt-1">
+                            <h4 style= "color:darkred">Billing From:</h4>
+                            <h4><b style= "color:indianred">
+                   <asp:Label Text="Waheguru Creations" runat="server" ID="cnameLabel" /></b></h4>
+                     <h5>  address 1</h5>
+                        <h5>City1,opp to avs,ahhsn road
+                           Maharashtra</h5>
+                             <h5>     Pincode :416602</h5>
+                                    <h5>Contact No:738388444</h5>
+                              </div>     
 
             </div>
-        </div>
+                    
+                    
+              <div class="col-sm-4 offset-sm-2">
+                        <div class="mt-3 float-sm-right">
+                                            <h5><%# Eval("fname") %> &nbsp;&nbsp;<%# Eval("lname") %></h5>
+
+                            <p class="font-16"><strong>Date: </strong> &nbsp;&nbsp;&nbsp; <asp:Label Text='<%# Eval("odate") %>' runat="server" ID="pdateLabel" /></p>
+                  
+                            <p class="font-16"><strong>Invoice No: </strong> <span class="float-center">Inv000<%# Eval("Id") %></span></p>
+                        </div>
+                    </div>
+      </div>
     </div> <!-- end col -->
-<div class="row">
-    <div class="col-lg-7">
+            <hr />
+  </div>
+                        
+
+
+                           
+<div class="row mb-0">  
+    <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title mb-2">Items from Order #12537</h4>
+                <h4 class="header-title mb-2">Items from Order #<%# Eval("orderno") %></h4>
 
                 <div class="table-responsive">
-                    <table class="table mb-0">
-                        <thead class="thead-light">
-                            <tr>
-                                <th>Item</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>The Military Duffle Bag</td>
-                                <td>3</td>
-                                <td>128 Rs</td>
-                                <td>384 Rs</td>
-                            </tr>
-                            <tr>
-                                <td>Mountain Basket Ball</td>
-                                <td>1</td>
-                                <td>199 Rs</td>
-                                <td>199 Rs</td>
-                            </tr>
-                            <tr>
-                                <td>Wavex Canvas Messenger Bag</td>
-                                <td>5</td>
-                                <td>180 Rs</td>
-                                <td>900 Rs</td>
-                            </tr>
-                            <tr>
-                                <td>The Utility Shirt</td>
-                                <td>2</td>
-                                <td>79 Rs</td>
-                                <td>158 Rs</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                         <asp:GridView runat="server" ID="gv" class="table table-bordered table-centered table-hover mb-0"
+                                    AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" GridLines="Horizontal" ForeColor="Black">
+                                    <Columns>
+                                        <asp:BoundField DataField="pid" HeaderText="Items" SortExpression="pid"></asp:BoundField>
+                                        <asp:BoundField DataField="price" HeaderText="Price" SortExpression="price"></asp:BoundField>
+                                        <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="quantity"></asp:BoundField>
+                                        <asp:BoundField DataField="total" HeaderText="Total" SortExpression="total"></asp:BoundField>
+                                    </Columns>
+                             <FooterStyle BackColor="#CCCC99" ForeColor="Black"></FooterStyle>
+
+                             <HeaderStyle BackColor="Lavender" Font-Bold="True" ForeColor="Black"></HeaderStyle>
+
+                             <PagerStyle HorizontalAlign="Right" BackColor="White" ForeColor="Black"></PagerStyle>
+
+                             <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+
+                             <SortedAscendingCellStyle BackColor="#F7F7F7"></SortedAscendingCellStyle>
+
+                             <SortedAscendingHeaderStyle BackColor="#4B4B4B"></SortedAscendingHeaderStyle>
+
+                             <SortedDescendingCellStyle BackColor="#E5E5E5"></SortedDescendingCellStyle>
+
+                             <SortedDescendingHeaderStyle BackColor="#242121"></SortedDescendingHeaderStyle>
+                         </asp:GridView>
+
+                        <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT [pid], [price], [quantity], (price* quantity) as[total] FROM [custorderDet] WHERE ([orderno] = @orderno)">
+                            <SelectParameters>
+                                <asp:QueryStringParameter QueryStringField="orderno" Name="orderno" Type="String"></asp:QueryStringParameter>
+                            </SelectParameters>
+                        </asp:SqlDataSource>
                 </div>
                 <!-- end table-responsive -->
 
             </div>
         </div>
     </div> <!-- end col -->
-
-    <div class="col-lg-5">
+     
+    <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
                 <h4 class="header-title mb-3">Order Summary</h4>
@@ -142,19 +143,19 @@
                         <tbody>
                             <tr>
                                 <td>Grand Total :</td>
-                                <td>1641 Rs</td>
+                                <td><%# Eval("total") %> Rs</td>
                             </tr>
                             <tr>
                                 <td>Shipping Charge :</td>
-                                <td>23 Rs</td>
+                                <td><%# Eval("shippcharge") %> Rs</td>
                             </tr>
                             <tr>
                                 <td>Estimated Tax : </td>
-                                <td>19.22 Rs</td>
+                                <td><%# Eval("tax") %> Rs</td>
                             </tr>
                             <tr>
                                 <th>Total :</th>
-                                <th>1683.22 RS</th>
+                                <th><%# Eval("grandtotal") %> Rs</th>
                             </tr>
                         </tbody>
                     </table>
@@ -164,23 +165,24 @@
             </div>
         </div>
     </div> <!-- end col -->
+    
 </div>
 <!-- end row -->
 
 
 <div class="row">
-    <div class="col-lg-4">
+   <div class="col-lg-4">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title mb-3">Shipping Information</h4>
+                <h4 class="header-title mb-3" style="text-decoration:underline">Shipping Information</h4>
 
-                <h5>Stanley Jones</h5>
+                <h5><%# Eval("fname") %> &nbsp;&nbsp;<%# Eval("lname") %></h5>
 
                 <address class="mb-0 font-14 address-lg">
-                    795 Folsom Ave, Suite 600<br>
-                    San Francisco, CA 94107<br>
-                    <abbr title="Phone">P:</abbr> (123) 456-7890 <br />
-                    <abbr title="Mobile">M:</abbr> (+01) 12345 67890
+                    <%# Eval("ad1") %><br/>
+                   <%# Eval("ad2") %> &nbsp;&nbsp;<%# Eval("city") %><br/>
+                    <abbr title="Zip">Zip:</abbr> <%# Eval("zip") %> <br />
+                    <abbr title="Mobile">M:</abbr> <%# Eval("contact") %> 
                 </address>
 
             </div>
@@ -190,14 +192,13 @@
     <div class="col-lg-4">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title mb-3">Billing Information</h4>
+                <h4 class="header-title mb-3" style="text-decoration:underline">Billing Information</h4>
 
                 <ul class="list-unstyled mb-0">
                     <li>
-                        <p class="mb-2"><span class="font-weight-bold mr-2">Payment Type:</span> Credit Card</p>
-                        <p class="mb-2"><span class="font-weight-bold mr-2">Provider:</span> Visa ending in 2851</p>
-                        <p class="mb-2"><span class="font-weight-bold mr-2">Valid Date:</span> 02/2020</p>
-                        <p class="mb-0"><span class="font-weight-bold mr-2">CVV:</span> xxx</p>
+                        <p class="mb-2"><span class="font-weight-bold mr-2">Payment Type:</span><%# Eval("paymode") %></p>
+                        <p class="mb-2"><span class="font-weight-bold mr-2">Status:</span> <%# Eval("paystatus") %></p>
+                        <p class="mb-2"><span class="font-weight-bold mr-2">Payment Date:</span><%# Eval("odate") %></p>
                     </li>
                 </ul>
 
@@ -208,23 +209,29 @@
     <div class="col-lg-4">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title mb-3">Delivery Info</h4>
+                <h4 class="header-title mb-3" style="text-decoration:underline">Delivery Info</h4>
 
                 <div class="text-center">
                     <i class="mdi mdi-truck-fast h2 text-muted"></i>
                     <h5><b>UPS Delivery</b></h5>
-                    <p class="mb-1"><b>Order ID :</b> xxxx235</p>
-                    <p class="mb-0"><b>Payment Mode :</b> COD</p>
+                    <p class="mb-1"><b>Order ID :</b><%# Eval("id") %></p>
+                    <p class="mb-0"><b>Shipping Status :</b><%# Eval("shipstatus") %></p>
                 </div>
             </div>
         </div>
     </div> <!-- end col -->
+                      <div class="mt-2 float-sm-right">      <p class="mb-0"><span class="font-weight-bold mr-2">Note:</span> <%# Eval("note") %></p>
+</div>
+      </ItemTemplate>
+                               </asp:Repeater> </div>     
+                   <div class="d-print-none mt-4">
+                   
+                        <a href="javascript:window.print()" class="btn btn-primary"><i class="mdi mdi-printer"></i> Print</a>
+                      
+                        
+       
 </div>
 <!-- end row -->
-
+            </div></div></div></div></div>
 
 </asp:Content>
-
-<asp:Content ID="content2" ContentPlaceHolderID="footer" runat="server">  
-<script src="admin-assets/js/vendor/buttons.print.min.js"></script>
-    </asp:Content>
