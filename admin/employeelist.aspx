@@ -86,7 +86,7 @@
 
                                                                            <asp:TemplateField HeaderText="Salary">
                                                                                <ItemTemplate>
-                                                                                   <asp:Label ID="lblclr" runat="server" Text='<%# Bind("Salary") %>'></asp:Label>
+                                                                                   <asp:Label ID="lblclr" runat="server" Text='<%# Bind("Salary") %>' ></asp:Label>
                                                                                </ItemTemplate>
                                                                                <EditItemTemplate>
                                                                                    <asp:TextBox ID="salary" CssClass="form-control" runat="server" Text='<%# Bind("Salary") %>'></asp:TextBox>
@@ -110,7 +110,7 @@
                                                                            </asp:TemplateField>
                                                                             <asp:TemplateField HeaderText="Joining Date">
                                                                                <ItemTemplate>
-                                                                                   <asp:Label ID="city" runat="server" Text='<%# Bind("doj") %>'></asp:Label>
+                                                                                   <asp:Label ID="city" runat="server"  Text='<%# Bind("doj", "{0:dd/MM/yyyy}") %>'></asp:Label>
                                                                                </ItemTemplate>
                                                                                <EditItemTemplate>
                                                                                    <asp:TextBox ID="doj" CssClass="form-control"  runat="server" TextMode="date"></asp:TextBox>
@@ -119,7 +119,7 @@
                                                                            </asp:TemplateField>
                                                                            <asp:TemplateField HeaderText="End Of Contract">
                                                                                <ItemTemplate>
-                                                                                   <asp:Label ID="lbldis" runat="server" Text='<%# Bind("eoj") %>'></asp:Label>
+                                                                                   <asp:Label ID="lbldis" runat="server" Text='<%# Bind("eoj", "{0:dd/MM/yyyy}") %>'></asp:Label>
                                                                                </ItemTemplate>
                                                                                <EditItemTemplate>
                                                                                    <asp:TextBox ID="eoj" CssClass="form-control" runat="server" TextMode="date"></asp:TextBox>

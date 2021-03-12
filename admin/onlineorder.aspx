@@ -81,7 +81,7 @@
 
                             <asp:TemplateField HeaderText="Order Date">
                                 <ItemTemplate>
-                                    <asp:Label ID="odate" runat="server" Text='<%# Bind("odate") %>' Width="100px"></asp:Label>
+                                    <asp:Label ID="odate" runat="server"  Text='<%# Bind("odate", "{0:dd/MM/yyyy}") %>' Width="100px"></asp:Label>
                                 </ItemTemplate>
                              
 

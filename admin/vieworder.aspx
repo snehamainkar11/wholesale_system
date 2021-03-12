@@ -76,8 +76,9 @@
                            
                        <h5>Contact: <%# Eval("contact") %></h5>
                                             <h5> Invoice No: <%# Eval("orderno") %></h5>
-                        Date: <%# Eval("duedate") %>
-                         </div></div>
+                        Date: <%# Eval("duedate", "{0:dd/MM/yyyy}") %>
+
+                     </div></div>
                     <!-- end col-->
 
                     </div>

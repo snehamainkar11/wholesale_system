@@ -1,8 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/adminmaster.Master" MaintainScrollPositionOnPostBack="true" CodeFile="addsales.aspx.cs" Inherits="wholesale.admin.addsales" %>
  
 <asp:Content ID="content1" ContentPlaceHolderID="admincontent" runat="server">  
-      <asp:ScriptManager EnablePartialRendering="true"
- ID="ScriptManager1" runat="server"></asp:ScriptManager> 
+       <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
                        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                        <ContentTemplate>
     <div class="content-page">

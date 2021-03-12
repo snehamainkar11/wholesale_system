@@ -68,7 +68,7 @@
                                         </ItemTemplate>
                                        <ItemStyle Width="2%" />
                                     </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Code">
+                                <asp:TemplateField HeaderText="Bill No">
                                     <ItemTemplate>
                                         <asp:Label ID="lblName" runat="server" Text='<%# Bind("ecode") %>'></asp:Label>
                                     </ItemTemplate>
@@ -88,7 +88,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Created Date">
                                     <ItemTemplate>
-                                        <asp:Label ID="lblDesc" runat="server" Text='<%# Bind("edate") %>'></asp:Label>
+                                        <asp:Label ID="lblDesc" runat="server" Text='<%# Bind("edate", "{0:dd/MM/yyyy}") %>' Width="130px"></asp:Label>
                                     </ItemTemplate>
                                     <EditItemTemplate>
                                         <asp:TextBox ID="edate" CssClass="form-control" TextMode="Date" runat="server" Text='<%# Bind("edate") %>'></asp:TextBox>

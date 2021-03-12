@@ -87,7 +87,7 @@
 
                             <asp:TemplateField HeaderText="Date">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblclr" runat="server" Text='<%# Bind("pdate") %>' Width="100px"></asp:Label>
+                                    <asp:Label ID="lblclr" runat="server" Text='<%# Bind("pdate", "{0:dd/MM/yyyy}") %>' Width="100px"></asp:Label>
                                 </ItemTemplate>
                                 <EditItemTemplate>
                                     <asp:TextBox ID="pdate" CssClass="form-control" runat="server" TextMode="Date" Width="100px"></asp:TextBox>

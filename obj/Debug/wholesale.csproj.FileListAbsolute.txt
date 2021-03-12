@@ -1,2 +1,4 @@
 C:\Users\Htc\source\repos\wholesale\wholesale\obj\Debug\wholesale.csproj.CoreCompileInputs.cache
 C:\Users\Htc\source\repos\wholesale\wholesale\obj\Debug\wholesale.csprojAssemblyReference.cache
+C:\Users\Htc\source\repos\wholesale\wholesale\obj\Debug\RdlCompile.cache
+C:\Users\Htc\source\repos\wholesale\wholesale\obj\Debug\RdlCompile.compiled

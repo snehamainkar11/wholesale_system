@@ -1,5 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/adminmaster.Master"CodeFile="addproduct.aspx.cs" Inherits="wholesale.addproduct" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 <asp:Content ID="content1" ContentPlaceHolderID="admincontent" runat="server">  
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    
     <div class="content-page">
                 <div class="content">
                 <div class="content">
@@ -19,7 +24,7 @@
     </div>
 </div>
 <!-- end page title -->
-<div class="row">
+<%--<div class="row">--%>
     <div class="col-12">
         <div class="card">
             <div class="card-body">
@@ -27,8 +32,8 @@
    <asp:Label ID="lblSuccessMessage" Text="" runat="server" ForeColor="Green" />
             <br />
             <asp:Label ID="lblErrorMessage" Text="" runat="server" ForeColor="Red" />
-
-   
+                  
+  
       <div class="form-row">
 
     <div class="form-group col-md-4">
@@ -62,13 +67,22 @@
     </div>  
      <div class="form-group col-md-4" >
         <label for="validationCustom04">Category</label>
-         <asp:DropDownList runat="server" AutoPostBack="true" class="form-control" ID="ddlcategory" OnSelectedIndexChanged="ddlcategory_SelectedIndexChanged">    
+         
+         <asp:DropDownList runat="server" AutoPostBack="true" RenderMode='Partial' class="form-control" ID="ddlcategory" OnSelectedIndexChanged="ddlcategory_SelectedIndexChanged">    
                         </asp:DropDownList>
+                 
          </div>
         <div class="form-group col-md-4" >
         <label for="validationCustom04">Sub Category</label>
+              <asp:UpdatePanel ID="UpdatePanel1" runat="server" ChildrenAsTriggers=false UpdateMode=Conditional>
+            <ContentTemplate>
          <asp:DropDownList runat="server" class="form-control" ID="ddlsubcat" OnSelectedIndexChanged="ddlsubcat_SelectedIndexChanged">    
                         </asp:DropDownList>
+                </ContentTemplate>
+       <Triggers>
+<asp:AsyncPostBackTrigger ControlID="ddlcategory" EventName="SelectedIndexChanged" />
+</Triggers>
+        </asp:UpdatePanel>
        </div>
  
                
@@ -164,7 +178,7 @@
     </div>
         </div></div>
        </div>    
-
+    
     
     
         <span class="fa-header" style="color:black"><b>Add Product Image</b></span>
@@ -203,6 +217,7 @@
 
    
     </div>
+                   
 </asp:Content>
 <asp:Content ID="content2" ContentPlaceHolderID="footer" runat="server">  
                  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

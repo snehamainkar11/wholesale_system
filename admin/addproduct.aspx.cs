@@ -22,7 +22,8 @@ namespace wholesale
                
                 BindBrand();
                 BindCategory();
-           
+               // ddlcategory.SelectedItem.Value= (Session["ddlcategory"]).ToString();
+
 
             }
         }
@@ -71,8 +72,8 @@ namespace wholesale
         protected void ddlcategory_SelectedIndexChanged(object sender, EventArgs e)
         {
        
-            int MainCategoryID = Convert.ToInt32(ddlcategory.SelectedItem.Value);
-
+           // int MainCategoryID = Convert.ToInt32(ddlcategory.SelectedItem.Value);
+           // Session["ddlcategory"] = ddlcategory.SelectedItem.Value;
             using (SqlConnection con = new SqlConnection(s))
             {
                 con.Open();

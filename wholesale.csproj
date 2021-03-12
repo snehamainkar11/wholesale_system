@@ -47,17 +47,47 @@
     <Reference Include="AjaxControlToolkit">
       <HintPath>..\..\..\..\Downloads\wholesale\wholesale\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1440.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1440.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1440.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1440.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1440.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1440.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -619,63 +649,8 @@
     <Content Include="Checkout.aspx" />
     <Content Include="contact.aspx" />
     <Content Include="admin\employeelist.aspx" />
-    <Content Include="Content\DataTables\css\dataTables.autoFill.css" />
-    <Content Include="Content\DataTables\css\dataTables.autoFill.min.css" />
-    <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
-    <Content Include="Content\DataTables\css\dataTables.colReorder.css" />
-    <Content Include="Content\DataTables\css\dataTables.colReorder.min.css" />
-    <Content Include="Content\DataTables\css\dataTables.colVis.css" />
-    <Content Include="Content\DataTables\css\dataTables.colvis.jqueryui.css" />
-    <Content Include="Content\DataTables\css\dataTables.colVis.min.css" />
-    <Content Include="Content\DataTables\css\dataTables.fixedColumns.css" />
-    <Content Include="Content\DataTables\css\dataTables.fixedColumns.min.css" />
-    <Content Include="Content\DataTables\css\dataTables.fixedHeader.css" />
-    <Content Include="Content\DataTables\css\dataTables.fixedHeader.min.css" />
-    <Content Include="Content\DataTables\css\dataTables.foundation.css" />
-    <Content Include="Content\DataTables\css\dataTables.jqueryui.css" />
-    <Content Include="Content\DataTables\css\dataTables.keyTable.css" />
-    <Content Include="Content\DataTables\css\dataTables.keyTable.min.css" />
-    <Content Include="Content\DataTables\css\dataTables.responsive.css" />
-    <Content Include="Content\DataTables\css\dataTables.scroller.css" />
-    <Content Include="Content\DataTables\css\dataTables.scroller.min.css" />
-    <Content Include="Content\DataTables\css\dataTables.tableTools.css" />
-    <Content Include="Content\DataTables\css\dataTables.tableTools.min.css" />
-    <Content Include="Content\DataTables\css\jquery.dataTables.css" />
-    <Content Include="Content\DataTables\css\jquery.dataTables.min.css" />
-    <Content Include="Content\DataTables\css\jquery.dataTables_themeroller.css" />
-    <Content Include="Content\DataTables\images\background.png" />
-    <Content Include="Content\DataTables\images\back_disabled.png" />
-    <Content Include="Content\DataTables\images\back_enabled.png" />
-    <Content Include="Content\DataTables\images\back_enabled_hover.png" />
-    <Content Include="Content\DataTables\images\collection.png" />
-    <Content Include="Content\DataTables\images\collection_hover.png" />
-    <Content Include="Content\DataTables\images\copy.png" />
-    <Content Include="Content\DataTables\images\copy_hover.png" />
-    <Content Include="Content\DataTables\images\csv.png" />
-    <Content Include="Content\DataTables\images\csv_hover.png" />
-    <Content Include="Content\DataTables\images\details_close.png" />
-    <Content Include="Content\DataTables\images\details_open.png" />
-    <Content Include="Content\DataTables\images\filler.png" />
-    <Content Include="Content\DataTables\images\forward_disabled.png" />
-    <Content Include="Content\DataTables\images\forward_enabled.png" />
-    <Content Include="Content\DataTables\images\forward_enabled_hover.png" />
-    <Content Include="Content\DataTables\images\insert.png" />
-    <Content Include="Content\DataTables\images\loading-background.png" />
-    <Content Include="Content\DataTables\images\pdf.png" />
-    <Content Include="Content\DataTables\images\pdf_hover.png" />
-    <Content Include="Content\DataTables\images\print.png" />
-    <Content Include="Content\DataTables\images\print_hover.png" />
-    <Content Include="Content\DataTables\images\sort_asc.png" />
-    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
-    <Content Include="Content\DataTables\images\sort_both.png" />
-    <Content Include="Content\DataTables\images\sort_desc.png" />
-    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
-    <Content Include="Content\DataTables\images\xls.png" />
-    <Content Include="Content\DataTables\images\xls_hover.png" />
-    <Content Include="Content\DataTables\swf\copy_csv_xls.swf" />
-    <Content Include="Content\DataTables\swf\copy_csv_xls_pdf.swf" />
-    <Content Include="Content\jquery.dataTables.multiselect.css" />
     <Content Include="css\style.css" />
+    <Content Include="expenseReport.aspx" />
     <Content Include="FilledStar.gif" />
     <Content Include="fonts\material-icon\css\material-design-iconic-font.css" />
     <Content Include="fonts\material-icon\css\material-design-iconic-font.min.css" />
@@ -773,31 +748,9 @@
     <Content Include="ordercomplete.aspx" />
     <Content Include="admin\printpurchase.aspx" />
     <Content Include="profile.aspx" />
-    <Content Include="ReceivedOrder.aspx" />
-    <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
-    <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
-    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
-    <Content Include="Scripts\DataTables\dataTables.colReorder.js" />
-    <Content Include="Scripts\DataTables\dataTables.colReorder.min.js" />
-    <Content Include="Scripts\DataTables\dataTables.colVis.js" />
-    <Content Include="Scripts\DataTables\dataTables.colVis.min.js" />
-    <Content Include="Scripts\DataTables\dataTables.fixedColumns.js" />
-    <Content Include="Scripts\DataTables\dataTables.fixedColumns.min.js" />
-    <Content Include="Scripts\DataTables\dataTables.fixedHeader.js" />
-    <Content Include="Scripts\DataTables\dataTables.fixedHeader.min.js" />
-    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
-    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
-    <Content Include="Scripts\DataTables\dataTables.keyTable.js" />
-    <Content Include="Scripts\DataTables\dataTables.keyTable.min.js" />
-    <Content Include="Scripts\DataTables\dataTables.responsive.js" />
-    <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
-    <Content Include="Scripts\DataTables\dataTables.scroller.js" />
-    <Content Include="Scripts\DataTables\dataTables.scroller.min.js" />
-    <Content Include="Scripts\DataTables\dataTables.tableTools.js" />
-    <Content Include="Scripts\DataTables\dataTables.tableTools.min.js" />
-    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
-    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
-    <Content Include="Scripts\jquery.dataTables.multiselect.js" />
+    <Content Include="purchaseReport.aspx" />
+    <Content Include="salesdata.aspx" />
+    <Content Include="salesreport.aspx" />
     <Content Include="shop.aspx" />
     <Content Include="Shoppingcart.aspx" />
     <Content Include="signup.aspx" />
@@ -1020,6 +973,30 @@
     <Compile Include="admin\employeelist.aspx.designer.cs">
       <DependentUpon>employeelist.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="expenseReport.aspx.cs">
+      <DependentUpon>expenseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="expenseReport.aspx.designer.cs">
+      <DependentUpon>expenseReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="expenseReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>expenseReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1077,12 +1054,38 @@
       <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReceivedOrder.aspx.cs">
-      <DependentUpon>ReceivedOrder.aspx</DependentUpon>
+    <Compile Include="purchaseReport.aspx.cs">
+      <DependentUpon>purchaseReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ReceivedOrder.aspx.designer.cs">
-      <DependentUpon>ReceivedOrder.aspx</DependentUpon>
+    <Compile Include="purchaseReport.aspx.designer.cs">
+      <DependentUpon>purchaseReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="purchasereport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>purchasereport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="sales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="salesdata.aspx.cs">
+      <DependentUpon>salesdata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="salesdata.aspx.designer.cs">
+      <DependentUpon>salesdata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="salesreport.aspx.cs">
+      <DependentUpon>salesreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="salesreport.aspx.designer.cs">
+      <DependentUpon>salesreport.aspx</DependentUpon>
     </Compile>
     <Compile Include="shop.aspx.cs">
       <DependentUpon>shop.aspx</DependentUpon>
@@ -1176,7 +1179,6 @@
       <DependentUpon>wishlist.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="assets\fonts\fontawesome-webfont3e6e.eot" />
     <Content Include="assets\fonts\fontawesome-webfont3e6e.ttf" />
@@ -1349,9 +1351,18 @@
     <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.woff" />
     <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.woff2" />
     <Content Include="images\favicons\manifest.json" />
-    <Content Include="Content\DataTables\css\dataTables.responsive.scss" />
-    <Content Include="Content\DataTables\css\dataTables.jqueryui.scss" />
     <Content Include="assets\img\covers\cov.webp" />
+    <Content Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="assets\style.css.map" />
     <None Include="Web.Debug.config">
@@ -1360,6 +1371,32 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="expenseReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>expenseReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchasereport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>purchasereport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="sales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>sales.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_GlobalResources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

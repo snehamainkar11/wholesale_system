@@ -68,7 +68,7 @@
                        </div>
   <div class="col-sm-4 offset-sm-2">
                         <div class="mt-3 float-sm-right">
-                            <p class="font-16"><strong>Date: </strong> &nbsp;&nbsp;&nbsp; <asp:Label Text='<%# Eval("odate") %>' runat="server" ID="pdateLabel" /></p>
+                            <p class="font-16"><strong>Date: </strong> &nbsp;&nbsp;&nbsp; <asp:Label Text=' <%# Eval("odate", "{0:dd/MM/yyyy}") %>' runat="server" ID="pdateLabel" /></p>
                   
                             <p class="font-16"><strong>Order No: </strong> <span class="float-center"><%# Eval("po") %></span></p>
                         </div>
