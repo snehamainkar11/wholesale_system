@@ -20,10 +20,45 @@ namespace wholesale
             if (!IsPostBack)
             {
                 BindProductRepeater();
-                //BindBra   
+                Reviews();   
                 BindProductDetail1s();
                 BindProductImage();
                 BindProductDetails();
+            }
+        }
+        private void Reviews()
+        {
+            Int64 PID = Convert.ToInt64(Request.QueryString["PID"]);
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                using (SqlCommand cmd = new SqlCommand("select ISNULL(AVG(Ratings), 0) AverageRating from tblrating1 where pid ='" + PID + "'", con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        rptr1.DataSource = dt;
+                        rptr1.DataBind();
+                        Repeater3.DataSource = dt;
+                        Repeater3.DataBind();
+                    }
+                }
+            }
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                using (SqlCommand cmd = new SqlCommand("select * from tblrating1 where pid ='" + PID + "'", con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        Repeater4.DataSource = dt;
+                        Repeater4.DataBind();
+
+                    }
+                }
             }
         }
         private void BindProductImage()
@@ -100,98 +135,58 @@ namespace wholesale
                 }
             }
         }
-        private void BindBrand()
-    {
-        using (SqlConnection con = new SqlConnection(s))
+        protected void ButtonAddtoCart_Click(object sender, EventArgs e)
         {
-            using (SqlCommand cmd = new SqlCommand("Select * from brands ", con))
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                {
+            string SelectedSize = string.Empty;
+            string quantity = string.Empty;
+            Int64 PID = Convert.ToInt64(Request.QueryString["PID"]);
 
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                //    rptrBrand.DataSource = dt;
-                  //  rptrBrand.DataBind();
+            foreach (RepeaterItem item in Repeater1.Items)
+            {
+                if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
+                {
+                    var rbList = item.FindControl("rblSize") as RadioButtonList;
+                    var qty = item.FindControl("quantity") as TextBox;
+
+                    SelectedSize = rbList.SelectedValue;
+                    quantity = qty.Text;
+                    var lblError = item.FindControl("lblError") as Label;
+                    lblError.Text = "";
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(s);
+                        SqlCommand cmd = new SqlCommand("insert into cart values (@username,@pid,@qty,@size)", con);
+                        SqlDataAdapter sda = new SqlDataAdapter();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@username", Session["userid"].ToString());
+                        cmd.Parameters.AddWithValue("@qty", quantity);
+                        cmd.Parameters.AddWithValue("@size", SelectedSize);
+                        cmd.Parameters.AddWithValue("@pid", PID);
+
+                        cmd.Connection = con;
+                        con.Open();
+                       cmd.ExecuteNonQuery();
+                        //Int64 cid= Convert.ToInt64(cmd.ExecuteScalar());
+                     
+                       
+                    }
+                    catch (Exception ex)
+                    {
+                        string s = ex.Message;
+                        Response.Write(s);
+                    }
                 }
             }
+
+         
+            Response.Redirect("~/shoppingcart.aspx");
+
+
+
         }
-    }
 
 
 
-
-    protected void women_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void men_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void kid_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void men_DataBinding(object sender, EventArgs e)
-    {
-        using (SqlConnection con = new SqlConnection(s))
-        {
-            using (SqlCommand cmd = new SqlCommand("select A.PID, A.status,A.minlevel, A.pname, A.pcode, A.unitprice, A.sellingprice, A.discount,A.Type,B.Name as ImageName,B.Extension,B.ProID,C.* ,D.*,E.* from Product A inner join Brands C on C.ID = A.brand inner join Category E on E.ID=A.Category inner join ProdStock D on D.PID = A.PID cross apply( select top 1 * from ProdImage B where B.ProID = A.PID order by B.ProID desc )B  where A.Type=@type", con))
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                {
-                    cmd.Parameters.AddWithValue("@type", "MEN");
-
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    rptrProducts.DataSource = dt;
-                    rptrProducts.DataBind();
-                }
-            }
-        }
-    }
-
-    protected void kids_DataBinding(object sender, EventArgs e)
-    {
-        using (SqlConnection con = new SqlConnection(s))
-        {
-            using (SqlCommand cmd = new SqlCommand("select A.PID, A.status,A.minlevel, A.pname, A.pcode, A.unitprice, A.sellingprice, A.discount,A.Type,B.Name as ImageName,B.Extension,B.ProID,C.* ,D.*,E.* from Product A inner join Brands C on C.ID = A.brand inner join Category E on E.ID=A.Category inner join ProdStock D on D.PID = A.PID cross apply( select top 1 * from ProdImage B where B.ProID = A.PID order by B.ProID desc )B  where A.Type=@type", con))
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                {
-                    cmd.Parameters.AddWithValue("@type", "Kid's");
-
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    rptrProducts.DataSource = dt;
-                    rptrProducts.DataBind();
-                }
-            }
-        }
-    }
-
-    protected void women_DataBinding(object sender, EventArgs e)
-    {
-        using (SqlConnection con = new SqlConnection(s))
-        {
-            using (SqlCommand cmd = new SqlCommand("select A.PID, A.status,A.minlevel, A.pname, A.pcode, A.unitprice, A.sellingprice, A.discount,A.Type,B.Name as ImageName,B.Extension,B.ProID,C.* ,D.*,E.* from Product A inner join Brands C on C.ID = A.brand inner join Category E on E.ID=A.Category inner join ProdStock D on D.PID = A.PID cross apply( select top 1 * from ProdImage B where B.ProID = A.PID order by B.ProID desc )B  where A.Type=@type", con))
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                {
-                    cmd.Parameters.AddWithValue("@type", "Women");
-
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    rptrProducts.DataSource = dt;
-                    rptrProducts.DataBind();
-                }
-            }
-        }
-    }
 
         protected void postrvw_Click(object sender, EventArgs e)
         {

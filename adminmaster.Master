@@ -306,7 +306,7 @@
                 <a href="/Salesreport.aspx">Inventory Report</a>
             </li>
             <li>
-                <%--<a href="/expensereport.aspx">Expense</a>--%>
+                <a href="/expensereport.aspx">Expense</a>
             </li>
            
             </ul>

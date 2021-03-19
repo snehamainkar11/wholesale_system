@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="wholesale.SiteMaster" %>
+﻿<%@ Master Language="C#"   AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="wholesale.SiteMaster" %>
 <!doctype html>
 <html lang="en">
 
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/libs/highlightjs/styles/vs2015.css">
     <link rel="stylesheet" href="assets/libs/flickity-fade/flickity-fade.css">
     <link rel="stylesheet" href="assets/fonts/feather/feather.css">
+
     <!-- Theme CSS -->
     <style type="text/css">
      .Star {
@@ -805,7 +806,7 @@
                     </a>
                 </li>
                 <li class="nav-item ml-lg-n4">
-                    <asp:HyperLink class="nav-link" data-toggle="modal"  id="btnCart" runat="server" >
+                    <asp:HyperLink class="nav-link" id="btnCart" runat="server"  NavigateUrl="~/Shoppingcart.aspx">
                       <span class="fe fe-shopping-cart" id="pCount" runat="server"><i class="fe fe-shopping-cart"></i></span>
 
                             
@@ -999,6 +1000,9 @@
     </div>
 </footer>
         </form>
+    
+<asp:ContentPlaceHolder ID="footer" runat="server">
+            </asp:ContentPlaceHolder>
     <!-- JAVASCRIPT -->
     <!-- Libs JS -->
      <script src="js/jquery-3.2.1.min.js"></script>
@@ -1009,7 +1013,11 @@
             });
         });
     </script>
-    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+        <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+
+    <script src="js/component.rating.js"></script>
+    <script src="js/jquery.rateit.min.js"></script>
+
     <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/flickity/dist/flickity.pkgd.min.js"></script>
     <script src="assets/libs/%40fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>

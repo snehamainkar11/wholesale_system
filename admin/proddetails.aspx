@@ -184,7 +184,8 @@
                             
                         </div> <!-- end media -->
                     </div> <!-- end card-body -->
-                </div> <!-- end col -->
+                </div>
+                    </div><!-- end col -->
                     </ItemTemplate>
               </asp:Repeater>  
                

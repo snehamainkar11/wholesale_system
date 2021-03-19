@@ -5,7 +5,7 @@
   <div class="content-page">
                 <div class="content">
                 <div class="content">
-                    <%--  --%>
+                   
 <div class="row">
     <div class="col-12">
         <div class="page-title-box">
@@ -62,7 +62,7 @@
                                                                            </asp:TemplateField>
                             <asp:TemplateField HeaderText="Invoice No" >
                                 <ItemTemplate>
-                                    <asp:Label ID="vwprod" Text='<%# Bind("orderno") %>'
+                                    <asp:Label ID="vwprod" Text='<%# Bind("ID") %>'
                                         runat="server" >
                                     </asp:Label>
                                 </ItemTemplate>
@@ -131,7 +131,7 @@
                             <asp:TemplateField HeaderText="Action" ItemStyle-Width="40">
                                 <ItemTemplate>
                                       <asp:HyperLink ID="vwdet" 
-                                        runat="server" NavigateUrl='<%# "~/admin/custorder.aspx?orderno=" + Eval("orderno") %>'>
+                                        runat="server" NavigateUrl='<%# "~/admin/custorder.aspx?Id=" + Eval("Id") %>'>
                                         <i class="mdi mdi-eye"></i>
                                     </asp:HyperLink>
                                      <asp:ImageButton ImageUrl="~/Images/edit.png" runat="server" CommandName="Edit" ToolTip="Edit" Width="20px" Height="20px" />

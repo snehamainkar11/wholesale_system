@@ -16,7 +16,7 @@
             
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-        <h1 style="text-align:center"> Purchase Report</h1>
+        <h1 style="text-align:center"> Expense Report</h1>
          <div style="text-align:center;text-size-adjust:auto;font-size:16px">
                         Start Date: <asp:TextBox runat="server" TextMode="Date" ID="to" ></asp:TextBox> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               End Date: <asp:TextBox runat="server" TextMode="Date" ID="from" ></asp:TextBox>&nbsp;&nbsp;&nbsp;&nbsp;

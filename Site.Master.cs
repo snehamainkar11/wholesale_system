@@ -28,11 +28,12 @@ namespace wholesale
 
                     link_loginout.Text = "Log out";
 
-                   // Label2.Text = "Welcome </br>" + Session["userid"].ToString();
+                    Label2.Text = "Welcome </br>" + Session["userid"].ToString();
 
                 }
                 else
                 {
+                    Response.Redirect("~/login.aspx");
 
                     link_loginout.Text = "Log in";
 
@@ -78,18 +79,40 @@ namespace wholesale
         }
         public void BindCartNumber()
         {
-            if (Request.Cookies["CartPID"] != null)
+            using (SqlConnection con = new SqlConnection(s))
             {
-                string CookiePID = Request.Cookies["CartPID"].Value.Split('=')[1];
-                string[] ProductArray = CookiePID.Split(',');
-                int ProductCount = ProductArray.Length;
-                pCount.InnerText = ProductCount.ToString();
+                SqlCommand cmd = new SqlCommand("select count(Id)  from cart where uid=@uid", con);
+                try
+                {
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@uid", Session["userid"].ToString());
 
-            }
-            else
-            {
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    while (sdr.Read())
+                    {
+                        Int64 ss = Convert.ToInt64(sdr[0]);
 
-                pCount.InnerText = 0.ToString();
+                        pCount.InnerText = (ss).ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    pCount.InnerText = "0";
+
+                }
+                /*  if (Request.Cookies["CartPID"] != null)
+                  {
+                      string CookiePID = Request.Cookies["CartPID"].Value.Split('=')[1];
+                      string[] ProductArray = CookiePID.Split(',');
+                      int ProductCount = ProductArray.Length;
+                      pCount.InnerText = ProductCount.ToString();
+
+                  }
+                  else
+                  {
+
+                      pCount.InnerText = 0.ToString();
+                  }*/
             }
         }
         protected void OnItemDataBound(object sender, RepeaterItemEventArgs e)

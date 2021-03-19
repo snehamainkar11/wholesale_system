@@ -87,7 +87,7 @@
     <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title mb-2">Items from Order #<%# Eval("orderno") %></h4>
+                <h4 class="header-title mb-2">Items from Order #<%# Eval("Id") %></h4>
 
                 <div class="table-responsive">
                          <asp:GridView runat="server" ID="gv" class="table table-bordered table-centered table-hover mb-0"
@@ -96,7 +96,7 @@
                                         <asp:BoundField DataField="pid" HeaderText="Items" SortExpression="pid"></asp:BoundField>
                                         <asp:BoundField DataField="price" HeaderText="Price" SortExpression="price"></asp:BoundField>
                                         <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="quantity"></asp:BoundField>
-                                        <asp:BoundField DataField="total" HeaderText="Total" SortExpression="total"></asp:BoundField>
+                                        <asp:BoundField DataField="total" HeaderText="Total" SortExpression="total" ReadOnly="True"></asp:BoundField>
                                     </Columns>
                              <FooterStyle BackColor="#CCCC99" ForeColor="Black"></FooterStyle>
 
@@ -115,9 +115,9 @@
                              <SortedDescendingHeaderStyle BackColor="#242121"></SortedDescendingHeaderStyle>
                          </asp:GridView>
 
-                        <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT [pid], [price], [quantity], (price* quantity) as[total] FROM [custorderDet] WHERE ([orderno] = @orderno)">
+                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT pid, price, quantity, price * quantity AS total FROM custorderDet WHERE (purid = @Id)">
                             <SelectParameters>
-                                <asp:QueryStringParameter QueryStringField="orderno" Name="orderno" Type="String"></asp:QueryStringParameter>
+                                <asp:QueryStringParameter QueryStringField="Id" Name="Id" Type="String"></asp:QueryStringParameter>
                             </SelectParameters>
                         </asp:SqlDataSource>
                 </div>

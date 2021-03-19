@@ -22,7 +22,6 @@ namespace wholesale
                
                 BindBrand();
                 BindCategory();
-               // ddlcategory.SelectedItem.Value= (Session["ddlcategory"]).ToString();
 
 
             }

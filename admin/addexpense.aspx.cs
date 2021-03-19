@@ -19,10 +19,6 @@ namespace wholesale
 
 
 
-        protected void Unnamed_Click(object sender, EventArgs e)
-        {
-
-        }
 
         protected void save_Click(object sender, EventArgs e)
         {
@@ -62,12 +58,37 @@ namespace wholesale
             name.Text = "";
             edate.Text = "";
             company.Text = "";
-            amt.Text= "";
+            amt.Text = "";
             vat.Text = "";
             billable.ClearSelection();
             status.ClearSelection();
             ecategory.ClearSelection();
 
+        }
+        public string getsalary()
+        {
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select Sum(salary) from emp ", con);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                string price = dt.Rows[0][0].ToString();
+                return price;
+            }
+
+        }
+        protected void ecategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ecategory.SelectedItem.Text == "Employee Salary")
+            {
+               amt.Text= getsalary();
+            }
+            else
+            {
+                amt.Text = "";
+            }
         }
     }
 }

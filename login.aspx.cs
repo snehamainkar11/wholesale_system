@@ -52,7 +52,7 @@ public partial class login : System.Web.UI.Page
                 
 
             Response.Redirect("index.aspx");
-            Session.RemoveAll();
+            //Session.RemoveAll();
         }
 
             else

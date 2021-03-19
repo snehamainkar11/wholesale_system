@@ -127,8 +127,9 @@
                                 <a class="text-muted" href="shop.aspx">Jeans</a>
                             </div>
                             <div class="col-auto">
-                                <!-- Rating -->
-                                <div class="rating font-size-xs text-dark" data-value="4">
+                               <asp:Repeater ID="rptr1" runat="server">
+                <ItemTemplate>
+                                <div class="rating font-size-xs text-dark" data-value= <%#Eval("AverageRating")%>  >
                                     <div class="rating-item">
                                         <i class="fas fa-star"></i>
                                     </div>
@@ -145,6 +146,7 @@
                                         <i class="fas fa-star"></i>
                                     </div>
                                 </div>
+                    </ItemTemplate></asp:Repeater>
                                 <a class="font-size-sm text-reset ml-2" href="#reviews">
                                     Reviews
                                 </a>
@@ -197,88 +199,21 @@
                                 <!-- Label -->
                                 <p class="mb-5">
                                     Size: <strong><span id="sizeCaption">34</span> Size(IN)</strong>
-                                </p>
-                               <!-- <div class="btn-group" data-toggle="buttons">
-    <label class="btn btn-default">
-     <asp:RadioButton runat="server" id="radioB1" GroupName="sizeRadio" AutoPostBack="True"/>
-     Option 1 
-    </label>
-    <label class="btn btn-default">
-     <asp:RadioButton runat="server" id="radioB2" GroupName="radioB" AutoPostBack="True"/>
-     Option 2
-    </label>
-</div>-->
-                                <!-- Radio -->
                                 <div class="mb-2">
                                      <div class="custom-control custom-control-inline custom-control-size mb-2">
-                                         <div class="custom-control-label"">
-                                        <asp:RadioButton runat="server"   GroupName="sizeRadio"   id="sizeRadioOne" value="28" data-toggle="form-caption" data-target="#sizeCaption" />
-                                        <asp:label  for="sizeRadioOne">28</asp:label>
-                                             </div>
-                                    </div>
-                                    <div class="custom-control custom-control-inline custom-control-size mb-2">
-                                         <div class="custom-control-label"">
-                                        <asp:RadioButton runat="server"  GroupName="sizeRadio"   id="sizeRadioTwo" value="30" data-toggle="form-caption" data-target="#sizeCaption" />
-                                        <asp:label  for="sizeRadioTwo">30</asp:label>
-                                             </div>
-                                    </div>
-                                    <div class="custom-control custom-control-inline custom-control-size mb-2">
-                                         <div class="custom-control-label"">
-                                        <asp:RadioButton runat="server"  GroupName="sizeRadio"   id="sizeRadioThree" value="28" data-toggle="form-caption" data-target="#sizeCaption" />
-                                        <asp:label  for="sizeRadioThree">32</asp:label>
-                                             </div>
-                                    </div>
-                                    <div class="custom-control custom-control-inline custom-control-size mb-2">
-                                         <div class="custom-control-label"">
-                                        <asp:RadioButton runat="server"  GroupName="sizeRadio"   id="sizeRadioFour" value="28" data-toggle="form-caption" data-target="#sizeCaption" />
-                                        <asp:label  for="sizeRadioFour">34</asp:label>
-                                             </div>
-                                    </div>
-                                    <div class="custom-control custom-control-inline custom-control-size mb-2">
-                                         <div class="custom-control-label">
-                                        <asp:RadioButton runat="server"   GroupName="sizeRadio"   id="sizeRadioFive" value="28" data-toggle="form-caption" data-target="#sizeCaption" />
-                                        <asp:label  for="sizeRadioFive">36</asp:label>
-                                             </div>
-                                    </div>
-                                    <div class="custom-control custom-control-inline custom-control-size mb-2">
-                                         <div class="custom-control-label">
-                                        <asp:RadioButton runat="server"   GroupName="sizeRadio"   id="sizeRadioSix" value="28" data-toggle="form-caption" data-target="#sizeCaption" />
-                                        <asp:label  for="sizeRadioSix">38</asp:label>
-                                             </div>
-                                    </div>
-                                    <div class="custom-control custom-control-inline custom-control-size mb-2">
-                                         <div class="custom-control-label">
-                                        <asp:RadioButton runat="server"   GroupName="sizeRadio"   id="sizeRadioSeven" value="28" data-toggle="form-caption" data-target="#sizeCaption" />
-                                        <asp:label  for="sizeRadioSeven">40</asp:label>
-                                             </div>
-                                    </div>
-                                    
-                                   
-                                    <!--<div class="custom-control custom-control-inline custom-control-size mb-2">
-                                        <input type="radio" class="custom-control-input" name="sizeRadio" id="sizeRadioNine" value="10" data-toggle="form-caption" data-target="#sizeCaption">
-                                        <label class="custom-control-label" for="sizeRadioNine">10</label>
-                                    </div>
-                                    <div class="custom-control custom-control-inline custom-control-size mb-2">
-                                        <input type="radio" class="custom-control-input" name="sizeRadio" id="sizeRadioTen" value="10.5" data-toggle="form-caption" data-target="#sizeCaption">
-                                        <label class="custom-control-label" for="sizeRadioTen">10.5</label>
-                                    </div>
-                                    <div class="custom-control custom-control-inline custom-control-size mb-2">
-                                        <input type="radio" class="custom-control-input" name="sizeRadio" id="sizeRadioEleven" value="11" data-toggle="form-caption" data-target="#sizeCaption">
-                                        <label class="custom-control-label" for="sizeRadioEleven">11</label>
-                                    </div>
-                                    <div class="custom-control custom-control-inline custom-control-size mb-2">
-                                        <input type="radio" class="custom-control-input" name="sizeRadio" id="sizeRadioTwelve" value="12" data-toggle="form-caption" data-target="#sizeCaption">
-                                        <label class="custom-control-label" for="sizeRadioTwelve">12</label>
-                                    </div>
-                                    <div class="custom-control custom-control-inline custom-control-size mb-2">
-                                        <input type="radio" class="custom-control-input" name="sizeRadio" id="sizeRadioThirteen" value="13" data-toggle="form-caption" data-target="#sizeCaption">
-                                        <label class="custom-control-label" for="sizeRadioThirteen">13</label>
-                                    </div>
-                                    <div class="custom-control custom-control-inline custom-control-size mb-2">
-                                        <input type="radio" class="custom-control-input" name="sizeRadio" id="sizeRadioFourteen" value="14" data-toggle="form-caption" data-target="#sizeCaption">
-                                        <label class="custom-control-label" for="sizeRadioFourteen">14</label>
-                                    </div>-->
+                                        
+                                        <asp:radiobuttonlist ID="rblSize" runat="server" RepeatDirection="Horizontal" >
+                                        <asp:ListItem Value="28" Text="28"></asp:ListItem>
+                                        <asp:ListItem Value="30" Text="30"></asp:ListItem>
+                                        <asp:ListItem Value="32" Text="32"></asp:ListItem>
+                                        <asp:ListItem Value="34" Text="34"></asp:ListItem>
+                                        <asp:ListItem Value="36" Text="36"></asp:ListItem>
+                                        <asp:ListItem Value="38" Text="38"></asp:ListItem>
+                                        <asp:ListItem Value="40" Text="40"></asp:ListItem>
+
+                                    </asp:radiobuttonlist>
                                 </div>
+                                    </div>
                                 <!-- Size chart -->
                                 <p class="mb-7">
                                     <img src="assets/img/icons/icon-ruler.svg" alt="..." class="img-fluid"> <a class="text-reset text-decoration-underline ml-3" data-toggle="modal" href="#modalSizeChart">Size chart</a>
@@ -292,42 +227,24 @@
                                         </div>
                                     </div>
                                 </div>
-                                        <!--<select class="custom-select mb-2">
-                                            <option value="1" selected>1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>-->
+                                       
+                                  
 
-                                    <div>
-
-                        <div class="col-10 col-lg">
-                                     <asp:TextBox ID="pincode" runat="server" Placeholder="Enter Pincode" class="form-control form-control-white-700 form-control-lg" height="55px"></asp:TextBox>  
-                                    
-
-                                          <asp:Button ID="SubmitButton" runat="server" Text="Check" BorderStyle="Solid" BackColor="white" Width="458px" Height="55px" ForeColor="Black"/>  
-                                    </div>
-                                            <i class="btn btn-Ck-dark ml-2"></i>
-                                        
-                                         
-                                        <!-- Submit -->
+                  
                                     
                                     <div class="col-12 col-lg">
                                         <!-- Submit -->
-                                        <asp:Button ID="Button2" runat="server" Text="Add To Cart" BorderStyle="Solid" BackColor="Black" Width="465px" Height="55px" ForeColor="White"/>  
-                                       <!-- <asp:Button ID="submit" Text=" Add to Cart" class="btn btn-block btn-dark mb-2" runat="server">
-                                                                                </asp:Button>-->
+                                        <asp:Button ID="ButtonAddtoCart" runat="server" Text="Add To Cart" BorderStyle="Solid" BackColor="Black" Width="465px" Height="55px" ForeColor="White" OnClick="ButtonAddtoCart_Click"/>  
+                                      <asp:Label ID="lblError" CssClass="text-danger" runat="server">
+
+                                        </asp:Label>
                                     </div>
                                     <div class="col-12 col-lg-auto">
-                                        <!-- Wishlist -->
                                        <asp:Button ID="Button3" runat="server" Text="Wishlist" BorderStyle="Solid" BackColor="Black" Width="465px" Height="55px" hover="White" ForeColor="White"/>  
-                                       <!-- <button class="btn btn-outline-dark btn-block mb-2" data-toggle="button">
-                                            Wishlist <i class="fe fe-heart ml-2"></i>
-                                        </button>-->
+                                     
                                     </div>
                                 </div>
-                                <!-- Text -->
+                               
                               
                             </div>
                        
@@ -571,24 +488,27 @@
                         </div>
                     </div>
                     <div class="col-12 col-md text-md-center">
-                        <!-- Rating -->
-                        <div class="rating text-dark h6 mb-4 mb-md-0" data-value="4">
-                            <div class="rating-item">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="rating-item">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="rating-item">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="rating-item">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="rating-item">
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
+                         <asp:Repeater ID="Repeater3" runat="server">
+                <ItemTemplate>
+                      <div class="rating font-size-xs text-dark" data-value= <%#Eval("AverageRating")%>  >
+                                    <div class="rating-item">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="rating-item">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="rating-item">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="rating-item">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="rating-item">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                    </ItemTemplate>
+                    </asp:Repeater>
                         <!-- Count -->
                         <strong class="font-size-sm ml-2">Reviews</strong>
                     </div>
@@ -665,9 +585,9 @@
                             </div>
                         </div>
                 </div>
-                <!-- Reviews -->
+                <asp:Repeater ID="Repeater4" runat="server">
+                <ItemTemplate>
                 <div class="mt-8">
-                    <!-- Review -->
                     <div class="review">
                         <div class="review-body">
                             <div class="row">
@@ -683,8 +603,8 @@
                                     <!-- Header -->
                                     <div class="row mb-6">
                                         <div class="col-12">
-                                            <!-- Rating -->
-                                            <div class="rating font-size-sm text-dark" data-value="5">
+                                            
+                                            <div class="rating font-size-sm text-dark" data-value= <%#Eval("ratings")%>   >
                                                 <div class="rating-item">
                                                     <i class="fas fa-star"></i>
                                                 </div>
@@ -705,21 +625,19 @@
                                         <div class="col-12">
                                             <!-- Time -->
                                             <span class="font-size-xs text-muted">
-                                                Rosh Panjabi, <time datetime="2019-07-25">25 Jan 2020</time>
+                                               <%#Eval("username")%>  <time datetime="2019-07-25">25 Jan 2020</time>
                                             </span>
                                         </div>
                                     </div>
                                     <!-- Title -->
                                     <p class="mb-2 font-size-lg font-weight-bold">
-                                        So cute!
+                                         <%#Eval("title")%> 
                                     </p>
                                     <!-- Text -->
                                     <p class="text-gray-500">
-                                        abvgfhjjlk
-                                       <!-- Justo ut diam erat hendrerit. Morbi porttitor, per eu. Sodales curabitur diam sociis. Taciti lobortis nascetur. Ante laoreet odio hendrerit.
-                                        Dictumst curabitur nascetur lectus potenti dis sollicitudin habitant quis vestibulum.-->
-                                    </p>
-                                    <!-- Footer -->
+                                          <%#Eval("feedback")%> 
+                                          </p>
+                                 
                                     <div class="row align-items-center">
                                         <div class="col-auto d-none d-lg-block">
                                             <!-- Text -->
@@ -736,188 +654,15 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <div class="col-auto d-none d-lg-block">
-                                            <!-- Text -->
-                                            <p class="mb-0 font-size-sm">Comments (0)</p>
-                                        </div>
-                                        <div class="col-auto">
-                                            <!-- Button -->
-                                            <a class="btn btn-xs btn-outline-border" href="#!">
-                                                Comment
-                                            </a>
-                                        </div>
+                                     
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Review -->
-                    <div class="review">
-                        <!-- Body -->
-                        <div class="review-body">
-                            <div class="row">
-                                <div class="col-12 col-md-auto">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xxl mb-6 mb-md-0">
-                                        <span class="avatar-title rounded-circle">
-                                            <i class="fa fa-user"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md">
-                                    <!-- Header -->
-                                    <div class="row mb-6">
-                                        <div class="col-12">
-                                            <!-- Rating -->
-                                            <div class="rating font-size-sm text-dark" data-value="3">
-                                                <div class="rating-item">
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <div class="rating-item">
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <div class="rating-item">
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <div class="rating-item">
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <div class="rating-item">
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <!-- Time -->
-                                            <span class="font-size-xs text-muted">
-                                                Sneha Mainkar, <time datetime="2019-07-07">01 Feb 2021</time>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Title -->
-                                    <p class="mb-2 font-size-lg font-weight-bold">
-                                        Cute, but too small
-                                    </p>
-                                    <!-- Text -->
-                                    <p class="text-gray-500">
-                                        Shall good midst can't. Have fill own his multiply the divided. Thing great. Of heaven whose signs.
-                                    </p>
-                                    <!-- Footer -->
-                                    <div class="row align-items-center">
-                                        <div class="col-auto d-none d-lg-block">
-                                            <!-- Text -->
-                                            <p class="mb-0 font-size-sm">Was this review helpful?</p>
-                                        </div>
-                                        <div class="col-auto mr-auto">
-                                            <!-- Rate -->
-                                            <div class="rate">
-                                                <a class="rate-item" data-toggle="vote" data-count="2" href="#" role="button">
-                                                    <i class="fe fe-thumbs-up"></i>
-                                                </a>
-                                                <a class="rate-item" data-toggle="vote" data-count="1" href="#" role="button">
-                                                    <i class="fe fe-thumbs-down"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto d-none d-lg-block">
-                                            <!-- Text -->
-                                            <p class="mb-0 font-size-sm">Comments (1)</p>
-                                        </div>
-                                        <div class="col-auto">
-                                            <!-- Button -->
-                                            <a class="btn btn-xs btn-outline-border" href="#!">
-                                                Comment
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Child review -->
-                        <div class="review review-child">
-                            <div class="review-body">
-                                <!-- Content -->
-                                <div class="row">
-                                    <div class="col-12 col-md-auto">
-                                        <!-- Avatar -->
-                                        <div class="avatar avatar-xxl mb-6 mb-md-0">
-                                            <span class="avatar-title rounded-circle">
-                                                <i class="fa fa-user"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md">
-                                        <!-- Header -->
-                                        <div class="row mb-6">
-                                            <div class="col-12">
-                                                <!-- Rating -->
-                                                <div class="rating font-size-sm text-dark" data-value="4">
-                                                    <div class="rating-item">
-                                                        <i class="fas fa-star"></i>
-                                                    </div>
-                                                    <div class="rating-item">
-                                                        <i class="fas fa-star"></i>
-                                                    </div>
-                                                    <div class="rating-item">
-                                                        <i class="fas fa-star"></i>
-                                                    </div>
-                                                    <div class="rating-item">
-                                                        <i class="fas fa-star"></i>
-                                                    </div>
-                                                    <div class="rating-item">
-                                                        <i class="fas fa-star"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <!-- Time -->
-                                                <span class="font-size-xs text-muted">
-                                                    Ash Mul, <time datetime="2019-07-14">14 Aug 2020</time>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Title -->
-                                        <p class="mb-2 font-size-lg font-weight-bold">
-                                            Very good
-                                        </p>
-                                        <!-- Text -->
-                                        <p class="text-gray-500">
-                                            Made face lights yielding forth created for image behold blessed seas.
-                                        </p>
-                                        <!-- Footer -->
-                                        <div class="row align-items-center">
-                                            <div class="col-auto d-none d-lg-block">
-                                                <!-- Text -->
-                                                <p class="mb-0 font-size-sm">Was this review helpful?</p>
-                                            </div>
-                                            <div class="col-auto mr-auto">
-                                                <!-- Rate -->
-                                                <div class="rate">
-                                                    <a class="rate-item" data-toggle="vote" data-count="7" href="#" role="button">
-                                                        <i class="fe fe-thumbs-up"></i>
-                                                    </a>
-                                                    <a class="rate-item" data-toggle="vote" data-count="0" href="#" role="button">
-                                                        <i class="fe fe-thumbs-down"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-auto d-none d-lg-block">
-                                                <!-- Text -->
-                                                <p class="mb-0 font-size-sm">Comments (0)</p>
-                                            </div>
-                                            <div class="col-auto">
-                                                <!-- Button -->
-                                                <a class="btn btn-xs btn-outline-border" href="#!">
-                                                    Comment
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  
+               </ItemTemplate>
+                                                 </asp:Repeater>
                 <!-- Pagination -->
                 <nav class="d-flex justify-content-center mt-9">
                     <ul class="pagination pagination-sm text-gray-400">

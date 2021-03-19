@@ -69,6 +69,17 @@
         <div class="form-row" >
 
      <div class="form-group col-md-4" >
+                        <label for="example-select">Category</label>
+                        <asp:DropDownList runat="server" class="form-control" ID="ecategory" OnSelectedIndexChanged="ecategory_SelectedIndexChanged" AutoPostBack="true">
+                           <asp:ListItem>Light Bill</asp:ListItem>
+                           <asp:ListItem>Rent</asp:ListItem>
+                           <asp:ListItem>Maintenance</asp:ListItem>
+                            <asp:ListItem>Food</asp:ListItem>
+                            <asp:ListItem>Employee Salary</asp:ListItem>
+
+                        </asp:DropDownList>
+                    </div>  
+     <div class="form-group col-md-4" >
         <label for="validationCustom06">Amount</label>
         <asp:TextBox runat ="server" type="number" class="form-control" id="amt"
             placeholder="Amount"  required></asp:TextBox>
@@ -84,16 +95,6 @@
             Looks good!
         </div>
     </div>
-     <div class="form-group col-md-4" >
-                        <label for="example-select">Category</label>
-                        <asp:DropDownList runat="server" class="form-control" ID="ecategory">
-                           <asp:ListItem>Light Bill</asp:ListItem>
-                           <asp:ListItem>Rent</asp:ListItem>
-                           <asp:ListItem>Maintenance</asp:ListItem>
-                            <asp:ListItem>Tea/Snacks Bill</asp:ListItem>
-
-                        </asp:DropDownList>
-                    </div>  
 
                  
      

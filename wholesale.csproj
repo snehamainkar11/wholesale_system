@@ -714,7 +714,9 @@
     <Content Include="images\signupimg.jpg" />
     <Content Include="images\unchecked.gif" />
     <Content Include="index.aspx" />
+    <Content Include="js\component.rating.js" />
     <Content Include="js\jquery-3.2.1.min.js" />
+    <Content Include="js\jquery.rateit.min.js" />
     <Content Include="js\npm.js" />
     <Content Include="js\site89a2.js" />
     <Content Include="js\views\customer\index.js" />

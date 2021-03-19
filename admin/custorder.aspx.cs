@@ -28,9 +28,9 @@ namespace wholesale.admin
         {
             using (SqlConnection con = new SqlConnection(s))
             {
-                String pid = (Request.QueryString["orderno"]);
+                String pid = (Request.QueryString["Id"]);
 
-                using (SqlCommand cmd = new SqlCommand("select * from custorder where orderno ='" + pid + "'", con))
+                using (SqlCommand cmd = new SqlCommand("select * from custorder where Id ='" + pid + "'", con))
                 {
                     cmd.CommandType = CommandType.Text;
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
