@@ -55,24 +55,27 @@
               <div class="float-left mt-1">
                             <h4 style= "color:darkred">Billing From:</h4>
                             <h4><b style= "color:indianred">
-                   <asp:Label Text="Waheguru Creations" runat="server" ID="cnameLabel" /></b></h4>
-                     <h5>  address 1</h5>
-                        <h5>City1,opp to avs,ahhsn road
-                           Maharashtra</h5>
-                             <h5>     Pincode :416602</h5>
-                                    <h5>Contact No:738388444</h5>
+                   <asp:Label Text="Waheguru Creation" runat="server" ID="cnameLabel" /></b></h4>
+                     <h5> 102,Ground Floor ,Vaibhav Laxmi Market,</h5>
+                        <h5> Gheekanta Road,Ahmedabad. 
+                           </h5>
+                             <h5>     Pincode :380001</h5>
+                                    <h5>Contact No:7096968959 </h5>
+                                       <h5> Email:manojkarda4455@gmail.com</h5>
                               </div>     
 
             </div>
                     
                     
-              <div class="col-sm-4 offset-sm-2">
+              <div class="col-sm-3 offset-sm-2">
                         <div class="mt-3 float-sm-right">
-                                            <h5><%# Eval("fname") %> &nbsp;&nbsp;<%# Eval("lname") %></h5>
+                            <h4 style= "color:darkred">Billing To:</h4>
 
-                            <p class="font-16"><strong>Date: </strong> &nbsp;&nbsp;&nbsp; <asp:Label Text='<%# Eval("odate") %>' runat="server" ID="pdateLabel" /></p>
+                                            <h4 style= "color:darkblue"><%# Eval("fname") %> &nbsp;<%# Eval("lname") %></h4>
+
+                            <p class="font-16"><strong>Date: </strong> &nbsp;&nbsp; <asp:Label Text='<%# Eval("odate", "{0:dd/MM/yyyy}") %>' runat="server" ID="pdateLabel" />
                   
-                            <p class="font-16"><strong>Invoice No: </strong> <span class="float-center">Inv000<%# Eval("Id") %></span></p>
+                         <br /> <strong>Invoice No: </strong> <span class="float-center">000<%# Eval("Id") %></span></p>
                         </div>
                     </div>
       </div>
@@ -87,7 +90,7 @@
     <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title mb-2">Items from Order #<%# Eval("Id") %></h4>
+                <h4 class="header-title mb-2">Items from Order #000<%# Eval("Id") %></h4>
 
                 <div class="table-responsive">
                          <asp:GridView runat="server" ID="gv" class="table table-bordered table-centered table-hover mb-0"
@@ -194,11 +197,11 @@
             <div class="card-body">
                 <h4 class="header-title mb-3" style="text-decoration:underline">Billing Information</h4>
 
-                <ul class="list-unstyled mb-0">
+                <ul class="list-unstyled mb-0" >
                     <li>
                         <p class="mb-2"><span class="font-weight-bold mr-2">Payment Type:</span><%# Eval("paymode") %></p>
                         <p class="mb-2"><span class="font-weight-bold mr-2">Status:</span> <%# Eval("paystatus") %></p>
-                        <p class="mb-2"><span class="font-weight-bold mr-2">Payment Date:</span><%# Eval("odate") %></p>
+                        <p class="mb-2"><span class="font-weight-bold mr-2">Payment Date:</span><%# Eval("odate", "{0:dd/MM/yyyy}") %></p>
                     </li>
                 </ul>
 
@@ -209,18 +212,26 @@
     <div class="col-lg-4">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title mb-3" style="text-decoration:underline">Delivery Info</h4>
+                <h4 class="header-title mb-3 text-center" style="text-decoration:underline">Delivery Info</h4>
 
                 <div class="text-center">
                     <i class="mdi mdi-truck-fast h2 text-muted"></i>
-                    <h5><b>UPS Delivery</b></h5>
+                    <h5><b> Delivery</b></h5>
                     <p class="mb-1"><b>Order ID :</b><%# Eval("id") %></p>
                     <p class="mb-0"><b>Shipping Status :</b><%# Eval("shipstatus") %></p>
-                </div>
+                <%--</div>--%>
             </div>
         </div>
     </div> <!-- end col -->
-                      <div class="mt-2 float-sm-right">      <p class="mb-0"><span class="font-weight-bold mr-2">Note:</span> <%# Eval("note") %></p>
+      
+           <br />
+                      <div class="mt-2 float-sm-right">      <p class="mb-0"><span class="font-weight-bold mr-2">
+                           <p>__________________________________________</p>
+                          <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign and Stamp by Authority</h5>
+ <hr />
+                          <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note&nbsp;:&nbsp; NO RETURN POLICY!!!</b></p>
+                                       <h5>  ....................................................................................Please Visit again,Happy Shopping!!!............................................................................................
+</h5>
 </div>
       </ItemTemplate>
                                </asp:Repeater> </div>     

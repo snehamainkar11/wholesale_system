@@ -78,9 +78,9 @@
 
 
                                                                            </asp:TemplateField>
-                                                                           <asp:TemplateField HeaderText="Company/Store">
+                                                                           <asp:TemplateField HeaderText="Company">
                                                                                <ItemTemplate>
-                                                                                   <asp:Label ID="lblsize" runat="server" Text='<%# Bind("company") %>'></asp:Label>
+                                                                                   <asp:Label ID="lblsize" runat="server" Text='<%# Bind("company") %>'  Width="100"></asp:Label>
                                                                                </ItemTemplate>
                                                                                <EditItemTemplate>
                                                                                    <asp:TextBox ID="txtcompany" CssClass="form-control" runat="server" Text='<%# Bind("company") %>'></asp:TextBox>
@@ -118,7 +118,7 @@
 
                                                                            <asp:TemplateField HeaderText="Address">
                                                                                <ItemTemplate>
-                                                                                   <asp:Label ID="lblup" runat="server" Text='<%# Bind("address") %>'></asp:Label>
+                                                                                   <asp:Label ID="lblup" runat="server" Text='<%# Bind("address") %>' Width="200"></asp:Label>
                                                                                </ItemTemplate>
                                                                                <EditItemTemplate>
                                                                                    <asp:TextBox ID="addr" CssClass="form-control" runat="server" Text='<%# Bind("address") %>'></asp:TextBox>

@@ -66,6 +66,12 @@
 
                     </div>
                            </ItemTemplate></asp:Repeater> 
+                              <div class="form-group col-md-3">
+                        <label for="brand">Order Date </label>
+                        <asp:Textbox  ID="odate" runat="server" class="form-control" TextMode="date" name="brand"  value="dd-mm-yyyy">
+                            
+                            </asp:Textbox>
+                    </div>
                              <div class="form-group col-md-3">
                         <label for="brand">Due Date </label>
                         <asp:Textbox  ID="txtdue" runat="server" class="form-control" TextMode="date" name="brand"  value="dd-mm-yyyy">
@@ -184,7 +190,7 @@
                                      <asp:TextBox ID="discounts"  Text='<%# Bind("discount") %>' CssClass="dis" runat="server"   ></asp:TextBox> <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroupPrepend">Rs</span>
             </div></div></p>
-                                   <p> <b> GST:</b> <asp:Label ID="txtgst"    Text="5 %"   runat="server" ></asp:Label></p>
+                                   <p> <b> GST:</b> <asp:TextBox ID="txtgst" CssClass="txtgst" Width="60"  Text='<%# Bind("gst") %>'   runat="server" ></asp:TextBox>%</p>
                             
                               <h4>  Grand Total :  <asp:Label ID="grand" Text='<%# Bind("grand") %>' CssClass="grand"  runat="server"></asp:Label>Rs</h4>
 
@@ -253,13 +259,27 @@
 <script type="text/javascript">
    $(function () {
 
-           
+       $('.txtgst').blur(function () {
+           var txttot = parseFloat($('.tot').val())
+
+           var disCount = parseFloat($('.dis').val())
+           var gst = parseFloat($('.txtgst').val())
+
+           var x = parseFloat(txttot + parseFloat((txttot * gst) / 100))
+           if (!isNaN(disCount)) {
+
+               $('.grand').text(parseFloat(x) - parseFloat(disCount));
+
+           }
+
+       })
             $('.dis').blur(function () {
                  var txttot = parseFloat($('.tot').val())
 
                 var disCount = parseFloat($('.dis').val())
+                var gst = parseFloat($('.txtgst').val())
 
-                 var x= parseFloat(txttot + parseFloat((txttot*5)/100))
+                 var x= parseFloat(txttot + parseFloat((txttot*gst)/100))
                 if (!isNaN(disCount)) {
                   
                     $('.grand').text(parseFloat(x) - parseFloat(disCount));
@@ -270,7 +290,7 @@
 
 
         })
-    </script>
+</script>
 
     </asp:Content>
 

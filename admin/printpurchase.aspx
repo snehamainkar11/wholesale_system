@@ -37,13 +37,13 @@
                     <div style="text-align:center">
                                            
                            
-                            <h3 style="color:darkblue">Waheguru Creations</h3>
+                            <h3 style="color:darkblue">Waheguru Creation</h3>
 
                             
                      <div style="color:black">
-                      <h5>abc road,opp to dominoz piazza,                        
-                          Pin :487570</h5>
-                       <h5> Contact:9484949990 , Email:abc@gmail.com</h5>
+                      <h5>102,Ground Floor Vaibhav Laxmi Market, Gheekanta Road,Ahmedabad.                       
+                          Pin :380001</h5>
+                       <h5> Contact:7096968959 , Email:manojkarda4455@gmail.com</h5>
 
                         
                   
@@ -116,18 +116,23 @@
             <div class="col-sm-10">
                         <div class="float-right mt-4 mt-sm-2">
                            
-                            <h4>Grand Total : <%# Eval("total") %> Rs</h4>
+                            <h4>Total : <%# Eval("total") %> Rs</h4>
                         </div>
                         </div>
                         </div>
                        
-                          
+            
+        
+                      </ItemTemplate>
+                               </asp:Repeater> 
+                       <hr />      
+         <p>__________________________________________</p>
+                          <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign and Stamp by Authority</h5>
+               Name:_________________________________
+               
                           
        </div>
                             </div>
-        
-                      </ItemTemplate>
-                               </asp:Repeater>      
                     </asp:Panel>
   </div></div>
         </div></div>

@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"MasterPageFile="~/Site.Master" CodeFile="accountorder.aspx.cs" Inherits="wholesale.accountorder" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true"MasterPageFile="~/Site.Master" CodeFile="accountorder.aspx.cs" Inherits="wholesale.accountorder" %>
 
 
 <asp:Content ID="conten1" ContentPlaceHolderID="Maincontent" runat="server">  
@@ -30,19 +31,22 @@
                 </nav>
             </div>
             <div class="col-12 col-md-9 col-lg-8 offset-lg-1">
-                <!-- Order -->
+                
                 <div class="card card-lg mb-5 border">
+                   
                     <div class="card-body pb-0">
-                        <!-- Info -->
+                        
                         <div class="card card-sm">
                             <div class="card-body bg-light">
                                 <div class="row">
+                                     <asp:Repeater Id="rptr" runat="server" >
+                                        <ItemTemplate>
                                     <div class="col-6 col-lg-3">
                                         <!-- Heading -->
                                         <h6 class="heading-xxxs text-muted">Order No:</h6>
                                         <!-- Text -->
                                         <p class="mb-lg-0 font-size-sm font-weight-bold">
-                                            673290789
+                                             <%# Eval ("Id") %> 
                                         </p>
                                     </div>
                                     <div class="col-6 col-lg-3">
@@ -51,7 +55,7 @@
                                         <!-- Text -->
                                         <p class="mb-lg-0 font-size-sm font-weight-bold">
                                             <time datetime="2019-10-01">
-                                                01 Feb, 2021
+                                                 <%# Eval ("odate", "{0:dd/MM/yyyy}") %>
                                             </time>
                                         </p>
                                     </div>
@@ -60,7 +64,7 @@
                                         <h6 class="heading-xxxs text-muted">Status:</h6>
                                         <!-- Text -->
                                         <p class="mb-0 font-size-sm font-weight-bold">
-                                            Awating Delivery
+                                             <%# Eval ("shipstatus") %> 
                                         </p>
                                     </div>
                                     <div class="col-6 col-lg-3">
@@ -68,106 +72,84 @@
                                         <h6 class="heading-xxxs text-muted">Order Amount:</h6>
                                         <!-- Text -->
                                         <p class="mb-0 font-size-sm font-weight-bold">
-                                            Rs.2,398
+                                              <%# Eval ("grandtotal") %> Rs
                                         </p>
                                     </div>
-                                </div>
+                                </ItemTemplate></asp:Repeater>  </div>
                             </div>
-                        </div>
+                            
+                        
                     </div>
+                    </div>
+                  
                     <div class="card-footer">
                         <!-- Heading -->
                         <h6 class="mb-7">Order Items</h6>
                         <!-- Divider -->
                         <hr class="my-5">
-                        <!-- List group -->
+                            
+           
                         <ul class="list-group list-group-lg list-group-flush-y list-group-flush-x">
+                             <asp:Repeater Id="Repeater2" runat="server" >
+                                        <ItemTemplate>
                             <li class="list-group-item">
                                 <div class="row align-items-center">
                                     <div class="col-4 col-md-3 col-xl-2">
                                         <!-- Image -->
-                                        <a href="viewproduct.aspx"><img src="../assets/img/products/product-6.jpg" alt="..." class="img-fluid"></a>
+                                        <a><img src="/Products/<%# Eval("ProID") %>/<%# Eval("Name") %><%# Eval("Extension") %>" alt="..." class="img-fluid"></a>
                                     </div>
                                     <div class="col">
                                         <!-- Title -->
                                         <p class="mb-4 font-size-sm font-weight-bold">
-                                            <a class="text-body" href="viewproduct.aspx">Joggers x 1</a> <br>
-                                            <span class="text-muted">Rs.799</span>
+                                            <a class="text-body" href="viewproduct.aspx"><%# Eval("pname") %></a> <br>
+                                            <span class="text-muted">Rs.<%# Eval("sellingprice") %></span>
                                         </p>
                                         <!-- Text -->
                                         <div class="font-size-sm text-muted">
-                                            Size: M <br>
-                                            Color: White
+                                          Size : <%# Eval("size") %> <br>
+                                            Color:<%# Eval("color") %>
                                         </div>
+                                            <p class="text-body"> Quantity:<%# Eval("quantity") %></p>
+
                                     </div>
                                 </div>
                             </li>
-                            <li class="list-group-item">
-                                <div class="row align-items-center">
-                                    <div class="col-4 col-md-3 col-xl-2">
-                                        <!-- Image -->
-                                        <a href="viewproduct.aspx"><img src="../assets/img/products/product-10.jpg" alt="..." class="img-fluid"></a>
-                                    </div>
-                                    <div class="col">
-                                        <!-- Title -->
-                                        <p class="mb-4 font-size-sm font-weight-bold">
-                                            <a class="text-body" href="viewproduct.aspx">Patches Funky x 1</a> <br>
-                                            <span class="text-muted">Rs.1,599</span>
-                                        </p>
-                                        <!-- Text -->
-                                        <div class="font-size-sm text-muted">
-                                            Color: Blue
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                           <!-- <li class="list-group-item">
-                                <div class="row align-items-center">
-                                    <div class="col-4 col-md-3 col-xl-2">-->
-                                        <!-- Image -->
-                                      <!--  <a href="../Product.html"><img src="../assets/img/products/product-48.jpg" alt="..." class="img-fluid"></a>
-                                    </div>
-                                    <div class="col">-->
-                                        <!-- Title -->
-                                        <!--<p class="mb-4 font-size-sm font-weight-bold">
-                                            <a class="text-body" href="../Product.html">Sweatshirt with Pocket</a> <br>
-                                            <span class="text-muted">$39.00</span>
-                                        </p>-->
-                                        <!-- Text -->
-                                        <!--<div class="font-size-sm text-muted">
-                                            Size: L <br>
-                                            Color: Pink
-                                        </div>-->
+                          
+                       </ItemTemplate>
+                                 </asp:Repeater>
                                     </div>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <!-- Total -->
+              <asp:Repeater Id="Repeater1" runat="server" >
+                                        <ItemTemplate>
                 <div class="card card-lg mb-5 border">
                     <div class="card-body">
+
                         <!-- Heading -->
                         <h6 class="mb-7">Order Total</h6>
-                        <!-- List group -->
+                   
                         <ul class="list-group list-group-sm list-group-flush-y list-group-flush-x">
                             <li class="list-group-item d-flex">
                                 <span>Subtotal</span>
-                                <span class="ml-auto">Rs.2,398</span>
+                                <span class="ml-auto">Rs.  <%# Eval ("total") %></span>
                             </li>
                             <li class="list-group-item d-flex">
                                 <span>Tax</span>
-                                <span class="ml-auto">Rs.0</span>
+                                <span class="ml-auto"> <%# Eval ("tax") %> Rs  (5 %)</span>
                             </li>
                             <li class="list-group-item d-flex">
                                 <span>Shipping</span>
-                                <span class="ml-auto">Free</span>
+                                <span class="ml-auto"> Rs. <%# Eval ("shippcharge") %></span>
                             </li>
                             <li class="list-group-item d-flex font-size-lg font-weight-bold">
                                 <span>Total</span>
-                                <span class="ml-auto">Rs.2,398</span>
+                                <span class="ml-auto"> Rs. <%# Eval ("grandtotal") %></span>
                             </li>
                         </ul>
+                                         
                     </div>
                 </div>
                 <!-- Details -->
@@ -183,11 +165,10 @@
                                     Billing Address:
                                 </p>
                                 <p class="mb-7 mb-md-0 text-gray-500">
-                                    IG-101, <br>
-                                    Ground Floor, <br>
-                                    Vaibhav Laxmi, <br>
-                                    Ahemdabad, <br>
-                                    380001
+                                   <%# Eval ("ad1") %>, <br>
+                                   <%# Eval ("ad2") %>, <br>
+                                   <%# Eval ("city") %> ,<br>
+                                     <%# Eval ("zip") %> 
                                 </p>
                             </div>
                             <div class="col-12 col-md-4">
@@ -196,33 +177,33 @@
                                     Shipping Address:
                                 </p>
                                 <p class="mb-7 mb-md-0 text-gray-500">
-                                    IG-101, <br>
-                                    Ground Floor, <br>
-                                    Vaibhav Laxmi, <br>
-                                    Ahemdabad, <br>
-                                    380001
+                                     <%# Eval ("ad1") %>, <br>
+                                   <%# Eval ("ad2") %>, <br>
+                                   <%# Eval ("city") %> ,<br>
+                                     <%# Eval ("zip") %>
                                 </p>
                             </div>
                             <div class="col-12 col-md-4">
                                 <!-- Heading -->
-                                <p class="mb-4 font-weight-bold">
-                                    Shipping Method:
+                               <p class="mb-4 font-weight-bold">
+                                    Payment Method :
                                 </p>
-                                <p class="mb-7 text-gray-500">
-                                    Standart Shipping <br>
-                                    (5 - 7 days)
+                                <p class="mb-0 text-gray-500">
+                                    <%# Eval ("paymode") %>
                                 </p>
                                 <!-- Heading -->
                                 <p class="mb-4 font-weight-bold">
-                                    Payment Method:
+                                    Payment Status :
                                 </p>
                                 <p class="mb-0 text-gray-500">
-                                    Debit Mastercard
+                                    <%# Eval ("paystatus") %>
                                 </p>
                             </div>
                         </div>
                     </div>
+                      
                 </div>
+                                             </ItemTemplate></asp:Repeater>
             </div>
         </div>
     </div>

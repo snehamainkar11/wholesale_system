@@ -100,17 +100,31 @@ namespace wholesale.admin
             Double rem = Convert.ToDouble(txtinv.Text) - Convert.ToDouble(txtrem.Text);
             try
             {
+                string status = "";
+                if (rem == 0)
+                {
+                    status = "Paid";
+                }
+                else
+                {
+                    status = "Pending";
+                }
                 string s = ConfigurationManager.ConnectionStrings["wholesale"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(s))
                 {
-                    SqlCommand cmd = new SqlCommand("insert into purchase values(@pid,@sid,@odate,@inv,@amt,@rem,@paid)", con);
+                    SqlCommand cmd = new SqlCommand("insert into purchase values(@pid,@sid,@odate,@inv,@amt,@rem,@paid,@rdate,@dis,@gst,@status,@cby)", con);
                     cmd.Parameters.AddWithValue("@sid", ddlsup.SelectedValue);
-                    cmd.Parameters.AddWithValue("@odate", Convert.ToDateTime(DateTime.Now));
+                    cmd.Parameters.AddWithValue("@odate",pdate.Text);
                     cmd.Parameters.AddWithValue("@inv", txtnum.Text);
                     cmd.Parameters.AddWithValue("@pid", txtnum.Text);
                     cmd.Parameters.AddWithValue("@amt", txtinv.Text);
                     cmd.Parameters.AddWithValue("@paid", txtrem.Text);
+                    cmd.Parameters.AddWithValue("@rdate", rdate.Text);
+                    cmd.Parameters.AddWithValue("@dis", dis.Text);
+                    cmd.Parameters.AddWithValue("@gst", gst.Text);
+                    cmd.Parameters.AddWithValue("@status", status);
                     cmd.Parameters.AddWithValue("@rem", rem);
+                    cmd.Parameters.AddWithValue("@cby","superadmin");
 
                     con.Open();
                     cmd.ExecuteNonQuery();

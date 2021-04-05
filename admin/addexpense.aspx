@@ -15,7 +15,7 @@
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Order</a></li>
                     <li class="breadcrumb-item active">Expense</li>
-                <%--</ol>--%>
+                -</ol>
             </div>
             <h4 class="page-title">Add Expense</h4>
         </div>
@@ -32,7 +32,7 @@
           <div class="form-group col-md-4" >
         <label for="validationCustom01">Code/Bill No</label>
         <asp:TextBox runat ="server"  class="form-control" id="code"
-            placeholder="XX345626"  required></asp:TextBox>
+            placeholder="XX345626"  required=""></asp:TextBox>
         <div class="valid-feedback">
             Looks good!
         </div>
@@ -40,7 +40,7 @@
      <div class="form-group col-md-4" >
         <label for="validationCustom01">Expense Name</label>
         <asp:TextBox runat ="server"  class="form-control" id="name"
-            placeholder="Expense Name"  required></asp:TextBox>
+            placeholder="Expense Name"  required=""></asp:TextBox>
         <div class="valid-feedback">
             Looks good!
         </div>
@@ -48,7 +48,7 @@
           <div class="form-group col-md-4" >
         <label for="validationCustom06">Date</label>
         <asp:TextBox runat ="server" type="date" class="form-control" id="edate"
-            placeholder="dd-mm-yyyy"  required></asp:TextBox>
+            placeholder="dd-mm-yyyy"  required=""></asp:TextBox>
         <div class="valid-feedback">
             Looks good!
         </div>
@@ -60,7 +60,7 @@
      <div class="form-group col-md-8" >
         <label for="validationCustom06">External Company Name</label>
         <asp:TextBox runat ="server" type="text" class="form-control" id="company"
-            placeholder="Comapny Name"  required></asp:TextBox>
+            placeholder="Comapny Name"  required=""></asp:TextBox>
         <div class="valid-feedback">
             Looks good!
         </div>
@@ -76,37 +76,21 @@
                            <asp:ListItem>Maintenance</asp:ListItem>
                             <asp:ListItem>Food</asp:ListItem>
                             <asp:ListItem>Employee Salary</asp:ListItem>
+                            <asp:ListItem>Other</asp:ListItem>
 
                         </asp:DropDownList>
                     </div>  
      <div class="form-group col-md-4" >
         <label for="validationCustom06">Amount</label>
         <asp:TextBox runat ="server" type="number" class="form-control" id="amt"
-            placeholder="Amount"  required></asp:TextBox>
+            placeholder="Amount"  required=""></asp:TextBox>
         <div class="valid-feedback">
             Looks good!
         </div>
     </div>
-     <div class="form-group col-md-4" >
-        <label for="validationCustom06">VAT %</label>
-        <asp:TextBox runat ="server" type="number" class="form-control" id="vat"
-            placeholder="%"  required></asp:TextBox>
-        <div class="valid-feedback">
-            Looks good!
-        </div>
-    </div>
+    
 
-                 
-     
-     <div class="form-group col-md-4" >
-                        <label for="example-select">Billable</label>
-                        <asp:DropDownList runat="server" class="form-control" ID="billable">
-                           <asp:ListItem>Yes</asp:ListItem>
-                           <asp:ListItem>No</asp:ListItem>
-     
-                        </asp:DropDownList>
-                    </div>  
- 
+         
      <div class="form-group col-md-4" >
                         <label for="example-select">Payment Status</label>
                         <asp:DropDownList runat="server" class="form-control" ID="status">

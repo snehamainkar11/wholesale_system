@@ -29,6 +29,10 @@ namespace wholesale
                     link_loginout.Text = "Log out";
 
                     Label2.Text = "Welcome </br>" + Session["userid"].ToString();
+                    //show();
+
+
+
 
                 }
                 else
@@ -38,6 +42,7 @@ namespace wholesale
                     link_loginout.Text = "Log in";
 
                 }
+
                 BindCartNumber();
                 BindCategories();
                 // string id = Session["id"].ToString();
@@ -115,6 +120,7 @@ namespace wholesale
                   }*/
             }
         }
+
         protected void OnItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
@@ -139,5 +145,21 @@ namespace wholesale
                 }
             }
         }
+
+
+        protected void OnBlur(object sender, EventArgs e)
+        {
+            Session["search"] = search1.Text;
+            if (search1.Text == "")
+            {
+                Response.Redirect("searchdata.aspx?search=Formal");
+                Session["search"] = "Formal";
+
+            }
+            else
+            { 
+            Response.Redirect("searchdata.aspx?search=" + search1.Text);
+             }
+         }
     }
 }

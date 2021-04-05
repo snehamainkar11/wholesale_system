@@ -59,7 +59,11 @@
                         <asp:Textbox  ID="txtpo" runat="server" class="form-control" type="text" name="brand"  placeholder="PO Number">
                             </asp:Textbox>
                     </div>
-                            
+                             <div class="form-group col-md-4">
+                        <label for="brand">Order Date  </label>
+                        <asp:Textbox  ID="odate" runat="server" class="form-control" type="date" >
+                            </asp:Textbox>
+                    </div>   
                              
                             
 </div>
@@ -96,7 +100,8 @@
                          </tr>
                      </table>
                   </div>
-                                      <table  style="width: 100%" ><tr>
+                                      <table  style="width: 100%" >
+                                          <tr>
 <td>
                 <asp:GridView ID="GridView1" runat="server"  ShowFooter="false" AutoGenerateColumns="false" class="table table-bordered table-centered table-hover mb-0">
 
@@ -130,7 +135,7 @@
                                       <div class="col-sm-11">
                         <div class="float-right mt-0 mt-sm-0">
 
-                              <h4>  Grand Total :  <asp:Label ID="grand" Text="0.0"    runat="server"></asp:Label> Rs</h4>
+                              <h4>  Total :  <asp:Label ID="grand" Text="0.0"    runat="server"></asp:Label> Rs</h4>
                             </div></div>
 </asp:Panel>
                 <br />

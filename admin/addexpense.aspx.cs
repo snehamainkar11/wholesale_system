@@ -24,14 +24,12 @@ namespace wholesale
         {
             using (SqlConnection con = new SqlConnection(s))
             {
-                SqlCommand cmd = new SqlCommand("insert into expense values(@ecode,@ename,@edate,@ecompany,@eamt,@vat,@billable,@pstatus,@ecategory)", con);
+                SqlCommand cmd = new SqlCommand("insert into expense values(@ecode,@ename,@edate,@ecompany,@eamt,@pstatus,@ecategory)", con);
                 cmd.Parameters.AddWithValue("@ecode", code.Text);
                 cmd.Parameters.AddWithValue("@ename", name.Text);
                 cmd.Parameters.AddWithValue("@edate", edate.Text);
                 cmd.Parameters.AddWithValue("@ecompany", company.Text);
                 cmd.Parameters.AddWithValue("@eamt", amt.Text);
-                cmd.Parameters.AddWithValue("@vat", vat.Text);
-                cmd.Parameters.AddWithValue("@billable", billable.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@pstatus", status.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@ecategory", ecategory.SelectedItem.Value);
 
@@ -59,8 +57,6 @@ namespace wholesale
             edate.Text = "";
             company.Text = "";
             amt.Text = "";
-            vat.Text = "";
-            billable.ClearSelection();
             status.ClearSelection();
             ecategory.ClearSelection();
 

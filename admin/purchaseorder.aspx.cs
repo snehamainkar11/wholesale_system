@@ -79,7 +79,9 @@ namespace wholesale.admin
                 if (dt.Rows.Count != 0)
                 {
                     ddlsup.DataSource = dt;
-                    ddlsup.DataTextField = "sname";
+                    ddlsup.DataTextField = "company" +
+                        "" +
+                        "";
                     ddlsup.DataValueField = "supid";
                     ddlsup.DataBind();
 
@@ -236,7 +238,7 @@ namespace wholesale.admin
                     cmd.Parameters.AddWithValue("@sid", ddlsup.SelectedValue);
                     cmd.Parameters.AddWithValue("@po", txtpo.Text);
 
-                    cmd.Parameters.AddWithValue("@odate", Convert.ToDateTime(DateTime.Now));
+                    cmd.Parameters.AddWithValue("@odate", odate.Text);
                     cmd.Parameters.AddWithValue("@total",grand.Text);
                     con.Open();
                     cmd.ExecuteNonQuery();

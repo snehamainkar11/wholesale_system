@@ -31,44 +31,37 @@
                                             <div class="collapse" id="blousesCollapse" data-parent="#productsNav">
                                                 <div class="py-4 pl-5">
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                        <input class="custom-control-input" id="blousesOne" type="checkbox">
-                                                        <label class="custom-control-label" for="blousesOne">
+                                                        <label  for="blousesOne">
                                                             Skiny Jeans
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                        <input class="custom-control-input" id="blousesTwo" type="checkbox">
-                                                        <label class="custom-control-label" for="blousesTwo">
+                                                        <label  for="blousesTwo">
                                                             Straight Jeans
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                        <input class="custom-control-input" id="blousesTwo" type="checkbox">
-                                                        <label class="custom-control-label" for="blousesTwo">
+                                                        <label  for="blousesTwo">
                                                             Boyfriend Jeans
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                        <input class="custom-control-input" id="blousesThree" type="checkbox">
-                                                        <label class="custom-control-label" for="blousesThree">
+                                                        <label  for="blousesThree">
                                                             Whiskers Jeans
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                        <input class="custom-control-input" id="blousesTwo" type="checkbox">
-                                                        <label class="custom-control-label" for="blousesTwo">
+                                                        <label  for="blousesTwo">
                                                             Cargo Jeans
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox">
-                                                        <input class="custom-control-input" id="blousesFour" type="checkbox">
-                                                        <label class="custom-control-label" for="blousesFour">
+                                                        <label  for="blousesFour">
                                                             Wide Jeans
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox">
-                                                        <input class="custom-control-input" id="blousesFour" type="checkbox">
-                                                        <label class="custom-control-label" for="blousesFour">
+                                                        <label  for="blousesFour">
                                                             Side Stripe Jeans
                                                         </label>
                                                     </div>
@@ -84,20 +77,17 @@
                                             <div class="collapse" id="coatsCollapse" data-parent="#productsNav">
                                                 <div class="py-4 pl-5">
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                        <input class="custom-control-input" id="coatsOne" type="checkbox">
-                                                        <label class="custom-control-label" for="coatsOne">
+                                                        <label  for="coatsOne">
                                                             Metro Street Joggers
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                        <input class="custom-control-input" id="coatsTwo" type="checkbox">
-                                                        <label class="custom-control-label" for="coatsTwo">
+                                                        <label  for="coatsTwo">
                                                             Cropped Joggers
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox">
-                                                        <input class="custom-control-input" id="coatsThree" type="checkbox">
-                                                        <label class="custom-control-label" for="coatsThree">
+                                                        <label  for="coatsThree">
                                                             Restore Joggers
                                                         </label>
                                                     </div>
@@ -113,26 +103,23 @@
                                             <div class="collapse show" id="dressesCollapse" data-parent="#productsNav">
                                                 <div class="py-4 pl-5">
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                        <input class="custom-control-input" id="dressesOne" type="checkbox">
-                                                        <label class="custom-control-label" for="dressesOne">
+                                                        <label  for="dressesOne">
                                                             Black Funky
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                        <input class="custom-control-input" id="dressesTwo" type="checkbox" >
-                                                        <label class="custom-control-label" for="dressesTwo">
+                                                        <label  for="dressesTwo">
                                                             Stone Funky
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                        <input class="custom-control-input" id="dressesThree" type="checkbox">
-                                                        <label class="custom-control-label" for="dressesThree">
+                                                        <label  for="dressesThree">
                                                             Patches Funky
                                                         </label>
                                                     </div>
                                                     <!--<div class="custom-control custom-checkbox">
                                                         <input class="custom-control-input" id="dressesFour" type="checkbox">
-                                                        <label class="custom-control-label" for="dressesFour">
+                                                        <label  for="dressesFour">
                                                             Maxi Dresses
                                                         </label>
                                                     </div>-->
@@ -148,26 +135,23 @@
                                             <div class="collapse" id="hoodiesCollapse" data-parent="#productsNav">
                                                 <div class="py-4 pl-5">
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                        <input class="custom-control-input" id="hoodiesOne" type="checkbox">
-                                                        <label class="custom-control-label" for="hoodiesOne">
+                                                        <label  for="hoodiesOne">
                                                             Damage Ripped
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                        <input class="custom-control-input" id="hoodiesTwo" type="checkbox">
-                                                        <label class="custom-control-label" for="hoodiesTwo">
+                                                        <label  for="hoodiesTwo">
                                                             Scrape Ripped
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                        <input class="custom-control-input" id="hoodiesThree" type="checkbox">
-                                                        <label class="custom-control-label" for="hoodiesThree">
+                                                        <label for="hoodiesThree">
                                                             Shred Ripped
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox">
                                                         <input class="custom-control-input" id="hoodiesFour" type="checkbox">
-                                                        <label class="custom-control-label" for="hoodiesFour">
+                                                        <label  for="hoodiesFour">
                                                             Hole Ripped
                                                         </label>
                                                     </div>
@@ -184,25 +168,25 @@
                                                 <div class="py-4 pl-5">
                                                     <div class="custom-control custom-checkbox mb-3">
                                                         <input class="custom-control-input" id="denimOne" type="checkbox">
-                                                        <label class="custom-control-label" for="denimOne">
+                                                        <label  for="denimOne">
                                                             Women Shorts
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
                                                         <input class="custom-control-input" id="denimTwo" type="checkbox">
-                                                        <label class="custom-control-label" for="denimTwo">
+                                                        <label  for="denimTwo">
                                                             Juniors' Shorts
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
                                                         <input class="custom-control-input" id="denimThree" type="checkbox">
-                                                        <label class="custom-control-label" for="denimThree">
+                                                        <label  for="denimThree">
                                                             Men Shorts
                                                         </label>
                                                     </div>
                                                     <!--<div class="custom-control custom-checkbox">
                                                         <input class="custom-control-input" id="denimFour" type="checkbox">
-                                                        <label class="custom-control-label" for="denimFour">
+                                                        <label  for="denimFour">
                                                             Women Plus Shorts
                                                         </label>
                                                     </div>-->
@@ -219,25 +203,25 @@
                                                 <div class="py-4 pl-5">
                                                     <div class="custom-control custom-checkbox mb-3">
                                                         <input class="custom-control-input" id="jeansOne" type="checkbox">
-                                                        <label class="custom-control-label" for="jeansOne">
+                                                        <label  for="jeansOne">
                                                             Knee Cut
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
                                                         <input class="custom-control-input" id="jeansTwo" type="checkbox">
-                                                        <label class="custom-control-label" for="jeansTwo">
+                                                        <label  for="jeansTwo">
                                                             Knee Net
                                                         </label>
                                                     </div>
                                                    <!-- <div class="custom-control custom-checkbox mb-3">
                                                         <input class="custom-control-input" id="jeansThree" type="checkbox">
-                                                        <label class="custom-control-label" for="jeansThree">
+                                                        <label  for="jeansThree">
                                                             Surf, Skate & Street Clothing
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox">
                                                         <input class="custom-control-input" id="jeansFour" type="checkbox">
-                                                        <label class="custom-control-label" for="jeansFour">
+                                                        <label  for="jeansFour">
                                                             Men Big & Tall Pants
                                                         </label>
                                                     </div>-->
@@ -254,25 +238,25 @@
                                                 <div class="py-4 pl-5">
                                                     <div class="custom-control custom-checkbox mb-3">
                                                         <input class="custom-control-input" id="jumpersOne" type="checkbox">
-                                                        <label class="custom-control-label" for="jumpersOne">
+                                                        <label  for="jumpersOne">
                                                             Sweaters Plus-Size
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
                                                         <input class="custom-control-input" id="jumpersTwo" type="checkbox">
-                                                        <label class="custom-control-label" for="jumpersTwo">
+                                                        <label  for="jumpersTwo">
                                                             Plus Sweaters
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
                                                         <input class="custom-control-input" id="jumpersThree" type="checkbox">
-                                                        <label class="custom-control-label" for="jumpersThree">
+                                                        <label  for="jumpersThree">
                                                             Petite Cardigans
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox">
                                                         <input class="custom-control-input" id="jumpersFour" type="checkbox">
-                                                        <label class="custom-control-label" for="jumpersFour">
+                                                        <label  for="jumpersFour">
                                                             Tops, Tees & Blouses
                                                         </label>
                                                     </div>
@@ -291,25 +275,25 @@
                                                 <div class="py-4 pl-5">
                                                     <div class="custom-control custom-checkbox mb-3">
                                                         <input class="custom-control-input" id="legginsOne" type="checkbox">
-                                                        <label class="custom-control-label" for="legginsOne">
+                                                        <label  for="legginsOne">
                                                             Novelty Leggings
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
                                                         <input class="custom-control-input" id="legginsTwo" type="checkbox">
-                                                        <label class="custom-control-label" for="legginsTwo">
+                                                        <label  for="legginsTwo">
                                                             Novelty Pants & Capris
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
                                                         <input class="custom-control-input" id="legginsThree" type="checkbox">
-                                                        <label class="custom-control-label" for="legginsThree">
+                                                        <label  for="legginsThree">
                                                             Women Yoga Leggings
                                                         </label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox">
                                                         <input class="custom-control-input" id="legginsFour" type="checkbox">
-                                                        <label class="custom-control-label" for="legginsFour">
+                                                        <label  for="legginsFour">
                                                             Workout & Training Leggings
                                                         </label>
                                                     </div> 
@@ -330,19 +314,19 @@
                                 <div class="form-group form-group-overflow mb-6" id="seasonGroup">
                                     <div class="custom-control custom-checkbox mb-3">
                                         <input class="custom-control-input" id="seasonOne" type="checkbox" checked>
-                                        <label class="custom-control-label" for="seasonOne">
+                                        <label  for="seasonOne">
                                             Summer
                                         </label>
                                     </div>
                                     <div class="custom-control custom-checkbox mb-3">
                                         <input class="custom-control-input" id="seasonTwo" type="checkbox">
-                                        <label class="custom-control-label" for="seasonTwo">
+                                        <label  for="seasonTwo">
                                             Winter
                                         </label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input class="custom-control-input" id="seasonThree" type="checkbox">
-                                        <label class="custom-control-label" for="seasonThree">
+                                        <label  for="seasonThree">
                                             Spring & Autumn
                                         </label>
                                     </div>
@@ -359,67 +343,67 @@
                                 <div class="form-group form-group-overlow mb-6" id="sizeGroup">
                                     <div class="custom-control custom-control-inline custom-control-size mb-2">
                                         <input class="custom-control-input" id="sizeOne" type="checkbox">
-                                        <label class="custom-control-label" for="sizeOne">
+                                        <label  for="sizeOne">
                                             28
                                         </label>
                                     </div>
                                     <div class="custom-control custom-control-inline custom-control-size mb-2">
                                         <input class="custom-control-input" id="sizeTwo" type="checkbox" disabled>
-                                        <label class="custom-control-label" for="sizeTwo">
+                                        <label  for="sizeTwo">
                                             30
                                         </label>
                                     </div>
                                     <div class="custom-control custom-control-inline custom-control-size mb-2">
                                         <input class="custom-control-input" id="sizeThree" type="checkbox">
-                                        <label class="custom-control-label" for="sizeThree">
+                                        <label  for="sizeThree">
                                             32
                                         </label>
                                     </div>
                                     <div class="custom-control custom-control-inline custom-control-size mb-2">
                                         <input class="custom-control-input" id="sizeFour" type="checkbox">
-                                        <label class="custom-control-label" for="sizeFour">
+                                        <label  for="sizeFour">
                                             34
                                         </label>
                                     </div>
                                     <div class="custom-control custom-control-inline custom-control-size mb-2">
                                         <input class="custom-control-input" id="sizeFive" type="checkbox" checked>
-                                        <label class="custom-control-label" for="sizeFive">
+                                        <label  for="sizeFive">
                                             36
                                         </label>
                                     </div>
                                     <div class="custom-control custom-control-inline custom-control-size mb-2">
                                         <input class="custom-control-input" id="sizeSix" type="checkbox">
-                                        <label class="custom-control-label" for="sizeSix">
+                                        <label  for="sizeSix">
                                             38
                                         </label>
                                     </div>
                                     <div class="custom-control custom-control-inline custom-control-size mb-2">
                                         <input class="custom-control-input" id="sizeSeven" type="checkbox">
-                                        <label class="custom-control-label" for="sizeSeven">
+                                        <label  for="sizeSeven">
                                             40
                                         </label>
                                     </div>
                                     <div class="custom-control custom-control-inline custom-control-size mb-2">
                                         <input class="custom-control-input" id="sizeEight" type="checkbox" disabled>
-                                        <label class="custom-control-label" for="sizeEight">
+                                        <label  for="sizeEight">
                                             42
                                         </label>
                                     </div>
                                     <!--<div class="custom-control custom-control-inline custom-control-size mb-2">
                                         <input class="custom-control-input" id="sizeNine" type="checkbox">
-                                        <label class="custom-control-label" for="sizeNine">
+                                        <label  for="sizeNine">
                                             
                                         </label>
                                     </div>
                                     <div class="custom-control custom-control-inline custom-control-size mb-2">
                                         <input class="custom-control-input" id="sizeTen" type="checkbox">
-                                        <label class="custom-control-label" for="sizeTen">
+                                        <label  for="sizeTen">
                                             4XL
                                         </label>
                                     </div>
                                     <div class="custom-control custom-control-inline custom-control-size mb-2">
                                         <input class="custom-control-input" id="sizeEleven" type="checkbox">
-                                        <label class="custom-control-label" for="sizeEleven">
+                                        <label  for="sizeEleven">
                                             One Size
                                         </label>
                                     </div>-->
@@ -442,7 +426,7 @@
                                     </div>
                                     <div class="custom-control custom-control-color mb-3">
                                         <input class="custom-control-input" id="colorTwo" type="checkbox" checked>
-                                        <label class="custom-control-label" style="color: #f9f9f9;" for="colorTwo">
+                                        <label  style="color: #f9f9f9;" for="colorTwo">
                                             <span class="text-body">White</span>
                                         </label>
                                     </div>
@@ -460,7 +444,7 @@
                                     </div>
                                     <div class="custom-control custom-control-color mb-3">
                                         <input class="custom-control-input" id="colorFive" type="checkbox" disabled>
-                                        <label class="custom-control-label" for="colorFive" style="color: #795548">
+                                        <label  for="colorFive" style="color: #795548">
                                             <span class="text-body">Brown</span>
                                         </label>
                                     </div>
@@ -472,13 +456,13 @@
                                     </div>
                                     <div class="custom-control custom-control-color mb-3">
                                         <input class="custom-control-input" id="colorSeven" type="checkbox">
-                                        <label class="custom-control-label" for="colorSeven" style="color: #17a2b8;">
+                                        <label  for="colorSeven" style="color: #17a2b8;">
                                             <span class="text-body">Cyan</span>
                                         </label>
                                     </div>
                                     <div class="custom-control custom-control-color">
                                         <input class="custom-control-input" id="colorEight" type="checkbox">
-                                        <label class="custom-control-label" for="colorEight" style="color: #e83e8c;">
+                                        <label  for="colorEight" style="color: #e83e8c;">
                                             <span class="text-body">Pink</span>
                                         </label>
                                     </div>
@@ -495,69 +479,52 @@
                                 <!-- Search -->
                                 <div data-toggle="lists" data-options='{"valueNames": ["name"]}'>
                                     <!-- Input group -->
-                                    <div class="input-group input-group-merge mb-6">
-                                        <input class="form-control form-control-xs search" type="search" placeholder="Search Brand">
-                                        <!-- Button -->
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-border btn-xs">
-                                                <i class="fe fe-search"></i>
-                                            </button>
-                                        </div>
-                                    </div>
+                                 
                                     <!-- Form group -->
                                     <div class="form-group form-group-overflow mb-6" id="brandGroup">
                                         <div class="list">
                                             <div class="custom-control custom-checkbox mb-3">
-                                                <input class="custom-control-input" id="brandOne" type="checkbox">
-                                                <label class="custom-control-label name" for="brandOne">
+                                                <label  for="brandOne">
                                                     Agent Jack's
                                                 </label>
                                             </div>
                                             <div class="custom-control custom-checkbox mb-3">
-                                                <input class="custom-control-input" id="brandTwo" type="checkbox" disabled>
-                                                <label class="custom-control-label name" for="brandTwo">
+                                                <label  for="brandTwo">
                                                     Hangout Denim
                                                 </label>
                                             </div>
                                             <div class="custom-control custom-checkbox mb-3">
-                                                <input class="custom-control-input" id="brandThree" type="checkbox">
-                                                <label class="custom-control-label name" for="brandThree">
+                                                <label  for="brandThree">
                                                     James Walker
                                                 </label>
                                             </div>
                                             <div class="custom-control custom-checkbox mb-3">
-                                                <input class="custom-control-input" id="brandFour" type="checkbox" checked>
-                                                <label class="custom-control-label name" for="brandFour">
+                                                <label  for="brandFour">
                                                     Adidas
                                                 </label>
                                             </div>
                                             <div class="custom-control custom-checkbox mb-3">
-                                                <input class="custom-control-input" id="brandFive" type="checkbox">
-                                                <label class="custom-control-label name" for="brandFive">
+                                                <label  for="brandFive">
                                                     Forever21
                                                 </label>
                                             </div>
                                             <div class="custom-control custom-checkbox mb-3">
-                                                <input class="custom-control-input" id="brandSix" type="checkbox">
-                                                <label class="custom-control-label name" for="brandSix">
+                                                <label  for="brandSix">
                                                     H&M
                                                 </label>
                                             </div>
                                             <div class="custom-control custom-checkbox mb-3">
-                                                <input class="custom-control-input" id="brandSeven" type="checkbox">
-                                                <label class="custom-control-label name" for="brandSeven">
+                                                <label  for="brandSeven">
                                                     Calvin-Klien
                                                 </label>
                                             </div>
                                             <div class="custom-control custom-checkbox mb-3">
-                                                <input class="custom-control-input" id="brandEight" type="checkbox">
-                                                <label class="custom-control-label name" for="brandEight">
+                                                <label  for="brandEight">
                                                     Only
                                                 </label>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" id="brandNine" type="checkbox">
-                                                <label class="custom-control-label name" for="brandNine">
+                                                <label  for="brandNine">
                                                     Zara
                                                 </label>
                                             </div>
@@ -577,38 +544,36 @@
                                 <div class="form-group form-group-overflow mb-6" id="priceGroup">
                                     <div class="custom-control custom-checkbox mb-3">
                                         <input class="custom-control-input" id="priceOne" type="checkbox" checked>
-                                        <label class="custom-control-label" for="priceOne">
+                                        <label  for="priceOne">
                                             0-499
                                         </label>
                                     </div>
                                     <div class="custom-control custom-checkbox mb-3">
                                         <input class="custom-control-input" id="priceTwo" type="checkbox" checked>
-                                        <label class="custom-control-label" for="priceTwo">
+                                        <label  for="priceTwo">
                                             499-999
                                         </label>
                                     </div>
                                     <div class="custom-control custom-checkbox mb-3">
                                         <input class="custom-control-input" id="priceThree" type="checkbox">
-                                        <label class="custom-control-label" for="priceThree">
+                                        <label  for="priceThree">
                                             999-1999
                                         </label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input class="custom-control-input" id="priceFour" type="checkbox">
-                                        <label class="custom-control-label" for="priceFour">
+                                        <label  for="priceFour">
                                             1999 and above
                                         </label>
                                     </div>
                                 </div>
                                 <!-- Range -->
-                                <div class="d-flex align-items-center">
-                                    <!-- Input -->
+                                <!-- <div class="d-flex align-items-center">
                                     <input type="number" class="form-control form-control-xs" placeholder="499" min="10">
-                                    <!-- Divider -->
-                                    <div class="text-gray-350 mx-2"><!--â€’-->to</div>
-                                    <!-- Input -->
+                                    <div class="text-gray-350 mx-2">to</div>
+                                    Input 
                                     <input type="number" class="form-control form-control-xs" placeholder="999" max="350">
-                                </div>
+                                </div> -->
                             </div>
                         </li>
                     </ul>
@@ -818,13 +783,13 @@
                 </div>
     </div>
       
-           <!-- Body -->
+          
                            
                         </div>
                     </div>
                   
-                </div>
-                <nav class="d-flex justify-content-center justify-content-md-end">
+                </div>  
+   <!--       <nav class="d-flex justify-content-center justify-content-md-end">
                     <ul class="pagination pagination-sm text-gray-400">
                         <li class="page-item">
                             <a class="page-link page-link-arrow" href="#">
@@ -856,8 +821,8 @@
                         </li>
                     </ul>
                 </nav>
-            </div>
-   
+            
+   --></div>
         </div>
     </div>
 </section>

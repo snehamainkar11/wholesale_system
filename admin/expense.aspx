@@ -111,9 +111,11 @@
                                     <EditItemTemplate>
                                         <asp:DropDownList ID="ecategory" CssClass="form-control" runat="server">
                                             <asp:ListItem>Light Bill</asp:ListItem>
-                                            <asp:ListItem>Rent</asp:ListItem>
-                                            <asp:ListItem>Maintenance</asp:ListItem>
-                                            <asp:ListItem>Tea/Snacks Bill</asp:ListItem>
+                                           <asp:ListItem>Rent</asp:ListItem>
+                                           <asp:ListItem>Maintenance</asp:ListItem>
+                                            <asp:ListItem>Food</asp:ListItem>
+                                            <asp:ListItem>Employee Salary</asp:ListItem>
+                                            <asp:ListItem>Other</asp:ListItem>
 
                                         </asp:DropDownList>
                                     </EditItemTemplate>

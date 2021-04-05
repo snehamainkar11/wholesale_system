@@ -78,6 +78,8 @@ namespace wholesale.admin
                 var discount = item.FindControl("discounts") as TextBox;
                 var due = item.FindControl("note") as TextBox;
                 var txttot = item.FindControl("txttot") as TextBox;
+                var gst = item.FindControl("txtgst") as TextBox;
+
                 try
                 {
                     foreach (GridViewRow gvr in Gridview1.Rows)
@@ -112,8 +114,8 @@ namespace wholesale.admin
               
                 double tot = Convert.ToDouble(totalCount);
                 txttot.Text = (tot.ToString());
-
-                double first = (tot * 5) / 100;
+                double g = Convert.ToDouble(gst.Text);
+                double first = (tot * g) / 100;
                 double second = Convert.ToDouble(discount.Text.Trim() != string.Empty ? discount.Text.Trim() : "0");
                 grand.Text = ((tot + first) - second).ToString();
                 //due.Text = (Convert.ToDouble(grand.Text) - Convert.ToDouble(paid.Text)).ToString();
@@ -459,20 +461,22 @@ namespace wholesale.admin
                         var grand = item.FindControl("grand") as Label;
                         var discount = item.FindControl("discounts") as TextBox;
                         var txttot = item.FindControl("txttot") as TextBox;
+                        var g = item.FindControl("txtgst") as TextBox;
 
                         sqlCon.Open();
-                        SqlCommand cmd = new SqlCommand("update Sales  set grand=@grand,total=@total,duedate=@duedate,pdate=@pdate,status=@status,discount=@dis,paymode=@paymode,paid=@paid,due=@due where orderno=@id", sqlCon);
+                        SqlCommand cmd = new SqlCommand("update Sales  set  gst=@gst,cid=@cid,grand=@grand,total=@total,duedate=@duedate,pdate=@pdate,status=@status,discount=@dis,paymode=@paymode,paid=@paid,due=@due where orderno=@id", sqlCon);
 
                         cmd.Parameters.AddWithValue("@grand", grand.Text);
                         cmd.Parameters.AddWithValue("@total", txttot.Text);
-
+                        cmd.Parameters.AddWithValue("@cid", ddlcust.SelectedValue);
                         cmd.Parameters.AddWithValue("@status", ddlstatus.SelectedItem.Text);
                         cmd.Parameters.AddWithValue("@paymode", ddlpay.SelectedItem.Text);
                         cmd.Parameters.AddWithValue("@paid", paid.Text);
                         cmd.Parameters.AddWithValue("@duedate", txtdue.Text);
                         cmd.Parameters.AddWithValue("@dis", discount.Text);
-                        cmd.Parameters.AddWithValue("@pdate", Convert.ToDateTime(DateTime.Now));
+                        cmd.Parameters.AddWithValue("@pdate",odate.Text);
                         cmd.Parameters.AddWithValue("@due", Convert.ToDouble(grand.Text) - Convert.ToDouble(paid.Text));
+                        cmd.Parameters.AddWithValue("@gst", g.Text);
 
 
                         cmd.Parameters.AddWithValue("@id", orderno);

@@ -20,8 +20,12 @@ namespace wholesale
             {
                 BindProductRepeater();
                 BindBrand();
+                //searchdata();
+                Session["search"] = "Formal";
 
             }
+
+
         }
         private void BindProductRepeater()
         {
@@ -40,7 +44,7 @@ namespace wholesale
                 }
             }
         }
-
+    
         private void BindBrand()
         {
             using (SqlConnection con = new SqlConnection(s))

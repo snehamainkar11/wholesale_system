@@ -83,7 +83,9 @@
 </div>
                 <hr />
              <h4>  <asp:Label Text="Available Stock" ID="label1" runat="server" Style="color:green;"></asp:Label>
-              <div class="mt-0" style="float: right;background-color:white" ><asp:Button runat="server" Text="View All Records" ID="btnvw" OnClick="btnvw_Click"  class="btn btn-dark"></asp:Button></div>
+              <div class="mt-0" style="float: right;background-color:white" >
+                  <asp:HyperLink runat="server" ID="go" NavigateUrl="~/admin/lowstock.aspx"  Font-Size="14" Text="View Low Stock" ForeColor="BlueViolet"></asp:HyperLink>
+                  <asp:Button runat="server" Text="View All Records" ID="btnvw" OnClick="btnvw_Click"  class="btn btn-dark"></asp:Button></div>
                         </h4><br />  <div class="table-responsive">
                                <asp:Panel runat="server" ID="panel11">
                                 <asp:GridView ID="gvproduct" runat="server" OnRowDataBound="gvproduct_RowDataBound" ShowHeaderWhenEmpty="true" DataKeyNames="PID" ShowFooter="true" OnRowCancelingEdit="gvproduct_RowCancelingEdit" OnRowEditing="gvproduct_RowEditing" OnRowUpdating="gvproduct_RowUpdating" OnRowDeleting="gvproduct_RowDeleting"
@@ -210,9 +212,6 @@
 
 
 
-                </div>
-</div>
-          
 
    
           

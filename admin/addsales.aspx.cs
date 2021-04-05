@@ -72,7 +72,6 @@ namespace wholesale.admin
 
         protected void additem_Click(object sender, EventArgs e)
         {
-            Button1.Visible = true;
             dt = (DataTable)Session["data"];
             DataRow dr;
             dr = dt.NewRow();
@@ -139,7 +138,8 @@ namespace wholesale.admin
                     else
                     {
 
-                      
+                        Button1.Visible = true;
+
                         dt.Rows.Add(dr);
                         GridView1.DataSource = dt;
                         GridView1.DataBind();
@@ -180,18 +180,18 @@ namespace wholesale.admin
                 grandtotal = grandtotal + Convert.ToDouble(row.Cells[4].Text);
 
             }
-           // GridView1.FooterRow.Cells[3].Text = "Total";
-           // GridView1.FooterRow.Cells[4].Text = grandtotal.ToString();
+            // GridView1.FooterRow.Cells[3].Text = "Total";
+            // GridView1.FooterRow.Cells[4].Text = grandtotal.ToString();
 
             //Label3.Text = " Total Price(in Words) :" + ConvertNumbertoWords(grandtotal)+ "  Rs";
             //txttot.text = Convert.ToInt32(grandtotal);
 
             //  grand.Text =  Convert.ToInt32(discount.text) + Convert.ToInt32(txtgst.Text);
-
+            double gst = Convert.ToDouble(txtgst.Text);
             double tot = Convert.ToDouble(grandtotal);
             txttot.Text = (tot.ToString());
 
-            double first = (tot * 5) / 100;
+            double first = (tot * gst) / 100;
             double second = Convert.ToDouble(discounts.Text.Trim() != string.Empty ? discounts.Text.Trim() : "0");
             grand.Text = ((tot + first )-  second).ToString();
             //note.Text = (Convert.ToDouble(grand.Text) - Convert.ToDouble(Txtpaid.Text)).ToString();
@@ -353,9 +353,9 @@ namespace wholesale.admin
                   
                     cmd.Parameters.AddWithValue("@orderno", txtinv.Text);
                     cmd.Parameters.AddWithValue("@cid", ddlcust.SelectedValue);
-                    cmd.Parameters.AddWithValue("@pdate", Convert.ToDateTime(DateTime.Now));
+                    cmd.Parameters.AddWithValue("@pdate", Convert.ToDateTime(odate.Text).Date);
                     cmd.Parameters.AddWithValue("@duedate", Convert.ToDateTime(txtdue.Text).Date);
-                    cmd.Parameters.AddWithValue("@gst",5);
+                    cmd.Parameters.AddWithValue("@gst",txtgst.Text);
                     cmd.Parameters.AddWithValue("@discount", discounts.Text);
                     cmd.Parameters.AddWithValue("@total", txttot.Text);
                     cmd.Parameters.AddWithValue("@paymode", ddlpay.SelectedItem.Text);

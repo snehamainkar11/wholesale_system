@@ -262,6 +262,7 @@
     <Content Include="admin\admin-assets\js\vendor\responsive.bootstrap4.min.js" />
     <Content Include="admin\admin-assets\js\vendor\simplemde.min.js" />
     <Content Include="admin\admin-assets\js\vendor\summernote-bs4.min.js" />
+    <Content Include="admin\changepass.aspx" />
     <Content Include="admin\customer.aspx" />
     <Content Include="admin\custorder.aspx" />
     <Content Include="admin\editorder.aspx" />
@@ -747,14 +748,19 @@
     <Content Include="login.aspx" />
     <Content Include="admin\proddetails.aspx" />
     <Content Include="admin\productlist.aspx" />
+    <Content Include="admin\lowstock.aspx" />
+    <Content Include="manfproducts.aspx" />
     <Content Include="ordercomplete.aspx" />
     <Content Include="admin\printpurchase.aspx" />
+    <Content Include="productreview.aspx" />
     <Content Include="profile.aspx" />
     <Content Include="purchaseReport.aspx" />
     <Content Include="salesdata.aspx" />
     <Content Include="salesreport.aspx" />
+    <Content Include="searchdata.aspx" />
     <Content Include="shop.aspx" />
     <Content Include="Shoppingcart.aspx" />
+    <Content Include="shoptypes.aspx" />
     <Content Include="signup.aspx" />
     <Content Include="Site.Master" />
     <Content Include="Star.gif" />
@@ -827,6 +833,13 @@
     </Compile>
     <Compile Include="admin\category.aspx.designer.cs">
       <DependentUpon>category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\changepass.aspx.cs">
+      <DependentUpon>changepass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\changepass.aspx.designer.cs">
+      <DependentUpon>changepass.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\customer.aspx.cs">
       <DependentUpon>customer.aspx</DependentUpon>
@@ -1034,6 +1047,26 @@
     <Compile Include="admin\productlist.aspx.designer.cs">
       <DependentUpon>productlist.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\lowstock.aspx.cs">
+      <DependentUpon>lowstock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\lowstock.aspx.designer.cs">
+      <DependentUpon>lowstock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manfProduct.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>manfProduct.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="manfproducts.aspx.cs">
+      <DependentUpon>manfproducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manfproducts.aspx.designer.cs">
+      <DependentUpon>manfproducts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ordercomplete.aspx.cs">
       <DependentUpon>ordercomplete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1047,6 +1080,17 @@
     </Compile>
     <Compile Include="admin\printpurchase.aspx.designer.cs">
       <DependentUpon>printpurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="productreview.aspx.cs">
+      <DependentUpon>productreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="productreview.aspx.designer.cs">
+      <DependentUpon>productreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="productreview.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>productreview.rpt</DependentUpon>
     </Compile>
     <Compile Include="profile.aspx.cs">
       <DependentUpon>profile.aspx</DependentUpon>
@@ -1089,6 +1133,13 @@
     <Compile Include="salesreport.aspx.designer.cs">
       <DependentUpon>salesreport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="searchdata.aspx.cs">
+      <DependentUpon>searchdata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="searchdata.aspx.designer.cs">
+      <DependentUpon>searchdata.aspx</DependentUpon>
+    </Compile>
     <Compile Include="shop.aspx.cs">
       <DependentUpon>shop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1102,6 +1153,13 @@
     </Compile>
     <Compile Include="Shoppingcart.aspx.designer.cs">
       <DependentUpon>Shoppingcart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shoptypes.aspx.cs">
+      <DependentUpon>shoptypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shoptypes.aspx.designer.cs">
+      <DependentUpon>shoptypes.aspx</DependentUpon>
     </Compile>
     <Compile Include="signup.aspx.cs">
       <DependentUpon>signup.aspx</DependentUpon>
@@ -1382,6 +1440,14 @@
     <EmbeddedResource Include="expenseReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>expenseReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manfProduct.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>manfProduct.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="productreview.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>productreview.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="purchasereport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

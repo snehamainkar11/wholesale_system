@@ -40,7 +40,7 @@
        
           
            
-      <img   class="card-img-top card-img-front" height="250px" width="100px" src="/Products/<%# Eval("ProID") %>/<%# Eval("Name")%><%# Eval("Extension") %>" alt="<%# Eval("Name") %>" >
+      <img   class="card-img-top card-img-front" height="280px" width="90px" src="/Products/<%# Eval("ProID") %>/<%# Eval("Name")%><%# Eval("Extension") %>" alt="<%# Eval("Name") %>" >
         
            
     </div>     
@@ -175,7 +175,7 @@
                             <div class="media-body">
 
                               <h4 class="mb-0" style="color:black">  <%#Eval("title")%> </h4>
-                             <p class="mb-1 mt-1"> By <%#Eval("username")%></p>
+                             <p class="mb-1 mt-1"> By <%#Eval("username")%>,&nbsp;&nbsp;&nbsp;&nbsp;  <b> <%#Eval("rdate", "{0:dd/MM/yyyy}") %></b>&nbsp;</p>
 
                                 <p class="mb-0">  <%#Eval("feedback")%> </p>
                                                               <div class="rateit rateit-mdi" data-rateit-mode="font" data-rateit-icon=""  data-rateit-value= <%#Eval("ratings")%>   data-rateit-ispreset="true" data-rateit-readonly="true">

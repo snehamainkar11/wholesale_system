@@ -10,6 +10,8 @@ using System.Configuration;
 
 public partial class login : System.Web.UI.Page
 {
+    string str, UserName, Password;
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -20,51 +22,65 @@ public partial class login : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["wholesale"].ConnectionString);
         con.Open();
-        SqlCommand cmd = new SqlCommand("Select * from registeration where username='" + txtemail1.Text + "' and Password ='" + txtpass1.Text + "'", con);
+        SqlCommand cmd = new SqlCommand("Select * from registeration ", con);
         cmd.Connection = con;
         SqlDataAdapter da = new SqlDataAdapter(cmd);
         DataTable dt = new DataTable();
 
-        da.Fill(dt);
-        if (txtemail1.Text == "superadmin" && txtpass1.Text == "admin123")
-        {
 
-            Response.Redirect("~/admin/dashboard.aspx");
+        da.Fill(dt);
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            UserName = dt.Rows[i]["UserName"].ToString();
+            Password = dt.Rows[i]["Password"].ToString();
+
+            if (UserName == txtemail1.Text && Password == txtpass1.Text)
+            {
+                Session["userid"] = txtemail1.Text;
+                if (dt.Rows[i]["role"].ToString() == "Admin")
+                    Response.Redirect("~/admin/dashboard.aspx");
+                else
+                    Response.Redirect("index.aspx");
+
+                /*  if ((txtemail1.Text == "superadmin") && (txtpass1.Text = dt.Columns[3].ToString()))
+                  {
+                      Session["userid"] = "superadmin".ToString();
+
+                      Response.Redirect("~/admin/dashboard.aspx");
+
+                  }*/
+            }
+            else
+
+            {
+                lbl.Text = "Invalid Username or Password";
+            }
 
         }
-
-        Session["userid"] = txtemail1.Text;
-
-        if (dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
 
                 if (chk_remember.Checked)
                 {
-                    HttpCookie user = new HttpCookie("user_cookies"); //creating cookie object where user_cookies is cookie name
-                    user["Useremail"] = txtemail1.Text; // cookie content
-                    user.Expires = DateTime.Now.AddYears(3); // give the time/duration of cookie
-                    Response.Cookies.Add(user); // it gives the response in browser
-                }
-                
-                  
+                    HttpCookie user = new HttpCookie("user_cookies");
+                    user["Useremail"] = txtemail1.Text; 
+                    user.Expires = DateTime.Now.AddYears(3);
+                    Response.Cookies.Add(user); 
+                }               
 
-
-                
-
-            Response.Redirect("index.aspx");
-            //Session.RemoveAll();
-        }
+                Session.RemoveAll();
+            }
 
             else
 
             {
-                Response.Write("<script>alert('Please enter valid Username and Password')</script>");
+                  lbl.Text = "Invalid Username or Password";
 
             }
 
-        
-           
-        }
+
+
+    }
          
 
       }

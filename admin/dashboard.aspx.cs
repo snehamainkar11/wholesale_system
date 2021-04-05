@@ -241,13 +241,12 @@ namespace wholesale
             {
                 con.Open();
                 int j = Convert.ToInt32(cmd.ExecuteScalar());
-                Label5.Text = j.ToString("c");
 
 
                 con1.Open();
                 int i = Convert.ToInt32(cmd1.ExecuteScalar());
                 Label4.Text = i.ToString("c");
-                Label3.Text = (i + j).ToString("c");
+                Label3.Text = (j).ToString("c");
              }
             catch (Exception ex)
             {
@@ -281,7 +280,7 @@ namespace wholesale
         public void getdata1()
         {
             SqlConnection con = new SqlConnection(s);
-            SqlCommand cmd = new SqlCommand("select Top(5) A.PID,A.status,A.pname,A.minlevel,A.pcode,B.*,C.*,D.* ,E.* from product A with(nolock) inner join Category B on B.ID =a.category  inner join Brands C on C.Id =A.brand inner join tblSubCategory D on D.SubCategoryID =A.subcategory inner join ProdStock E on E.PID=A.PID order by A.PID desc ", con);
+            SqlCommand cmd = new SqlCommand("select Top(5) A.PID,A.status,A.pname,A.minlevel,A.pcode,B.*,C.*,D.* ,E.* from product A with(nolock) inner join Category B on B.ID =a.category  inner join Brands C on C.Id =A.brand inner join tblSubCategory D on D.SubCategoryID =A.subcategory inner join ProdStock E on E.PID=A.PID  where minlevel >= E.quantity order by A.PID desc  ", con);
 
             try
             {

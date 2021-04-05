@@ -91,15 +91,12 @@
 
                 </div>
 
-              <div class="row text-left">
-                    <div class="col-6">
-                        <h5 class="text-success d-block">Employee Salary</h5>
+              <div class="row text-center">
+                    <div class="col-12">
+                        <h5 class="text-success d-block">Monthly Employee Salary</h5>
                         <p class="font-18 mb-0 text-danger"><asp:Label ID="Label4" runat="server" ></asp:Label></p>
                     </div>
-                    <div class="col-6">
-                        <h5 class="text-success d-block">Expense</h5>
-                        <p class="font-18 mb-0 text-danger"><asp:Label ID="Label5" runat="server"></asp:Label></p>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -177,7 +174,7 @@
         <div class="col-xl-4 col-lg-6">
            <div class="card">
             <div class="card-body">
-                <h4 class="header-title mb-3">Product Stock</h4>
+                <h4 class="header-title mb-3">Low Stock</h4>
 
                 <div class="table-responsive">
                     <table class="table table-hover table-centered mb-0">
@@ -198,7 +195,7 @@
                     <tr>
                                 <td><%# Eval("pcode") %></td>
                                 <td><%# Eval("pname") %></td>
-                                <td><%# Eval("quantity") %></td>
+                                <td style="color:red"><%# Eval("quantity") %></td>
                                 <td><%# Eval("minlevel") %></td>
                                  </tr>
                             </Itemtemplate>

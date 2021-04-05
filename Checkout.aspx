@@ -527,12 +527,13 @@
                     </div>
                 </div>
                 <p class="mb-7 font-size-xs text-gray-500">
-                   support your experience throughout this website.
+                   Happy Shopping...
                 </p>
-                <!-- Button -->
+              
                 <asp:Button  Text="Place Order" runat="server" OnClick="order_Click"  ID="order" BackColor="Black" ForeColor="White">
                    
                 </asp:Button>
+                 
             </div>
         </div>
     </div>

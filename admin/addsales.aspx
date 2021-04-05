@@ -58,7 +58,12 @@
                             </asp:Textbox>
 
                     </div>
+                              <div class="form-group col-md-3">
+                        <label for="brand">Order Date </label>
+                        <asp:Textbox  ID="odate" runat="server" class="form-control" TextMode="date" name="brand"  value="dd-mm-yyyy">
                             
+                            </asp:Textbox>
+                    </div>
                              <div class="form-group col-md-3">
                         <label for="brand">Due Date </label>
                         <asp:Textbox  ID="txtdue" runat="server" class="form-control" TextMode="date" name="brand"  value="dd-mm-yyyy">
@@ -163,7 +168,8 @@
                                      <asp:TextBox ID="discounts"  Value="0.0" class="form-control" runat="server"   ></asp:TextBox> <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroupPrepend">Rs</span>
             </div></div></p>
-                                   <p> <b> GST:</b> <asp:Label ID="txtgst"    Text="5 %"   runat="server" ></asp:Label></p>
+                                   <p>  <b> GST : </b>
+ <asp:TextBox ID="txtgst" Text="5" runat="server"  Width="60"></asp:TextBox>             %</p>
                             
                               <h4>  Grand Total :  <asp:Label ID="grand" Text="0.0"  runat="server"></asp:Label>Rs</h4>
 
@@ -210,17 +216,14 @@
             <asp:Button runat="server"  Id="save" class="btn btn-primary" type="submit" text="Create Order" Width="150px" OnClick="save_Click"/>
                         
 </div>
-                     <div class="form-group col-md-2">
-                        
-</div>
+                  
 </div>
                 </div>
 </div>
 
             </div>
 
-    </div>
-      </div>
+ 
                            </ContentTemplate>
                     <Triggers>
  <asp:AsyncPostBackTrigger ControlID="Button1"  EventName="Click" />
@@ -228,7 +231,7 @@
 
  </Triggers>
  </asp:UpdatePanel>   
-              
+           </div>   
 </asp:Content>   
 
    
@@ -243,8 +246,9 @@
                  var txttot = parseFloat($('#<%=txttot.ClientID %>').val())
 
                 var disCount = parseFloat($('#<%=discounts.ClientID %>').val())
+                var gst = parseFloat($('#<%=txtgst.ClientID %>').val())
 
-                 var x= parseFloat(txttot + parseFloat((txttot*5)/100))
+                 var x= parseFloat(txttot + parseFloat((txttot*gst)/100))
                 if (!isNaN(disCount)) {
                   
                     $('#<%=grand.ClientID %>').text(parseFloat(x) - parseFloat(disCount));
@@ -252,10 +256,24 @@
 }
 
             })
+       $('#<%=txtgst.ClientID %>').blur(function () {
+           var txttot = parseFloat($('#<%=txttot.ClientID %>').val())
+
+                var disCount = parseFloat($('#<%=discounts.ClientID %>').val())
+             var gst = parseFloat($('#<%=txtgst.ClientID %>').val())
+
+             var x = parseFloat(txttot + parseFloat((txttot * gst) / 100))
+             if (!isNaN(disCount)) {
+
+                 $('#<%=grand.ClientID %>').text(parseFloat(x) - parseFloat(disCount));
+
+             }
+
+         })
 
 
         })
-    </script>
+</script>
 
     </asp:Content>
 

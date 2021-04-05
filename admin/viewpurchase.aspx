@@ -64,9 +64,10 @@
             </div>
               <div class="col-sm-4 offset-sm-2">
                         <div class="mt-3 float-sm-right">
-                            <p class="font-16"><strong>Date: </strong> &nbsp;&nbsp;&nbsp; <asp:Label Text=' <%# Eval("pdate", "{0:dd/MM/yyyy}") %>' runat="server" ID="pdateLabel" /></p>
-                  
-                            <p class="font-16"><strong>Invoice No: </strong> <span class="float-center"><%# Eval("invno") %></span></p>
+                            <p class="font-16"><strong> Order Date: </strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label Text=' <%# Eval("pdate", "{0:dd/MM/yyyy}") %>' runat="server" ID="Label2" /></p>
+                            <p class="font-16"><strong> Received Date: </strong> &nbsp;&nbsp; <asp:Label Text=' <%# Eval("rdate", "{0:dd/MM/yyyy}") %>' runat="server" ID="Label1" /></p>
+
+                            <p class="font-16"><strong>Invoice No: </strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="float-center" style="font-weight:bold;"><%# Eval("invno") %></span></p>
                         </div>
                     </div>
       </div>
@@ -141,17 +142,28 @@
                             </tr>
                         </thead>
                         <tbody>
+                              <tr>
+                                <td>Discount Amount :</td>
+                                <td><%# Eval("dis") %> Rs</td>
+                            </tr>  <tr>
+                                <td>GST(%) :</td>
+                                <td><%# Eval("gst") %> %</td>
+                            </tr>
                             
                             <tr>
-                                <td>Paid Amount :</td>
+                                <td>Paid Amount: </td>
                                 <td><%# Eval("invpaid") %> Rs</td>
                             </tr>
                             <tr>
                                 <td>Due Amount: </td>
                                 <td><%# Eval("invrem") %> Rs</td>
                             </tr>
-                            <tr>
-                                <th>Total Amount:</th>
+                             <tr>
+                                <td>Payment Status: </td>
+                                <td><%# Eval("status") %></td>
+                            </tr>
+                             <tr>
+                                <th>Invoice Amount:</th>
                                 <th><%# Eval("invamt") %> Rs</th>
                             </tr>
                         </tbody>
@@ -161,9 +173,14 @@
 
             </div>
         </div>
+            </div>
+             <div class="mt-10 float-sm-right">      <p class="mb-0">
+                          <p>__________________________________________</p>
+                          <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign and Stamp by Authority</h5>
+
     </div> <!-- end col -->
 </div>
-                        <div class="d-print-none mt-4">
+           </div>             <div class="d-print-none mt-4">
                    
                         <a href="javascript:window.print()" class="btn btn-primary"><i class="mdi mdi-printer"></i> Print</a>
                       

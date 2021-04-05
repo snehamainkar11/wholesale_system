@@ -211,7 +211,7 @@ namespace wholesale.admin
                         SqlCommand cmd = new SqlCommand("update porder  set odate=@pdate,total=@total,sid=@sid where po=@id", sqlCon);
 
                         cmd.Parameters.AddWithValue("@total", grand.Text);
-                        cmd.Parameters.AddWithValue("@pdate", Convert.ToDateTime(DateTime.Now));
+                        cmd.Parameters.AddWithValue("@pdate", odate.Text);
 
                          cmd.Parameters.AddWithValue("@sid",ddlsup.SelectedValue);
 

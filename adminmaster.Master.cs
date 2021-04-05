@@ -30,8 +30,8 @@ namespace wholesale
                 {
                     link_loginout.Text = "Log in";
                 }
-               //Label1.Text = "Welcome  <br/>" + Session["userid"].ToString();
-              // Label2.Text = Session["userid"].ToString();
+                Label1.Text = "Superadmin".ToString();
+                //Label2.Text = "Superadmin".ToString();
 
             }
         }

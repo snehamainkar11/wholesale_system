@@ -22,8 +22,14 @@
 </div>
 <!-- end page title -->
 
-<div class="row">
-    <%--<div class="col-12">--%>
+
+
+
+
+
+
+
+    <div class="col-12">
         <div class="card">
             <div class="card-body">
                 <div class="row mb-2">
@@ -55,7 +61,7 @@
 
                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775"></AlternatingRowStyle>
                                 <Columns>
-                                     <asp:TemplateField HeaderText = "Sr.No" ItemStyle-Width="20">
+                                     <asp:TemplateField HeaderText = "Sr.No" ItemStyle-Width="10">
                                         <ItemTemplate>
                                                    <%# Container.DataItemIndex + 1 %>
 
@@ -69,10 +75,14 @@
                                         <EditItemTemplate>
 
                                             <asp:TextBox ID="txtname" CssClass="form-control" runat="server" Text='<%# Bind("cname") %>'></asp:TextBox>
+                                        <asp:RegularExpressionValidator runat="server" ID="rcwm" ErrorMessage="Invalid Name" ForeColor="red"   ControlToValidate="txtname" ValidationExpression="^[a-zA-Z'.\s]{1,50}"></asp:RegularExpressionValidator>
+
                                         </EditItemTemplate>
 
                                         <FooterTemplate>
-                                            <asp:TextBox ID="txtname1" runat="server"  required="" />
+                                            <asp:TextBox ID="txtname1" runat="server"  />
+                                            <asp:RegularExpressionValidator runat="server" ID="rcm" ErrorMessage="Invalid Name" ForeColor="Pink"   ControlToValidate="txtname1" ValidationExpression="^[a-zA-Z'.\s]{1,50}"></asp:RegularExpressionValidator>
+
                                         </FooterTemplate>
 
 
@@ -83,10 +93,13 @@
                                         </ItemTemplate>
                                         <EditItemTemplate>
                                             <asp:TextBox ID="txtcontact" CssClass="form-control" TextMode="Number" MaxLength="10" runat="server" Text='<%# Bind("contact") %>'></asp:TextBox>
-                                        </EditItemTemplate>
+                                            <asp:RegularExpressionValidator runat="server" ID="rccc" ErrorMessage="Invalid Contact Number" ForeColor="red"   ControlToValidate="txtcontact" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
+
+                                            </EditItemTemplate>
 
                                         <FooterTemplate>
-                                            <asp:TextBox ID="txtcontact1" runat="server"  required="" TextMode="Number" MaxLength="10" />
+                                            <asp:TextBox ID="txtcontact1" runat="server"  TextMode="Number" MaxLength="10" ViewStateMode="Enabled" />
+                                            <asp:RegularExpressionValidator runat="server" ID="rc" ErrorMessage="Invalid Contact Number" ForeColor="Pink"   ControlToValidate="txtcontact1" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
                                         </FooterTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="GST No">
@@ -94,11 +107,14 @@
                                             <asp:Label ID="lblValue" runat="server" Text='<%# Bind("gstno") %>'></asp:Label>
                                         </ItemTemplate>
                                         <EditItemTemplate>
-                                            <asp:TextBox ID="txtgst" CssClass="form-control"  TextMode="Number" runat="server" Text='<%# Bind("gstno") %>'></asp:TextBox>
+                                            <asp:TextBox ID="txtgst" CssClass="form-control"  runat="server" Text='<%# Bind("gstno") %>'></asp:TextBox>
+                                         <asp:RegularExpressionValidator ValidationExpression="^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$" runat="server" ID="eucgst" ControlToValidate="txtgst" ErrorMessage="Invalid GST No" ForeColor="red"></asp:RegularExpressionValidator>
+
                                         </EditItemTemplate>
 
                                         <FooterTemplate>
-                                            <asp:TextBox ID="txtgst1" runat="server" TextMode="Number"  required="" />
+                                            <asp:TextBox ID="txtgst1" runat="server"  />
+                                            <asp:RegularExpressionValidator ValidationExpression="^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$" runat="server" ID="ecgst" ControlToValidate="txtgst1" ErrorMessage="Invalid GST No" ForeColor="Pink"></asp:RegularExpressionValidator>
                                         </FooterTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Address">
@@ -109,7 +125,7 @@
                                             <asp:TextBox ID="txtaddress" CssClass="form-control"  TextMode="MultiLine"  runat="server" Text='<%# Bind("address") %>'></asp:TextBox>
                                         </EditItemTemplate>
                                         <FooterTemplate>
-                                            <asp:TextBox ID="txtaddress1" runat="server" Columns="24"  Rows="3" TextMode="MultiLine" required=""/>
+                                            <asp:TextBox ID="txtaddress1" runat="server" Columns="24"  Rows="3" TextMode="MultiLine"/>
                                         </FooterTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Action">
@@ -158,9 +174,9 @@
                 </div></div>
                     </div>
             
-            </div></div></div>
+          
             
-            </div></div></div>
+            
             </asp:Content>
 
 <asp:Content ID="content2" ContentPlaceHolderID="footer" runat="server">  
@@ -201,13 +217,13 @@
             stateSave: true,
            dom: 'Bfrtip',
             'aoColumnDefs': [{ 'bSortable': false, 'aTargets': [5]}],
-            'iDisplayLength': 4,
+            'iDisplayLength': 8,
 select:true,
             buttons: [
             { extend: 'print', text: 'Print', exportOptions: { columns: ':visible'},className: ' uil-print', },
             { extend: 'copy', text: 'Copy', className: ' uil-copy-landscape', exportOptions: { modifier: { page: 'all'}} },
-            { extend: 'excel', text: 'Excel ', className: '  uil-file-times', filename: 'sales', exportOptions: { modifier: { page: 'all'}} },
-            { extend: 'pdf', text: 'PDF', className: ' mdi mdi-file-outline', filename: 'sales', orientation: 'Portrait', pageSize: 'LEGAL', exportOptions: { modifier: { page: 'all' }, columns: [0, 1, 2,3,4]} },
+            { extend: 'excel', text: 'Excel ', className: '  uil-file-times', filename: 'customer', exportOptions: { modifier: { page: 'all'}} },
+            { extend: 'pdf', text: 'PDF', className: ' mdi mdi-file-outline', filename: 'customer', orientation: 'Portrait', pageSize: 'LEGAL', exportOptions: { modifier: { page: 'all' }, columns: [0, 1, 2,3,4]} },
             'colvis'
             ],
             columnDefs: [{ targets: -1, visible: false}]

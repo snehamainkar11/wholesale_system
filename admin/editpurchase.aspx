@@ -53,9 +53,9 @@
                         <div class="form-row">
                        <div class="form-group col-md-3">
                         <label for="brand">Supplier </label>
-                           <asp:DropDownList runat="server" ID="ddlsup" class="form-control" DataSourceID="SqlDataSource1" DataTextField="company" DataValueField="company">
+                           <asp:DropDownList runat="server" ID="ddlsup" class="form-control" DataSourceID="SqlDataSource1" DataTextField="company" DataValueField="supid">
                            </asp:DropDownList>
-                           <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT [company] FROM [Supplier]"></asp:SqlDataSource>
+                           <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT [company], [supid] FROM [Supplier]"></asp:SqlDataSource>
                        </div>
                              <asp:Repeater ID="rptr" runat="server">
                     <ItemTemplate>
@@ -64,27 +64,28 @@
                         <asp:Textbox  ID="txtnum" runat="server" class="form-control" type="text" Text='<%# Bind("invno") %>'  placeholder="Invoice Number">
                             </asp:Textbox>
                     </div>
-                             <div class="form-group col-md-3">
-                        <label for="brand">Invoice Amount </label>
-                        <asp:Textbox  ID="txtinv" runat="server" class="form-control" Text='<%# Bind("invamt") %>' type="number"  placeholder=" Amount in RS">
-                            
-                            </asp:Textbox>
-                    </div>
-           
+                           
                      
-                  <div class="form-group col-md-3">
-                        <label for="brand">Paid Amount </label>
-                        <asp:Textbox  ID="txtrem" runat="server" class="form-control" Text='<%# Bind("invpaid") %>' type="number"  placeholder=" Amount Pending in RS">
+                 
+                          </ItemTemplate></asp:Repeater> 
+                             <div class="form-group col-md-3">
+                        <label for="brand">Order Date </label>
+                        <asp:Textbox  ID="pdate" runat="server" class="form-control" TextMode="date" name="brand"  value="dd-mm-yyyy">
                             
                             </asp:Textbox>
-             
-</div>
-                          </ItemTemplate></asp:Repeater> 
                     </div>
+                              <div class="form-group col-md-3">
+                        <label for="brand">Received Date </label>
+                        <asp:Textbox  ID="rdate" runat="server" class="form-control" TextMode="date" name="brand"  value="dd-mm-yyyy">
+                            
+                            </asp:Textbox>
+                    </div>
+                    </div>
+                   
               
 
                
-                         
+                          <br />  
                         
                 <asp:GridView ID="Gridview1"  runat="server" OnRowCommand="Gridview1_RowCommand1" OnRowDeleting="Gridview1_RowDeleting"  DataKeyNames="p_id" ShowFooter="true" AutoGenerateColumns="False" class="table table-bordered table-centered table-hover mb-0">
 
@@ -176,8 +177,56 @@
                 </Columns>
                     <FooterStyle ForeColor="#000066" />
 </asp:GridView>
-                    
+               
+                    <br/>
+                          <asp:Repeater ID="Repeater1" runat="server">
+                    <ItemTemplate>
+                        <div class="form-row">
+                            
+                             <div class="form-group col-md-3">
+                        <label for="brand">Total Discount </label> <div class="input-group"> 
+                        <asp:Textbox  ID="dis" runat="server" class="form-control" type="number"  Text='<%# Bind("dis") %>'>
+                            
+                            </asp:Textbox>
+                    <span class="input-group-text" id="inputGroupPrepend">Rs</span>
+            </div></div>
+                  
+                             <div class="form-group col-md-3">
+                        <label for="brand">GST(%) </label> <div class="input-group"> 
+                        <asp:Textbox  ID="gst" runat="server" class="form-control" type="number"   Text='<%# Bind("gst") %>'>
+                        </asp:Textbox>
+                   <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">%</span>
+            </div></div>
+                   </div>
 
+                             
+                  <div class="form-group col-md-3">
+                        <label for="brand">Invoice Amount </label>
+                       <div class="input-group"> 
+                        <asp:Textbox  ID="txtinv" runat="server" class="form-control"  Text='<%# Bind("invamt") %>' type="number"  placeholder=" Amount  in RS">
+                            
+                            </asp:Textbox>
+                       <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">Rs</span>
+            </div></div>
+                   </div>    
+
+          
+                     
+                  <div class="form-group col-md-3">
+                        <label for="brand">Paid Amount </label>
+                       <div class="input-group"> 
+                        <asp:Textbox  ID="txtrem" runat="server" class="form-control"  Text='<%# Bind("invpaid") %>' type="number"  placeholder=" Amount Pending in RS">
+                            
+                            </asp:Textbox>
+                       <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">Rs</span>
+            </div></div>
+                   </div>    
+                            
+  </ItemTemplate>
+                          </asp:Repeater>
                       <div class="form-group col-md-3">
             <asp:Button runat="server"  Id="save" class="btn btn-primary" type="submit" text="Update Invoice" Width="150px" OnClick="save_Click"/>
                         
@@ -185,6 +234,7 @@
                     
 </div>
                 </div>
+                      
 </div>
 
             </div>

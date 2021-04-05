@@ -51,7 +51,7 @@
 </head>
 
 
-<body class="loading" data-layout="detached" data-layout-config='{"leftSidebarCondensed":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+<body class="loading" data-layout="detached" data-layout-config='{"leftSidebarCondensed":false,"darkMode":false, "showRightSidebarOnStart": false}'>
     <!-- Topbar Start -->
      <form  runat="server" id="adminsmaster">
     <div class="navbar-custom topnav-navbar topnav-navbar-dark">
@@ -97,16 +97,12 @@
                 <h6 class="text-overflow m-0">Welcome ! </h6>
             </div>
             <!-- item-->
-            <a class="dropdown-item notify-item" href="#">
+            <a class="dropdown-item notify-item" href="changepass.aspx">
                 <i class="mdi mdi-account-circle mr-1"></i>
                 <span>My Account</span>
             </a>
 
-            <!-- item-->
-            <a class="dropdown-item notify-item" href="#">
-                <i class="mdi mdi-account-edit mr-1"></i>
-                <span>Settings</span>
-            </a>
+           
             <!-- item-->
             <a class="dropdown-item notify-item" href="login.aspx">
              <asp:LinkButton ID="link_loginout" runat="server" class="dropdown-item notify-item" OnClick=" link_loginout_Click">  <i class="mdi mdi-logout mr-1"></i><span>Log Out</span></asp:LinkButton>
@@ -137,10 +133,10 @@
         <div class="wrapper">
             <!-- ========== Left Sidebar Start ========== -->
             <div class="left-side-menu left-side-menu-detached">
-                <div class="leftbar-user">
+                      <div class="leftbar-user">
     <a href="javascript: void(0);">
         <img src="admin-assets/images/users/avatar-1.jpg" alt="user-image" height="42" class="rounded-circle shadow-sm">
-        <span class="leftbar-user-name">  <asp:Label ID="Label1" runat="server"></asp:Label>  
+        <span class="leftbar-user-name">  <asp:Label ID="Label1" runat="server" Text="superadmin"></asp:Label>  
 </span>       
             <i class="fa fa-circle text-success"></i>           
                 <span> Online as Admin</span>           
@@ -303,7 +299,10 @@
                 <a href="/purchaseReport.aspx">Purchase </a>
             </li>
             <li>
-                <a href="/Salesreport.aspx">Inventory Report</a>
+                <a href="/manfproducts.aspx">Inventory Report</a>
+            </li>
+              <li>
+                <a href="/productreview.aspx">Product Review Report</a>
             </li>
             <li>
                 <a href="/expensereport.aspx">Expense</a>

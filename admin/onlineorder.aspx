@@ -72,7 +72,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Customer Name">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblbrd2" runat="server" Text='<%# Bind("fname") %>'></asp:Label>
+                                    <asp:Label ID="lblbrd2" runat="server" Text= '<%# string.Concat(Eval("fname"), " ", Eval("lname"))%>'></asp:Label>
                                 </ItemTemplate>
 
 

@@ -17,13 +17,73 @@ namespace wholesale
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            HttpCookie usercookie = Request.Cookies["user_cookies"];
+            if (Session["userid"] != null || usercookie != null)
             {
-                BindProductRepeater();
-                Reviews();   
-                BindProductDetail1s();
-                BindProductImage();
-                BindProductDetails();
+
+                //link_loginout.Text = "Log out";
+
+                //Label2.Text = "Welcome </br>" + Session["userid"].ToString();
+                BindCartNumber();
+                if (!IsPostBack)
+                {
+                    BindProductRepeater();
+                    Reviews();
+                    BindProductDetail1s();
+                    BindProductImage();
+                    BindProductDetails();
+                }
+            }
+        }
+        protected void link_loginout_Click(object sender, EventArgs e)
+        {
+            if (link_loginout.Text == "Log out")
+            {
+                Response.Cookies["user_cookies"].Expires = DateTime.Now.AddYears(-1);
+                Response.Cookies.Clear();
+                Session.Clear();
+                Response.Redirect("/login.aspx");
+            }
+            else if (link_loginout.Text == "Log in")
+            {
+                Response.Redirect("/login.aspx");
+            }
+        }
+
+        public void BindCartNumber()
+        {
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                SqlCommand cmd = new SqlCommand("select count(Id)  from cart where uid=@uid", con);
+                try
+                {
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@uid", Session["userid"].ToString());
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    while (sdr.Read())
+                    {
+                        Int64 ss = Convert.ToInt64(sdr[0]);
+
+                        pCount.InnerText = (ss).ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    pCount.InnerText = "0";
+
+                }
+                /*  if (Request.Cookies["CartPID"] != null)
+                  {
+                      string CookiePID = Request.Cookies["CartPID"].Value.Split('=')[1];
+                      string[] ProductArray = CookiePID.Split(',');
+                      int ProductCount = ProductArray.Length;
+                      pCount.InnerText = ProductCount.ToString();
+
+                  }
+                 
+                      pCount.InnerText = 0.ToString();
+                  }*/
             }
         }
         private void Reviews()
@@ -146,10 +206,10 @@ namespace wholesale
                 if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
                 {
                     var rbList = item.FindControl("rblSize") as RadioButtonList;
-                    var qty = item.FindControl("quantity") as TextBox;
+                    var qty = item.FindControl("quantity") as DropDownList;
 
                     SelectedSize = rbList.SelectedValue;
-                    quantity = qty.Text;
+                    quantity = qty.SelectedItem.Text;
                     var lblError = item.FindControl("lblError") as Label;
                     lblError.Text = "";
                     try
@@ -194,7 +254,7 @@ namespace wholesale
             try
             {
                 SqlConnection con = new SqlConnection(s);
-                SqlCommand cmd = new SqlCommand("insert into tblrating1 (pid,username,usermail,title,ratings,feedback) values (@pid,@username,@usermail,@title,@ratings,@feedback)", con);
+                SqlCommand cmd = new SqlCommand("insert into tblrating1 (pid,username,usermail,title,ratings,feedback,rdate) values (@pid,@username,@usermail,@title,@ratings,@feedback,@date)", con);
                 SqlDataAdapter sda = new SqlDataAdapter();
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@username", reviewName.Text);
@@ -204,6 +264,8 @@ namespace wholesale
 
                 cmd.Parameters.AddWithValue("@ratings", Rating1.CurrentRating.ToString());
                 cmd.Parameters.AddWithValue("@feedback", txtreview.Text);
+                cmd.Parameters.AddWithValue("@date", DateTime.Now);
+
                 cmd.Connection = con;
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -217,6 +279,57 @@ namespace wholesale
                 Response.Write(s);
             }
         }
+          protected void ButtonAddtoWishlist_Click(object sender, EventArgs e)
+        {
+            string SelectedSize = string.Empty;
+            string quantity = string.Empty;
+            Int64 PID = Convert.ToInt64(Request.QueryString["PID"]);
+
+            foreach (RepeaterItem item in Repeater1.Items)
+            {
+                if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
+                {
+                    var rbList = item.FindControl("rblSize") as RadioButtonList;
+                    var qty = item.FindControl("quantity") as DropDownList;
+
+                    SelectedSize = rbList.SelectedValue;
+                    quantity = qty.SelectedItem.Text;
+                    var lblError = item.FindControl("lblError") as Label;
+                    lblError.Text = "";
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(s);
+                        SqlCommand cmd = new SqlCommand("insert into wishlist1 values (@username,@qty,@size,@pid)", con);
+                        SqlDataAdapter sda = new SqlDataAdapter();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@username", Session["userid"].ToString());
+                        cmd.Parameters.AddWithValue("@qty", quantity);
+                        cmd.Parameters.AddWithValue("@size", SelectedSize);
+                        cmd.Parameters.AddWithValue("@pid", PID);
+
+                        cmd.Connection = con;
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        //Int64 cid= Convert.ToInt64(cmd.ExecuteScalar());
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        string s = ex.Message;
+                        Response.Write(s);
+                    }
+                }
+            }
+
+
+            Response.Redirect("~/wishlist.aspx");
+
+
+
+        }
+
+
     }
 
 }

@@ -17,7 +17,7 @@
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Inventory</a></li>
                     <li class="breadcrumb-item active">Product</li>
-                <%--</ol>--%>
+                </ol>
             </div>
             <h4 class="page-title">Add Product</h4>
         </div>
@@ -100,6 +100,9 @@
                            <asp:ListItem>Blue</asp:ListItem>
                            <asp:ListItem>Sky Blue</asp:ListItem>
                            <asp:ListItem>Gray</asp:ListItem>
+                            <asp:ListItem>white</asp:ListItem>
+                           <asp:ListItem>Dark Blue</asp:ListItem>
+                           <asp:ListItem>Brown</asp:ListItem>
 
                         </asp:DropDownList>
        
@@ -107,7 +110,7 @@
  <div class="form-group col-md-4" >
         <label for="validationCustom04">Length</label>
         <asp:DropDownList runat="server" ID="ddllength" class="form-control">
-                           <asp:ListItem>Crop</asp:ListItem>
+                           <asp:ListItem>Knee Length</asp:ListItem>
                            <asp:ListItem>Full Length</asp:ListItem>
                            <asp:ListItem>Ankle Length</asp:ListItem>
 
@@ -139,7 +142,6 @@
         <label for="validationCustom05">Selling Price</label>
       <asp:TextBox runat ="server" type="number" class="form-control" id="sellingprc"
             placeholder="Selling price" required=""></asp:TextBox>
-         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Enter Price" ControlToValidate="sellingprc" ForeColor="red" Display="Dynamic"></asp:RequiredFieldValidator>
         
     </div>
            <div class="form-group col-md-3">
@@ -230,17 +232,12 @@
 
                 var disCount = parseFloat($('#<%=discount.ClientID %>').val())
 
-                if (!isNaN(disCount)) {
-                  
-                    $('#<%=sellingprc.ClientID %>').text(parseFloat(txttot) - parseFloat(disCount));
-                
-}
-
+                $('#<%=sellingprc.ClientID %>').val(txttot - disCount);
             })
 
 
         })
-    </script>
+</script>
      <script src="http://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         function ShowImagePreview(input) {

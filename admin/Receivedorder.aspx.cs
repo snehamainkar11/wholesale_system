@@ -146,13 +146,13 @@ namespace wholesale.admin
                 using (SqlConnection sqlCon = new SqlConnection(s))
                 {
                     sqlCon.Open();
-                    SqlCommand cmd = new SqlCommand("update purchase  set pdate=@pdate,invamt=@total,invrem=@invrem,invpaid=@invpaid where pid=@id", sqlCon);
+                    SqlCommand cmd = new SqlCommand("update purchase  set rdate=@pdate,invamt=@total,invrem=@invrem,invpaid=@invpaid,status=@status where pid=@id", sqlCon);
 
                     cmd.Parameters.AddWithValue("@pdate", (gvpo.Rows[e.RowIndex].FindControl("pdate") as TextBox).Text.Trim());
                     cmd.Parameters.AddWithValue("@total", (gvpo.Rows[e.RowIndex].FindControl("invamt") as TextBox).Text.Trim());
                     cmd.Parameters.AddWithValue("@invrem", (gvpo.Rows[e.RowIndex].FindControl("invrem") as TextBox).Text.Trim());
                     cmd.Parameters.AddWithValue("@invpaid", (gvpo.Rows[e.RowIndex].FindControl("invpaid") as TextBox).Text.Trim());
-                  
+                    cmd.Parameters.AddWithValue("@status", (gvpo.Rows[e.RowIndex].FindControl("status") as TextBox).Text.Trim());
                     cmd.Parameters.AddWithValue("@id", Convert.ToInt32(gvpo.DataKeys[e.RowIndex].Value.ToString()));
                     cmd.ExecuteNonQuery();
 

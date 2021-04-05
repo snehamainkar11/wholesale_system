@@ -11,7 +11,8 @@ namespace wholesale
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Int64 PID = Convert.ToInt64(Request.QueryString["ID"]);
+            label1.Text = PID.ToString();
         }
     }
 }

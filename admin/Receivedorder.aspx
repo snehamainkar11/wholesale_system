@@ -12,7 +12,7 @@
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Order</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript: void(0);">Purchase</a></li>
+                    <li class="breadcrumb-  active"><a href="javascript: void(0);">Purchase</a></li>
                 </ol>
             </div>
             <h4 class="page-title"> Purchase Bill </h4>
@@ -85,9 +85,9 @@
                             </asp:TemplateField>
 
 
-                            <asp:TemplateField HeaderText="Date">
+                            <asp:TemplateField HeaderText=" Received Date">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblclr" runat="server" Text='<%# Bind("pdate", "{0:dd/MM/yyyy}") %>' Width="100px"></asp:Label>
+                                    <asp:Label ID="lblclr" runat="server" Text='<%# Bind("rdate", "{0:dd/MM/yyyy}") %>' Width="100px"></asp:Label>
                                 </ItemTemplate>
                                 <EditItemTemplate>
                                     <asp:TextBox ID="pdate" CssClass="form-control" runat="server" TextMode="Date" Width="100px"></asp:TextBox>
@@ -123,7 +123,16 @@
                                     <asp:TextBox ID="invrem" CssClass="form-control" runat="server" Text='<%# Bind("invrem") %>' Width="100px"></asp:TextBox>
                                 </EditItemTemplate>
                             </asp:TemplateField>
-                          
+                            <asp:TemplateField HeaderText="Status">
+                                <ItemTemplate>
+                                    <asp:Label ID="Label12" runat="server" Text='<%# Bind("status") %>'></asp:Label>
+                                </ItemTemplate>
+                                   <EditItemTemplate>
+                                    <asp:TextBox ID="status" CssClass="form-control" runat="server" Text='<%# Bind("status") %>' Width="100px"></asp:TextBox>
+                                </EditItemTemplate>
+
+                            
+                            </asp:TemplateField>
                             <asp:TemplateField HeaderText="Action" ItemStyle-Width="20">
                                 <ItemTemplate>
                                     <asp:HyperLink ID="vwdet" 

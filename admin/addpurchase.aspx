@@ -58,26 +58,22 @@
                         <asp:Textbox  ID="txtnum" runat="server" class="form-control" type="text"   placeholder="Invoice Number">
                             </asp:Textbox>
                     </div>
-                             <div class="form-group col-md-3">
-                        <label for="brand">Invoice Amount </label>
-                        <asp:Textbox  ID="txtinv" runat="server" class="form-control" type="number"  placeholder=" Amount in RS">
+                         <div class="form-group col-md-3">
+                        <label for="brand">Order Date </label>
+                        <asp:Textbox  ID="pdate" runat="server" class="form-control" TextMode="date" name="brand"  value="dd-mm-yyyy">
                             
                             </asp:Textbox>
                     </div>
-           
-                     
-                  <div class="form-group col-md-3">
-                        <label for="brand">Paid Amount </label>
-                        <asp:Textbox  ID="txtrem" runat="server" class="form-control" value="0.0" type="number"  placeholder=" Amount Pending in RS">
+                              <div class="form-group col-md-3">
+                        <label for="brand">Received Date </label>
+                        <asp:Textbox  ID="rdate" runat="server" class="form-control" TextMode="date" name="brand"  value="dd-mm-yyyy">
                             
                             </asp:Textbox>
-                                    
-                  
-</div>
+                    </div>
                     </div>
                     <div class="table-responsive">
                      <table style="width: 100%"  class="table table-bordered table-centered table-hover mb-0">
-                         <tr>
+                         <tr style="background-color:lavender;color:black">
                              <td>Sr.No</td>
                              <td  style="width: 20%">Material</td>
                              <td  style="width: 20%">Quantity</td>
@@ -141,8 +137,47 @@
 </td><td>
                     <asp:Button runat="server"  Id="Button1" class="btn btn-outline-danger" type="clear" text="Clear" OnClick="Button1_Click" Visible="false"/>
  </td></tr></table>
+                        <br />
+                        <div class="form-row">
+                             <div class="form-group col-md-3">
+                        <label for="brand">Total Discount </label> <div class="input-group"> 
+                        <asp:Textbox  ID="dis" runat="server" class="form-control" type="number"  placeholder=" Discount in RS">
+                            
+                            </asp:Textbox>
+                    <span class="input-group-text" id="inputGroupPrepend">Rs</span>
+            </div></div>
+                  
+                             <div class="form-group col-md-3">
+                        <label for="brand">GST(%) </label> <div class="input-group"> 
+                        <asp:Textbox  ID="gst" runat="server" class="form-control" type="number"  placeholder=" GST">
+                        </asp:Textbox>
+                   <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">%</span>
+            </div></div>
+                   </div>
+
+                         <div class="form-group col-md-3">
+                        <label for="brand">Invoice Amount </label>
+                           <div class="input-group"> <asp:Textbox  ID="txtinv" runat="server" class="form-control" type="number"  placeholder=" Amount in RS">
+                            </asp:Textbox><div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">Rs</span>
+            </div></div>
+                   </div>
+
+           
+                     
+                  <div class="form-group col-md-3">
+                        <label for="brand">Paid Amount </label>
+                       <div class="input-group"> 
+                        <asp:Textbox  ID="txtrem" runat="server" class="form-control" value="0.0" type="number"  placeholder=" Amount Pending in RS">
+                            
+                            </asp:Textbox>
+                       <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">Rs</span>
+            </div></div>
+                   </div>
                   <div class="form-group col-md-6 mt-3">
-                                          <asp:Button runat="server" class="btn btn-primary" type="submit" text="Save" ID="save" OnClick="save_Click"/>
+                                          <asp:Button runat="server" class="btn btn-primary" type="submit" text="Save Invoice" ID="save" OnClick="save_Click"/>
                               </div>
             </div></div></div></div></div></div>
       </div>

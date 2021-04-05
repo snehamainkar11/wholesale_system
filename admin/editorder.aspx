@@ -65,7 +65,12 @@
                             </asp:Textbox>
                     </div>
                        </ItemTemplate></asp:Repeater>        
-                             
+                            <div class="form-group col-md-4">
+                        <label for="brand">Order Date  </label>
+                        <asp:Textbox  ID="odate" runat="server" class="form-control" type="date" >
+                            </asp:Textbox>
+                    </div>   
+                                
                             
 </div>
 </div></div>
@@ -179,7 +184,7 @@
                   <div class="col-sm-11">
                         <div class="float-right mt-0 mt-sm-0">
                             
-                              <h4>  Grand Total :  <asp:Label ID="grand" Text='0.0' CssClass="grand"    runat="server"></asp:Label> Rs</h4>
+                              <h4>Total :  <asp:Label ID="grand" Text='0.0' CssClass="grand"    runat="server"></asp:Label> Rs</h4>
                         
                             </div></div>
 
@@ -196,7 +201,7 @@
             </div>
 
     </div>
-      </div>
+ 
 </asp:Content>   
 
    

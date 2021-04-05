@@ -75,7 +75,8 @@ namespace wholesale.admin
                         sda.Fill(dt);
                         rptr.DataSource = dt;
                         rptr.DataBind();
-
+                        Repeater1.DataSource=dt;
+                        Repeater1.DataBind();
 
                     }
                 }
@@ -189,36 +190,55 @@ namespace wholesale.admin
                 {
                     foreach (RepeaterItem item in rptr.Items)
                     {
+                        foreach (RepeaterItem it2 in Repeater1.Items)
+                        {
 
-                        var invno = item.FindControl("txtnum") as TextBox;
-                        var amt = item.FindControl("txtinv") as TextBox;
-                        var invpaid = item.FindControl("txtrem") as TextBox;
+                            var invno = item.FindControl("txtnum") as TextBox;
+                            var amt = it2.FindControl("txtinv") as TextBox;
+                            var invpaid = it2.FindControl("txtrem") as TextBox;
+                            var gst = it2.FindControl("gst") as TextBox;
+                            var dis = it2.FindControl("dis") as TextBox;
+                            Double rem = Convert.ToDouble(amt.Text) - Convert.ToDouble(invpaid.Text);
+                            string status = "";
+                            if (rem == 0)
+                            {
+                                status = "Paid";
+                            }
+                            else
+                            {
+                                status = "Pending";
+                            }
+                            sqlCon.Open();
+                            SqlCommand cmd = new SqlCommand("update Purchase set supid=@sid,pdate=@pdate,dis=@dis,gst=@gst,rdate=@rdate,status=@status,invno=@invno,invamt=@amount,invrem=@rem,invpaid=@paid where pid=@id", sqlCon);
 
-                        sqlCon.Open();
-                        SqlCommand cmd = new SqlCommand("update Purchase  set pdate=@pdate,invno=@invno,invamt=@amount,invrem=@rem,invpaid=@paid where pid=@id", sqlCon);
+                            cmd.Parameters.AddWithValue("@invno", invno.Text);
+                            cmd.Parameters.AddWithValue("@amount", amt.Text);
+                            cmd.Parameters.AddWithValue("@pdate", pdate.Text);
+                            cmd.Parameters.AddWithValue("@dis", dis.Text);
+                            cmd.Parameters.AddWithValue("@gst", gst.Text);
+                            cmd.Parameters.AddWithValue("@status", status);
+                            cmd.Parameters.AddWithValue("@rdate", rdate.Text);
+                            cmd.Parameters.AddWithValue("@sid", ddlsup.SelectedValue);
 
-                        cmd.Parameters.AddWithValue("@invno", invno.Text);
-                        cmd.Parameters.AddWithValue("@amount", amt.Text);
-                        cmd.Parameters.AddWithValue("@pdate", Convert.ToDateTime(DateTime.Now));
-
-                        cmd.Parameters.AddWithValue("@paid", invpaid.Text);
-                        cmd.Parameters.AddWithValue("@rem", Convert.ToDouble(amt.Text) - Convert.ToDouble(invpaid.Text));
-
-
-                        cmd.Parameters.AddWithValue("@id", orderno);
-                        cmd.ExecuteNonQuery();
+                            cmd.Parameters.AddWithValue("@paid", invpaid.Text);
+                            cmd.Parameters.AddWithValue("@rem", rem);
 
 
+                            cmd.Parameters.AddWithValue("@id", orderno);
+                            cmd.ExecuteNonQuery();
 
-                        panel.Visible = true;
-                        panel1.Visible = false;
-                        lblSuccessMessage.Text = "Order Updated Successfully";
-                        lblErrorMessage.Text = "";
-                        Response.Redirect("~/admin/ReceivedOrder.aspx");
 
+
+                            panel.Visible = true;
+                            panel1.Visible = false;
+                            lblSuccessMessage.Text = "Order Updated Successfully";
+                            lblErrorMessage.Text = "";
+                            Response.Redirect("~/admin/ReceivedOrder.aspx");
+
+                        }
                     }
-                }
 
+                }
             }
             catch (Exception ex)
             {

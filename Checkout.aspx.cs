@@ -200,7 +200,7 @@ namespace wholesale
                 cmd.Parameters.AddWithValue("@shippcharge", shipped.Text);
                 cmd.Parameters.AddWithValue("@tax", dis.Text);
                 cmd.Parameters.AddWithValue("@grand", spanTotal.Text);
-                cmd.Parameters.AddWithValue("@shipstatus", "Order Received");
+                cmd.Parameters.AddWithValue("@shipstatus", "Order Placed");
 
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -237,7 +237,28 @@ namespace wholesale
                                 con1.Open();
                                 cmd1.ExecuteNonQuery();
                             }
+                            using (SqlConnection cono = new SqlConnection(s))
+                            {
+                                SqlCommand cmd1 = new SqlCommand("update Prodstock set ProdStock.quantity=ProdStock.quantity-@quantity from  Product inner join Prodstock  on Product.PID=ProdStock.PID where Product.pname=@id", cono);
+                                cmd1.Parameters.AddWithValue("@id", pid.ToString());
+                                cmd1.Parameters.AddWithValue("@quantity", qty.Text);
+                                cono.Open();
+                                cmd1.ExecuteNonQuery();
+                                // con1.Close();
+
+                            }
+                            using (SqlConnection con12 = new SqlConnection(s))
+                            {
+                                SqlCommand cmd1 = new SqlCommand("delete from cart where uid=@uid", con12);
+                                cmd1.CommandType = CommandType.Text;
+                               cmd1.Parameters.AddWithValue("@uid", Session["userid"].ToString());
+
+                                con12.Open();
+                                cmd1.ExecuteNonQuery();
+                            }
                         }
+                        Response.Redirect("ordercomplete.aspx?ID=" + purid);
+
                     }
                 }
 

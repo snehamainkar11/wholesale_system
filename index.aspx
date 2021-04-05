@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="wholesale.index" %>
+﻿<%@ Page Language="C#" EnableEventValidation="false"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="wholesale.index" %>
 	<asp:Content ID="conten1" ContentPlaceHolderID="Maincontent" runat="server">  
 
 
@@ -16,7 +16,7 @@
                 </div>
                 <div class="card-body mt-auto py-8">
                     <!-- Button -->
-                    <a class="btn btn-white stretched-link" href="shop.aspx">
+                    <a class="btn btn-white stretched-link" href="shoptypes.aspx?type=Women">
                         Shop Women <i class="fe fe-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="card-body mt-auto py-8">
                     <!-- Button -->
-                    <a class="btn btn-white stretched-link" href="shop.aspx">
+                    <a class="btn btn-white stretched-link" href="shoptypes.aspx?type=Men">
                         Shop Men <i class="fe fe-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="card-body mt-auto py-8">
                     <!-- Button -->
-                    <a class="btn btn-white stretched-link" href="shop.aspx">
+                    <a class="btn btn-white stretched-link" href="shoptypes.aspx?type=Kids">
                         Shop Kids <i class="fe fe-arrow-right ml-2"></i>
                     </a>
                 </div>

@@ -43,18 +43,18 @@
                     <ItemTemplate>
                     
                          <div class="row">
-                              <div class="col-sm-6">
+                              <div class="col-sm-7">
                         <div class="float-left">
                              <h4>Billing From</h4>
-                            <h4><b style= "color:black">Waheguru Creations</b></h4>
+                            <h4><b style= "color:black">Waheguru Creation</b></h4>
 
                             
                      <div style="color:black">
-                      <h5>abc road,opp to dominoz piazza,</h5>
-                           
-                          <h5>Pin :487570</h5>
-                       <h5> Contact:9484949990</h5>
-                                            <h5> Email:abc@gmail.com</h5>
+                      <h5>102, Ground Floor Vaibhav Laxmi Market, Gheekanta Road</h5>
+                          <h5> Ahmedabad.</h5>
+                          <h5>Pin :380001</h5>
+                       <h5> Contact:7096968959</h5>
+                                            <h5> Email:manojkarda4455@gmail.com</h5>
 
                          </div></div>
                     <!-- end col-->
@@ -65,18 +65,20 @@
                
                        </div>
                              
-                              <div class="col-sm-6">
+                              <div class="col-sm-5">
                         <div class="float-right">
                              <h4>Billing To</h4>
                             <h4><b style= "color:black"><%# Eval("cname") %></b></h4>
 
                             
                      <div style="color:black">
-                      <h5>   <%# Eval("address") %> </h5>
+                        <%# Eval("address") %> <br />
                            
-                       <h5>Contact: <%# Eval("contact") %></h5>
-                                            <h5> Invoice No: <%# Eval("orderno") %></h5>
-                        Date: <%# Eval("duedate", "{0:dd/MM/yyyy}") %>
+                       Contact: <%# Eval("contact") %><br />
+                                                Order Date: <%# Eval("pdate", "{0:dd/MM/yyyy}") %>
+                         <br />
+                       Due Date: <%# Eval("duedate", "{0:dd/MM/yyyy}") %>
+                       <h5> Invoice No: <%# Eval("orderno") %></h5>
 
                      </div></div>
                     <!-- end col-->
@@ -110,7 +112,7 @@
                                 </asp:SqlDataSource>
                         </div>    </div>        
             <div class="col-sm-10">
-                        <div class="float-right mt-4 mt-sm-2">
+                        <div class="float-right mt-2 mt-sm-1">
                      <table border="0" class="table table-sm   table-centered mb-0">   <tr>  <td> <p><b>Sub-total : </b> </td><td> <span class="float-center">  
                             <%# Eval("total") %> Rs</span></p></td></tr>
                           <tr>  <td><p><b>GST(%) :</b> </td><td> +  <span class="float-center"><%# Eval("gst") %></span> %</p></td></tr>
@@ -120,7 +122,7 @@
                            <tr>  <td >  <p  class=" font-18"><strong>Payment Status: </strong> </td><td> <span class="badge badge-success float-centre"><asp:Label Text='<%# Eval("status") %>' runat="server" ID="statusLabel" class="font-18" />  </span></p></td></tr>
                  </table> 
                         </div>
-                        
+                      
                      
                   
                
@@ -131,16 +133,27 @@
                             
      
                       </ItemTemplate>
+
                                </asp:Repeater>      
-                    
-  </div></div>
+                          <hr />      
+         <p>__________________________________________</p>
+                          <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign and Stamp by Authority</h5>
+ 
+           <br />
+          <div class="float-left mt-2 mt-sm-1">
+                     
+            Note:  NO RETURN POLICY !!!<br />
+             <h5>  ..............................................................................Please Visit again,Happy Shopping!!!.......................................................................................
+       </h5> </div>
+      </div>
         </div></div>
                     </asp:Panel>
-                     <div class="d-print-none mt-4">
+                     <div class="d-print-none mt-1">
                    
                         <a href="javascript:window.print()" class="btn btn-primary"><i class="mdi mdi-printer"></i> Print</a>
                       
                          </div>
+                    </div>
 </asp:Content>
 
 

@@ -29,155 +29,72 @@
             <div class="card-body">
                 <div class="row mb-2">
                                      
-                     <div class="col-sm-8">
-                          <asp:Panel runat="server" ID="panel" Visible="false">
-<div class="alert alert-info alert-dismissible fade show" role="alert">
-                         <i class="dripicons-checkmark mr-2"></i> 
-                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-                          <asp:Label ID="lblSuccessMessage"  data-dismiss="alert" aria-label="Close" Text="" runat="server" ForeColor="Green" />
-                            </div>
-            <br />
-                   </asp:Panel> 
-                         <asp:Panel runat="server" ID="panel1" Visible="false">
-                        <asp:Label ID="lblErrorMessage" Text="" runat="server" Visible="true" role="alert" ForeColor="Red" />
-                             </asp:Panel>
-            </div>
-                   </div>
+                   
 
-                      <div class="row mb-2">
-                <div class="form-group col-md-4" >
-        <label for="validationCustom04"> Select Supplier</label>
-                    <asp:DropDownList runat="server" ID="ddlsup" class="form-control" DataSourceID="SqlDataSource2" DataTextField="company" DataValueField="company">
-                    </asp:DropDownList>
-                    <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT [company] FROM [Supplier]"></asp:SqlDataSource>
-                </div>
+                                        <div class="col-sm-12">
 
-<div class="form-group col-md-4" >
-        <label for="validationCustom04"> Select Category</label>
-    <asp:DropDownList runat="server" ID="ddlcat" class="form-control" DataSourceID="SqlDataSource1" DataTextField="mcategory" DataValueField="mcategory">
-    </asp:DropDownList>
-    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT distinct [mcategory] FROM [Material]"></asp:SqlDataSource>
-</div>
- <div class="form-group col-md-8" >
-
-      <asp:Button runat="server" class="btn btn-success" type="submit" text="Search"  ID="btnsearch" OnClick="btnsearch_Click"></asp:Button>
-
-                                </div></div>
-
-                 <hr />
-             <h4>  <asp:Label Text="Available Stock" ID="label1" runat="server" Style="color:green;"></asp:Label>
-              <div class="mt-0" style="float: right;background-color:white" ><asp:Button runat="server" Text="View All Records" ID="btnvw" OnClick="btnvw_Click"  class="btn btn-dark"></asp:Button></div>
+               
+             <h4>  <asp:Label Text="Low Stock Items" ID="label1" runat="server" Style="color:green;"></asp:Label>
                         </h4><br />  <div class="table-responsive">
                                <asp:Panel runat="server" ID="panel11">
-                                <asp:GridView ID="gvproduct" runat="server" ShowHeaderWhenEmpty="true" DataKeyNames="mid" ShowFooter="true" OnRowCancelingEdit="gvproduct_RowCancelingEdit" OnRowEditing="gvproduct_RowEditing" OnRowUpdating="gvproduct_RowUpdating" OnRowDeleting="gvproduct_RowDeleting"
-
-                                                                       AllowPaging="False" AutoGenerateColumns="False"  class="table table-bordered table-centered table-hover mb-0"  CellPadding="4" ForeColor="#333333" GridLines="None">
-                                                                       <AlternatingRowStyle BackColor="White" ForeColor="#284775"></AlternatingRowStyle>
-                                                                       <EditRowStyle BackColor="#999999"></EditRowStyle>
-
-                                                                       <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" Width="100%"></FooterStyle>
-
-                                                                       <HeaderStyle Width="100px" BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-
-                                                                       <PagerStyle HorizontalAlign="Center" BackColor="#284775" ForeColor="White"></PagerStyle>
-
-                                                                       <RowStyle BackColor="#F7F6F3" ForeColor="#333333"></RowStyle>
-
-                                                                       <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333"></SelectedRowStyle>
-
-                                                                       <SortedAscendingCellStyle BackColor="#E9E7E2"></SortedAscendingCellStyle>
-
-                                                                       <SortedAscendingHeaderStyle BackColor="#506C8C"></SortedAscendingHeaderStyle>
-
-                                                                       <SortedDescendingCellStyle BackColor="#FFFDF8"></SortedDescendingCellStyle>
-
-                                                                       <SortedDescendingHeaderStyle BackColor="#6F8DAE"></SortedDescendingHeaderStyle>
-                                                                       <Columns>
-                            <asp:TemplateField HeaderText = "Sr.No" ItemStyle-Width="100">
+                                   <asp:GridView ID="gvproduct" runat="server" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" class="table table-bordered table-centered table-hover mb-0" CellPadding="3" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
+                                       <Columns>
+                                            <asp:TemplateField HeaderText = "Sr.No" ItemStyle-Width="100">
                                         <ItemTemplate>
                                                    <%# Container.DataItemIndex + 1 %>
 
                                         </ItemTemplate>
                                        <ItemStyle Width="2%" />
                                     </asp:TemplateField>
-        <asp:TemplateField HeaderText="Code">
-            <ItemTemplate>
-                <asp:Label ID="lblid" runat="server" Text='<%# Bind("mcode")  %>'  Width="100px"></asp:Label>
-            </ItemTemplate>           
-          
-        </asp:TemplateField>
-      
-           <asp:TemplateField HeaderText="Item">
-            <ItemTemplate>
-                 <asp:Label ID="vwprod"  Text= '<%# Bind("mname") %>'
-                     runat="server"  Width="100px">
-                                            </asp:Label>
-            </ItemTemplate>
-           
-          
-            </asp:TemplateField>
-         
-                <asp:TemplateField HeaderText="Min Stock Level">
-            <ItemTemplate>
-                <asp:Label ID="level" runat="server" Text='<%# Bind("minstock") %>'  ></asp:Label>
-            </ItemTemplate>
-           
-             <EditItemTemplate>
-                <asp:TextBox ID="minstock" CssClass="form-control" runat="server" Text='<%# Bind("minstock") %>'  Width="100px"></asp:TextBox>
-            </EditItemTemplate>
-        </asp:TemplateField>
-  <asp:TemplateField HeaderText="Available Stock">
-            <ItemTemplate>
-                <asp:Label ID="lblqty" runat="server" Text= '<%# string.Concat(Eval("qty"), " ", Eval("unit"))%>'></asp:Label>
-            </ItemTemplate>
-           
-             <EditItemTemplate>
-                <asp:TextBox ID="qty" CssClass="form-control" runat="server" Text='<%# Bind("qty") %>'  Width="100px"></asp:TextBox>
-            </EditItemTemplate>
-        </asp:TemplateField>
+
+                                           <asp:BoundField DataField="mname" HeaderText="Material" SortExpression="mname">
+                                               <ItemStyle Width="250" />
+                                           </asp:BoundField>
+                                           <asp:BoundField DataField="minstock" HeaderText="Reorder Level" SortExpression="minstock"></asp:BoundField>
+                                           <asp:BoundField DataField="qty" HeaderText="Quantity in Hand" SortExpression="qty">
+                                               <ItemStyle ForeColor="Red" />
+                                           </asp:BoundField>
+                                           <asp:TemplateField HeaderText="Action">
+                                               <ItemTemplate>
+                                                <asp:HyperLink Text=" Add Purchase Order" height="40" CssClass="btn btn-dark" NavigateUrl="~/admin/purchaseorder.aspx" ID="po" runat="server"></asp:HyperLink>
+                                                </ItemTemplate>
+                                           </asp:TemplateField>
+                                       </Columns>
 
 
-             <asp:TemplateField HeaderText="Price">
-            <ItemTemplate>
-                <asp:Label ID="lblsp" runat="server" Text='<%# Bind("price") %>'  Width="60px"></asp:Label>
-            </ItemTemplate>
-          <EditItemTemplate>
-                <asp:TextBox ID="price" CssClass="form-control" runat="server" Text='<%# Bind("price") %>'  Width="100px"></asp:TextBox>
-            </EditItemTemplate>
-            
-        </asp:TemplateField>
-              <asp:TemplateField HeaderText="Total Stock Price">
-            <ItemTemplate>
-                <asp:Label ID="Label3" runat="server" Text='<%# Convert.ToInt32(Eval("qty"))* Convert.ToDouble(Eval("price")) %>'  Width="100px"></asp:Label>
-            </ItemTemplate>
-       
-        </asp:TemplateField>
-            
-        <asp:TemplateField HeaderText="Action">
-                       <ItemTemplate>
-                            <asp:ImageButton ImageUrl="~/Images/edit.png" runat="server" CommandName="Edit" ToolTip="Edit" Width="20px" Height="20px"/>
-                            <asp:ImageButton ImageUrl="~/Images/delete.png" runat="server" CommandName="Delete" ToolTip="Delete" Width="20px" Height="20px"/>
-                        </ItemTemplate>
-                        <EditItemTemplate>
-                            <asp:ImageButton ImageUrl="~/Images/save.png" runat="server" CommandName="Update" ToolTip="Update" Width="20px" Height="20px"/>
-                            <asp:ImageButton ImageUrl="~/Images/cancel.png" runat="server" CommandName="Cancel" ToolTip="Cancel" Width="20px" Height="20px"/>
-                        </EditItemTemplate>
-                      
-                    </asp:TemplateField>
-    </Columns>
+
+
+                                                     <EditRowStyle BackColor="#999999"></EditRowStyle>
+
+                                                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White"></FooterStyle>
+
+                                                     <HeaderStyle Width="100px" BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+
+
+
+
+
+
+
+                                                     <PagerStyle HorizontalAlign="Center" BackColor="#284775" ForeColor="White"></PagerStyle>
+
+                                                     <RowStyle BackColor="#F7F6F3" ForeColor="#333333"></RowStyle>
+
+                                                     <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333"></SelectedRowStyle>
+
+                                                     <SortedAscendingCellStyle BackColor="#E9E7E2"></SortedAscendingCellStyle>
+
+                                                     <SortedAscendingHeaderStyle BackColor="#506C8C"></SortedAscendingHeaderStyle>
+
+                                                     <SortedDescendingCellStyle BackColor="#FFFDF8"></SortedDescendingCellStyle>
+
+                                                     <SortedDescendingHeaderStyle BackColor="#6F8DAE"></SortedDescendingHeaderStyle>
+                                                      </asp:GridView>
+                                   <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:wholesaleConnectionString %>' SelectCommand="SELECT mname, minstock, qty FROM Material where minstock >= qty"></asp:SqlDataSource>
+                                 
+                         
                           
-                          
-                                                  
-                                                       
-                            
-                            
-                            
-                            </asp:GridView>
-                                     <h4 style="text-align:center">  <asp:Label Text="Available Stock" ID="label2" runat="server" Style="color:red;" Visible=false></asp:Label>
-                                         </h4>
-                               </asp:Panel>
+                             </asp:Panel>
                </div>
             </div> <!-- end card-body-->
         </div> <!-- end card-->

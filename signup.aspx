@@ -60,8 +60,11 @@
                             </div>
                                        
                             <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                              <asp:TextBox ID="txtpass"  runat="server" TextMode="Password" ToolTip="Enter Password"  Placeholder="Password" Width="351px"></asp:TextBox>
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>         
+                     <asp:TextBox ID="txtpass"  runat="server" TextMode="Password" ToolTip="Enter Password"
+                             Placeholder="Password" Width="351px"></asp:TextBox>
+                                                       <span id="password_strength"></span>
+
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Enter Password" ControlToValidate="txtpass" ForeColor="red" Display="Dynamic"></asp:RequiredFieldValidator>
 
                             </div>
@@ -84,7 +87,7 @@
                            
                         </form>
                     </div>
-                    <div class="signup-image"> <h3><span style="font-weight:700;font-size:xx-large;color:navy">W</span>aheguru Creations</h3>
+                    <div class="signup-image"> <h3><span style="font-weight:700;font-size:xx-large;color:navy">W</span>aheguru Creation</h3>
                         <figure><img src="/images/signupimg.jpg" alt="sing up image">
                                    <a href="login.aspx" class="signup-image-link">I am already member</a>
 
@@ -99,7 +102,62 @@
 
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main.js"></script>
-   
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#<%=txtpass.ClientID %>").bind("keyup", function () {
+            if ($(this).val().length == 0) {
+                $("#password_strength").html("");
+                return;
+            }
+
+            var regex = new Array();
+            regex.push("[A-Z]");
+            regex.push("[a-z]");
+            regex.push("[0-9]");
+            regex.push("[$@$!%*#?&]");
+
+            var passed = 0;
+
+            for (var i = 0; i < regex.length; i++) {
+                if (new RegExp(regex[i]).test($(this).val())) {
+                    passed++;
+                }
+            }
+
+
+            if (passed > 2 && $(this).val().length > 8) {
+                passed++;
+            }
+
+            var color = "";
+            var strength = "";
+            switch (passed) {
+                case 0:
+                case 1:
+                    strength = "Weak";
+                    color = "red";
+                    break;
+                case 2:
+                    strength = "Good";
+                    color = "darkorange";
+                    break;
+                case 3:
+                case 4:
+                    strength = "Strong";
+                    color = "green";
+                    break;
+                case 5:
+                    strength = "Very Strong";
+                    color = "darkgreen";
+                    break;
+            }
+            $("#password_strength").html(strength);
+            $("#password_strength").css("color", color);
+        });
+    });
+</script>
+
 
 </body>
     </html>

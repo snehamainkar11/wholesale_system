@@ -1,6 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="login" %>
-
-
 <html>
 <head runat="server">
     <meta charset="UTF-8"/>
@@ -944,16 +942,18 @@ label.valid {
             <div class="container" style="height:600px">
                 <div class="signin-content">
                     <div class="signin-image">
+                   <h3><span style="font-weight:700;font-size:xx-large;color:navy">W</span>aheguru Creation</h3>
                         <figure><img  style="height:300px; Width:500px" src="images/logo.jpg" alt="sing up image"/></figure>
                         <a href="signup.aspx" class="signup-image-link">Create an account</a>
                     </div>
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign In</h2>
+                        <asp:Label ID="lbl" runat="server" ForeColor="red" />
                         <form method="POST" runat="server" class="auto-style3">
                                 
                             <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <asp:TextBox ID="txtemail1"  runat="server"  ToolTip="Enter Username"  Placeholder="Username" Height="63px" Width="601px"></asp:TextBox>
                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter Email" ControlToValidate="txtemail1" ForeColor="red" Display="Dynamic"></asp:RequiredFieldValidator>
 

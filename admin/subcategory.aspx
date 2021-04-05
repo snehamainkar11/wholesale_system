@@ -212,7 +212,7 @@
         $('#<%= gvsubcat.ClientID%>').prepend($("<thead></thead>").append($("#<%= gvsubcat.ClientID%>").find("tr:first"))).DataTable({
             stateSave: true,
            dom: 'Bfrtip',
-            'aoColumnDefs': [{ 'bSortable': false, 'aTargets': [0]}],
+            'aoColumnDefs': [{ 'bSortable': false, 'aTargets': [3]}],
             'iDisplayLength': 4,
 select:true,
             buttons: [
