@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeFile="ordercomplete.aspx.cs" Inherits="wholesale.ordercomplete" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ordercomplete.aspx.cs" Inherits="wholesale.ordercomplete" %>
  
 <asp:Content ID="conten1" ContentPlaceHolderID="Maincontent" runat="server">  
 

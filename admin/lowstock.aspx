@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/adminmaster.Master" CodeFile="lowstock.aspx.cs" Inherits="wholesale.admin.lowstock" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/adminmaster.Master" CodeBehind="lowstock.aspx.cs" Inherits="wholesale.admin.lowstock" %>
 
 <asp:Content ID="content1" ContentPlaceHolderID="admincontent" runat="server">  
     <div class="content-page">

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="~/productreview.aspx.cs" Inherits="wholesale.productreview" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="~/productreview.aspx.cs" Inherits="wholesale.productreview" %>
 
 
 
@@ -302,7 +302,7 @@
         </a>
         <ul class="side-nav-second-level" aria-expanded="false">
             <li>
-                <a href="salesdata.aspx">Sales</a>
+                <a href="salesreport.aspx">Sales</a>
             </li>
             <li>
                 <a href="purchaseReport.aspx">Purchase </a>

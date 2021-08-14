@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/adminmaster.Master"CodeFile="addproduct.aspx.cs" Inherits="wholesale.addproduct" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/adminmaster.Master" CodeBehind="addproduct.aspx.cs" Inherits="wholesale.addproduct" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="content1" ContentPlaceHolderID="admincontent" runat="server">  

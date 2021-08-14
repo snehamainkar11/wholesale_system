@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="~/manfproducts.aspx.cs" Inherits="wholesale.manfproducts" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="~/manfproducts.aspx.cs" Inherits="wholesale.manfproducts" %>
 <%@ Register assembly="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" namespace="CrystalDecisions.Web" tagprefix="CR" %>
 
 <!DOCTYPE html>
@@ -297,7 +297,7 @@
         </a>
         <ul class="side-nav-second-level" aria-expanded="false">
             <li>
-                <a href="salesdata.aspx">Sales</a>
+                <a href="salesreport.aspx">Sales</a>
             </li>
             <li>
                 <a href="purchaseReport.aspx">Purchase </a>

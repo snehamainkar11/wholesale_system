@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" EnableEventValidation="false"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="wholesale.index" %>
+﻿<%@ Page Language="C#" EnableEventValidation="false"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="wholesale.index" %>
 	<asp:Content ID="conten1" ContentPlaceHolderID="Maincontent" runat="server">  
 
 

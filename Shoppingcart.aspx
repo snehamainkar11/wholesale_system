@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false"  CodeFile="Shoppingcart.aspx.cs" Inherits="wholesale.Shoppingcart" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false"  CodeBehind="Shoppingcart.aspx.cs" Inherits="wholesale.Shoppingcart" %>
 
 
 <!Doctype html>

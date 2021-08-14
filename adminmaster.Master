@@ -293,7 +293,7 @@
         </a>
         <ul class="side-nav-second-level" aria-expanded="false">
             <li>
-                <a href="/salesdata.aspx">Sales</a>
+                <a href="/salesreport.aspx">Sales</a>
             </li>
             <li>
                 <a href="/purchaseReport.aspx">Purchase </a>

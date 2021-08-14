@@ -61,7 +61,7 @@ namespace wholesale
             using (SqlConnection sqlCon = new SqlConnection(s))
             {
                 sqlCon.Open();
-                String query = "select M.* ,C.* from sales M inner join salesDet C on M.orderno=C.orderno where duedate between @to and @from";
+                String query = "select M.* ,C.* from sales M inner join saleDet C on M.orderno=C.orderno where duedate between @to and @from";
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                 sqlCmd.Parameters.AddWithValue("@to", to.Text);
                 sqlCmd.Parameters.AddWithValue("@from", from.Text);

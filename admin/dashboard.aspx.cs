@@ -41,7 +41,7 @@ namespace wholesale
                 catch (Exception ex)
                 {
                     string x = ex.Message;
-                    Response.Write(x);
+                   // Response.Write(x);
                 }
             }
             using (SqlConnection con = new SqlConnection(s))
@@ -57,7 +57,7 @@ namespace wholesale
                 catch (Exception ex)
                 {
                     string x = ex.Message;
-                    Response.Write(x);
+                   // Response.Write(x);
                 }
             }
         }
@@ -76,7 +76,7 @@ namespace wholesale
                 catch (Exception ex)
                 {
                     string x = ex.Message;
-                    Response.Write(x);
+                    //Response.Write(x);
                 }
             }
             using (SqlConnection con = new SqlConnection(s))
@@ -92,7 +92,7 @@ namespace wholesale
                 catch (Exception ex)
                 {
                     string x = ex.Message;
-                    Response.Write(x);
+                    //Response.Write(x);
                 }
             }
         }
@@ -111,7 +111,7 @@ namespace wholesale
                 catch (Exception ex)
                 {
                     string x = ex.Message;
-                    Response.Write(x);
+                    //Response.Write(x);
                 }
             }
             using (SqlConnection con = new SqlConnection(s))
@@ -127,7 +127,7 @@ namespace wholesale
                 catch (Exception ex)
                 {
                     string x = ex.Message;
-                    Response.Write(x);
+                    //Response.Write(x);
                 }
             }
             using (SqlConnection con = new SqlConnection(s))
@@ -143,7 +143,7 @@ namespace wholesale
                 catch (Exception ex)
                 {
                     string x = ex.Message;
-                    Response.Write(x);
+                    //Response.Write(x);
                 }
             }
         }
@@ -162,7 +162,7 @@ namespace wholesale
                 catch (Exception ex)
                 {
                     string x = ex.Message;
-                    Response.Write(x);
+                   // Response.Write(x);
                 }
             }
             using (SqlConnection con = new SqlConnection(s))
@@ -178,7 +178,7 @@ namespace wholesale
                 catch (Exception ex)
                 {
                     string x = ex.Message;
-                    Response.Write(x);
+                    //Response.Write(x);
                 }
             }
             using (SqlConnection con = new SqlConnection(s))
@@ -194,7 +194,7 @@ namespace wholesale
                 catch (Exception ex)
                 {
                     string x = ex.Message;
-                    Response.Write(x);
+                   // Response.Write(x);
                 }
             }
             using (SqlConnection con = new SqlConnection(s))
@@ -210,7 +210,7 @@ namespace wholesale
                 catch (Exception ex)
                 {
                     string x = ex.Message;
-                    Response.Write(x);
+                    //Response.Write(x);
                 }
             }
             using (SqlConnection con = new SqlConnection(s))
@@ -226,7 +226,7 @@ namespace wholesale
                 catch (Exception ex)
                 {
                     string x = ex.Message;
-                    Response.Write(x);
+                   // Response.Write(x);
                 }
             }
         }
@@ -251,7 +251,7 @@ namespace wholesale
             catch (Exception ex)
             {
                 string x = ex.Message;
-                Response.Write(x);
+               // Response.Write(x);
             }
            }
         public void getdata()
@@ -274,7 +274,7 @@ namespace wholesale
             catch (Exception ex)
             {
                 string x = ex.Message;
-                Response.Write(x);
+                //Response.Write(x);
             }
         }
         public void getdata1()
@@ -297,7 +297,7 @@ namespace wholesale
             catch (Exception ex)
             {
                 string x = ex.Message;
-                Response.Write(x);
+                //Response.Write(x);
             }
         }
 

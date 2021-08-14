@@ -1,6 +1,6 @@
 ﻿
 
-<%@ Page Language="C#" AutoEventWireup="true"   CodeFile="wishlist.aspx.cs" Inherits="wholesale.wishlist" EnableEventValidation="false" %>
+<%@ Page Language="C#" AutoEventWireup="true"   CodeBehind="wishlist.aspx.cs" Inherits="wholesale.wishlist" EnableEventValidation="false" %>
 
 <!Doctype html>
 <html lang="en">

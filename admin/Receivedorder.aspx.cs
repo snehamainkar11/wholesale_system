@@ -10,7 +10,7 @@ using System.Data;
 using System.Configuration;
 using System.Collections;
 
-namespace wholesale.admin
+namespace wholesale
 {
     public partial class Receivedorder : System.Web.UI.Page
     {

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"MasterPageFile="~/adminmaster.Master" CodeFile="changepass.aspx.cs" Inherits="wholesale.admin.changepass" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"MasterPageFile="~/adminmaster.Master" CodeBehind="changepass.aspx.cs" Inherits="wholesale.admin.changepass" %>
 
 <asp:Content ID="content1" ContentPlaceHolderID="admincontent" runat="server">  
 

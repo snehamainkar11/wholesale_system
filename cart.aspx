@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeFile="cart.aspx.cs" Inherits="wholesale.cart" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="cart.aspx.cs" Inherits="wholesale.cart" %>
 <asp:Content ID="conten1" ContentPlaceHolderID="Maincontent" runat="server">  
  
 <!-- BREADCRUMB -->

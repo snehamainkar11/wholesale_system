@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/adminmaster.Master" MaintainScrollPositionOnPostBack="true" CodeFile="addsales.aspx.cs" Inherits="wholesale.admin.addsales" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/adminmaster.Master" MaintainScrollPositionOnPostBack="true" CodeBehind="addsales.aspx.cs" Inherits="wholesale.admin.addsales" %>
  
 <asp:Content ID="content1" ContentPlaceHolderID="admincontent" runat="server">  
        <asp:ScriptManager ID="ScriptManager1" runat="server">

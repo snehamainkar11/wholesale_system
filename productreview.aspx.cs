@@ -20,7 +20,7 @@ namespace wholesale
 
 
             ReportDocument cryRpt = new ReportDocument();
-            cryRpt.Load(Server.MapPath("productreview.rpt"));
+            cryRpt.Load(Server.MapPath("productreviews.rpt"));
             CrystalReportViewer1.ReportSource = cryRpt;
             //cryRpt.SetDatabaseLogon("SNEHA\\Htc", "");
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" MasterPageFile="~/adminmaster.Master"  CodeFile="salesorder.aspx.cs" Inherits="wholesale.admin.salesorder" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" MasterPageFile="~/adminmaster.Master"  CodeBehind="salesorder.aspx.cs" Inherits="wholesale.admin.salesorder" %>
 
 <asp:Content ID="content1" ContentPlaceHolderID="admincontent" runat="server">  
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false"  MasterPageFile="~/Site.Master" CodeFile="searchdata.aspx.cs" Inherits="wholesale.searchdata" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false"  MasterPageFile="~/Site.Master" CodeBehind="searchdata.aspx.cs" Inherits="wholesale.searchdata" %>
 <asp:Content ID="conten1" ContentPlaceHolderID="Maincontent" runat="server">  
    
 <section class="py-11">

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  EnableEventValidation="false" MasterPageFile="~/adminmaster.Master"  CodeFile="Category.aspx.cs" Inherits="wholesale.Category" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  EnableEventValidation="false" MasterPageFile="~/adminmaster.Master"  CodeBehind="Category.aspx.cs" Inherits="wholesale.Category" %>
 
 
 <asp:Content ID="content1" ContentPlaceHolderID="admincontent" runat="server">  

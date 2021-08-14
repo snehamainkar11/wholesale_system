@@ -24,6 +24,15 @@ namespace wholesale.admin
         protected global::System.Web.UI.WebControls.Label lblErrorMessage;
 
         /// <summary>
+        /// lbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl;
+
+        /// <summary>
         /// uname control.
         /// </summary>
         /// <remarks>
@@ -42,6 +51,15 @@ namespace wholesale.admin
         protected global::System.Web.UI.WebControls.TextBox pass;
 
         /// <summary>
+        /// npass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox npass;
+
+        /// <summary>
         /// cpass control.
         /// </summary>
         /// <remarks>
@@ -49,5 +67,23 @@ namespace wholesale.admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox cpass;
+
+        /// <summary>
+        /// reqcompre_adminpassrepeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator reqcompre_adminpassrepeat;
+
+        /// <summary>
+        /// save control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button save;
     }
 }

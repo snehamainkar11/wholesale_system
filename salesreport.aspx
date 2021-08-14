@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="salesreport.aspx.cs" Inherits="wholesale.salesreport" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="salesreport.aspx.cs" Inherits="wholesale.salesreport" %>
 
 
 
@@ -303,7 +303,7 @@
         </a>
         <ul class="side-nav-second-level" aria-expanded="false">
             <li>
-                <a href="salesdata.aspx">Sales</a>
+                <a href="salesreport.aspx">Sales</a>
             </li>
             <li>
                 <a href="purchaseReport.aspx">Purchase </a>
@@ -343,7 +343,7 @@
                     <li class="breadcrumb-item active">Reports</li>
                         </ol>
             </div>
-            <h4 class="page-title"> Customerwise Sales Report</h4>
+            <h4 class="page-title"> Sales Report</h4>
         </div>
           
         </div>

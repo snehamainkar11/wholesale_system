@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/adminmaster.Master" CodeFile="addexpense.aspx.cs" Inherits="wholesale.addexpense" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/adminmaster.Master" CodeBehind="addexpense.aspx.cs" Inherits="wholesale.addexpense" %>
 
 <asp:Content ID="content1" ContentPlaceHolderID="admincontent" runat="server">  
 
